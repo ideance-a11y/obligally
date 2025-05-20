@@ -1,0 +1,18 @@
+---
+import '@styles/components/header.css'
+
+interface Props {
+  siteTitle: string
+}
+
+const { siteTitle } = Astro.props
+---
+
+<header
+  class="header"
+  role="banner"
+>
+  <a href="/">
+    {siteTitle}
+  </a>
+</header>

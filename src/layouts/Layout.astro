@@ -1,14 +1,42 @@
+---
+import Header from '@components/Header.astro'
+import Skiplinks from '@components/Skiplinks.astro'
+import Footer from '@components/Footer.astro'
+
+import '@styles/main.css'
+
+interface Props {
+  pageTitle: string
+  metaDescription?: string
+  bodyClass?: string
+}
+
+const { pageTitle, metaDescription, bodyClass } = Astro.props
+const siteTitle = 'Lega11y'
+const siteMetaDesc = `Obligations légales concernant l\'accessibilité numérique en France`
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
+    <!-- prettier-ignore -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <meta name="description" content={`${siteMetaDesc}${metaDescription}`} />
+    <title>{pageTitle} | {siteTitle}</title>
   </head>
 
-  <body>
-    <slot />
+  <body class={`body ${bodyClass}`}>
+    <Skiplinks />
+    <Header siteTitle="Lega11y" />
+    <main
+      id="main"
+      role="main"
+    >
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
