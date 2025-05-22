@@ -1,5 +1,6 @@
 ---
 import Navigation from '@components/Navigation.astro'
+import Lang from '@components/Lang.astro'
 
 import '@styles/components/header.css'
 
@@ -14,6 +15,7 @@ const { siteTitle } = Astro.props
   class="header"
   role="banner"
 >
+  <Lang />
   <a href="/">
     {siteTitle}
   </a>
