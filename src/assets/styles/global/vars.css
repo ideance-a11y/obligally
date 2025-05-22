@@ -74,5 +74,6 @@
     --color-background: var(--color-black-ideance);
 
     --color-text: var(--color-white);
+    --color-text-link: var(--color-white);
   }
 }
