@@ -1,0 +1,37 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const nav = [
+  {
+    label: 'nav.home',
+    route: '/'
+  },
+  {
+    label: 'nav.about',
+    route: '/about'
+  }
+] as const
+---
+
+<nav
+  role="navigation"
+  aria-label={t('nav.label')}
+>
+  <ul>
+    {
+      nav.map((item) => (
+        <li>
+          <a
+            href={`/${lang}${item.route}`}
+            aria-current="false"
+          >
+            {t(item.label)}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

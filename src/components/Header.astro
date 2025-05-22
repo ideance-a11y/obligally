@@ -1,4 +1,6 @@
 ---
+import Navigation from '@components/Navigation.astro'
+
 import '@styles/components/header.css'
 
 interface Props {
@@ -15,4 +17,5 @@ const { siteTitle } = Astro.props
   <a href="/">
     {siteTitle}
   </a>
+  <Navigation />
 </header>
