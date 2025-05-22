@@ -12,23 +12,39 @@ interface Props {
 }
 
 const { pageTitle, metaDescription, bodyClass } = Astro.props
+
+import { getLangFromUrl } from '@/i18n/utils'
+const lang = getLangFromUrl(Astro.url)
+
 const siteTitle = 'Lega11y'
 const siteMetaDesc = `Obligations légales concernant l\'accessibilité numérique en France`
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang={lang}>
   <head>
-    <!-- prettier-ignore -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={`${siteMetaDesc}${metaDescription}`} />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <meta
+      name="description"
+      content={`${siteMetaDesc}${metaDescription}`}
+    />
     <title>{pageTitle} | {siteTitle}</title>
   </head>
 
-  <body class={`body ${bodyClass}`}>
+  <body class={`body wrapper-main ${bodyClass}`}>
     <Skiplinks />
     <Header siteTitle="Lega11y" />
     <main
