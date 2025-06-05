@@ -1,0 +1,49 @@
+---
+import '@/assets/styles/components/breadcrumb.css'
+
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+export interface Props {
+  breadcrumb: {
+    url: string
+    label: string
+    isCurrent: boolean
+  }[]
+}
+
+const { breadcrumb } = Astro.props
+---
+
+<nav
+  class="breadcrumb"
+  role="navigation"
+  aria-label={t('nav.breadcrumb.label')}
+>
+  <ol class="breadcrumb-list list-unstyled">
+    <li class="breadcrumb-item">
+      <a
+        class="breadcrumb-link"
+        href="/"
+      >
+        {t('nav.home')}
+      </a>
+    </li>
+    {
+      breadcrumb &&
+        breadcrumb.map((item) => (
+          <li class="breadcrumb-item">
+            <a
+              class="breadcrumb-link"
+              href={item.url}
+              aria-current={item.isCurrent ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+    }
+  </ol>
+</nav>

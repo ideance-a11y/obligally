@@ -1,0 +1,8 @@
+.breadcrumb {
+  --gap-column-breadcrumb-list: var(--size-12);
+}
+
+.breadcrumb-list {
+  display: flex;
+  gap: var(--gap-column-breadcrumb-list);
+}

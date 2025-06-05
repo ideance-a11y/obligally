@@ -1,7 +1,10 @@
 ---
-import Header from '@components/Header.astro'
 import Skiplinks from '@components/Skiplinks.astro'
+import Header from '@components/Header.astro'
+import Breadcrumb from '@components/Breadcrumb.astro'
 import Footer from '@components/Footer.astro'
+
+import type { ComponentProps } from 'astro/types'
 
 import '@styles/main.css'
 
@@ -9,9 +12,10 @@ interface Props {
   pageTitle: string
   metaDescription?: string
   bodyClass?: string
+  breadcrumb?: ComponentProps<typeof Breadcrumb>['breadcrumb']
 }
 
-const { pageTitle, metaDescription, bodyClass } = Astro.props
+const { pageTitle, metaDescription, bodyClass, breadcrumb } = Astro.props
 
 import { getLangFromUrl } from '@/i18n/utils'
 const lang = getLangFromUrl(Astro.url)
@@ -51,6 +55,7 @@ const siteMetaDesc = `Obligations légales concernant l\'accessibilité numériq
       id="main"
       role="main"
     >
+      {breadcrumb && <Breadcrumb breadcrumb={breadcrumb} />}
       <slot />
     </main>
     <Footer />
