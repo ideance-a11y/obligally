@@ -18,7 +18,7 @@ export const ui = {
     'skiplink.tocontent': 'To main content',
     'lang.version': 'English version',
     'nav.main.label': 'Main menu',
-    'nav.breadcrumb.label': 'Vous êtes ici',
+    'nav.breadcrumb.label': 'You are here',
     'nav.home': 'Home',
     'nav.about': 'About'
   }
