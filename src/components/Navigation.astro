@@ -26,7 +26,15 @@ const nav = [
         <li>
           <a
             href={`/${lang}${item.route}`}
-            aria-current="false"
+            aria-current={
+              item.route === '/'
+                ? Astro.url.pathname === `/${lang}${item.route}`
+                  ? 'page'
+                  : undefined
+                : Astro.url.pathname.includes(item.route)
+                  ? 'page'
+                  : undefined
+            }
           >
             {t(item.label)}
           </a>
