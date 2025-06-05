@@ -25,8 +25,9 @@ body {
   display: grid;
   align-content: start;
   grid-template-columns: minmax(var(--size-20), 1fr) minmax(auto, 968px) minmax(var(--size-20), 1fr);
+}
 
-  > * {
-    grid-column: 2;
-  }
+/* Selecteur where pour poids 0 (override facile) */
+:where(.wrapper-main > *) {
+  grid-column: 2;
 }

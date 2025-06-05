@@ -1,0 +1,12 @@
+.header {
+  --color-background-header: #e8efef;
+
+  background-color: var(--color-background-header);
+  grid-column: 1 / span 3;
+  display: grid;
+  grid-template-columns: inherit;
+
+  > * {
+    grid-column: 2;
+  }
+}
