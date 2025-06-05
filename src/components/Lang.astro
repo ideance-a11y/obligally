@@ -6,25 +6,27 @@ const lang = getLangFromUrl(Astro.url)
 const pathWithoutLang = Astro.url.pathname.replace(`/${lang}/`, '')
 ---
 
-{
-  lang === 'fr' && (
-    <a
-      href={`/en/${pathWithoutLang}`}
-      lang="en"
-      hreflang="en"
-    >
-      English version
-    </a>
-  )
-}
-{
-  lang === 'en' && (
-    <a
-      href={`/fr/${pathWithoutLang}`}
-      lang="fr"
-      hreflang="fr"
-    >
-      Version française
-    </a>
-  )
-}
+<div class="wrapper-lang">
+  {
+    lang === 'fr' && (
+      <a
+        href={`/en/${pathWithoutLang}`}
+        lang="en"
+        hreflang="en"
+      >
+        English version
+      </a>
+    )
+  }
+  {
+    lang === 'en' && (
+      <a
+        href={`/fr/${pathWithoutLang}`}
+        lang="fr"
+        hreflang="fr"
+      >
+        Version française
+      </a>
+    )
+  }
+</div>
