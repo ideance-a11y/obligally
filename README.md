@@ -1,4 +1,4 @@
-# Ideance Lega11y
+# Ideance Obligally
 
 Affiche les obligations légales en termes d'accessbilité numérique des contenus et services numériques en France selon le profil.
 
