@@ -2,6 +2,8 @@
   <form
     class="wrapper-form"
     action=""
+    v-on:submit.prevent="handleFormSubmit"
+    v-on:change="handleFormChange"
     novalidate
   >
     <p class="text-center">{{ t('general.form_mandatory_fields_legend') }}</p>
@@ -133,18 +135,8 @@
       >
     </FieldsetGroup>
 
-    <button
-      type="submit"
-      v-on:click="handleFormSubmitPrevious"
-    >
-      {{ t('general.previous') }}
-    </button>
-    <button
-      type="submit"
-      v-on:click="handleFormSubmitNext"
-    >
-      {{ t('general.next') }}
-    </button>
+    <button type="submit">{{ t('general.previous') }}</button>
+    <button type="submit">{{ t('general.next') }}</button>
 
     <!--
       <p>{{ t('general.form_collect_no_data') }}</p>
@@ -253,25 +245,23 @@ function handleFormChange(evt: Event) {
   if (['entity', 'turnover', 'employeeLimit'].includes(name)) provideServiceValue.value = ''
 }
 
-/** Étape de formulaire précédente */
-function handleFormSubmitPrevious() {}
+function handleFormSubmit() {
+  if (isErrorEntity.value) {
+    fieldsetEntityElem.value?.fieldsetRef?.focus()
+  } else if (isErrorTurnover.value) {
+    fieldsetTurnoverElem.value?.fieldsetRef?.focus()
+  } else if (isErrorEmployees.value) {
+    fieldsetEmployeesElem.value?.fieldsetRef?.focus()
+  } else if (isErrorService.value) {
+    fieldsetServiceElem.value?.fieldsetRef?.focus()
+  }
 
-/** Étape de formulaire suivante */
-function handleFormSubmitNext() {
-  /** En fonction de l'étape en cours (ou des données déjà enregistrées), vérifier la completion des données */
-  /** Si pas complété :
-   *  - Afficher l'erreur
-   *  - Déplacer le focus clavier
-   */
-  /** Si complété :
-   *  - Enregistrer la nouvelle étape en cours
-   *  - Déplacer le focus clavier
-   */
+  isFormSubmitted.value = true
 }
 </script>
 
 <style>
-q .wrapper-form {
+.wrapper-form {
   display: grid;
   row-gap: var(--size-20);
 }
