@@ -3,7 +3,7 @@ export const messages = {
     general: {
       a11y_legal_obligations_france: `Obligations légales pour l'accessibilité des contenus et services numériques en France`,
       form_collect_no_data: `Ce formulaire ne collecte aucune donnée.`,
-      form_mandatory_fields_legend: `Les champs obligatoires sont marqués d'un astérisque (caractère *).`,
+      form_mandatory_fields_legend: `Une réponse est requise pour chaque question.`,
       what_entity_are_you: `Quel type d'entité représentez-vous ?`,
       public_entity: `Un organisme public (ou assimilé)`,
       private_entity: `Une entreprise privée`,
@@ -17,6 +17,8 @@ export const messages = {
       do_you_provide_service: `Fournissez-vous un service ?`,
       yes: `Oui`,
       no: `Non`,
+      previous: `Précédent`,
+      next: `Suivant`,
       all_digital_content_including: `Tout contenu numérique, y compris`,
       following_digital_services: `Les services numériques suivants`,
       your_legal_obligations: `Vos obligations légales`,
