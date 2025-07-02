@@ -1,12 +1,22 @@
 <template>
   <div class="wrapper-obligations">
     <template v-if="obligationResults.length === 0">
-      <h3>{{ t('general.no_explicit_obligation') }}</h3>
+      <h2
+        tabindex="-1"
+        ref="title"
+      >
+        {{ t('general.no_explicit_obligation') }}
+      </h2>
       <div v-html="t('html.no_legal_obligation_content')" />
     </template>
 
     <template v-else>
-      <h2>{{ t('general.your_legal_obligations') }}</h2>
+      <h2
+        tabindex="-1"
+        ref="title"
+      >
+        {{ t('general.your_legal_obligations') }}
+      </h2>
 
       <template
         v-for="result in obligationResults"
@@ -95,7 +105,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject } from 'vue'
+import { computed, inject, useTemplateRef } from 'vue'
 import { datas } from '@/datas/datas'
 
 import ListWithSingle from '@/components/ListWithSingle.vue'
@@ -113,6 +123,12 @@ const props = defineProps<{
   exceedEmployeeLimit?: StringBoolean
   provideService?: StringBoolean
 }>()
+
+/** Ref de l'élément <h2> */
+const titleRef = useTemplateRef('title')
+
+/** Exposition de l'élément <h2> pour placer le focus */
+defineExpose({ titleRef })
 
 /** Retourne un tableau d'obligations correspondant aux données du formulaire */
 const obligationResults = computed(() => datas.filter((data) => matchConditions(data.conditions)))

@@ -13,4 +13,3 @@ export type ItemConditions = {
   exceedEmployeeLimit?: StringBoolean
   provideService?: StringBoolean
 }
-

@@ -17,8 +17,13 @@ export const messages = {
       do_you_provide_service: `Fournissez-vous un service ?`,
       yes: `Oui`,
       no: `Non`,
+      service_yes: `Oui, je fournis un service concerné par la directive européene relative à l'accessibilité des produits et services.`,
+      service_no: `Non, je ne fournis pas l'un de ces services.`,
       previous: `Précédent`,
       next: `Suivant`,
+      reset: `Réinitialiser`,
+      validate: `Valider`,
+      summary: `Résumé`,
       all_digital_content_including: `Tout contenu numérique, y compris`,
       following_digital_services: `Les services numériques suivants`,
       your_legal_obligations: `Vos obligations légales`,
@@ -36,6 +41,17 @@ export const messages = {
       empty_turnover: `Veuillez renseigner votre chiffre d'affaire.`,
       empty_employees: `Veuillez renseigner votre nombre de salariés.`,
       empty_service: `Veuillez renseigner si vous fournissez un service.`
+    },
+    summary: {
+      public: `Vous êtes un organisme publique (ou assimilé).`,
+      private: `Vous êtes une entreprise privée.`,
+      over250m: `Votre chiffre d'affaire est supérieur à 250 millions d'euros`,
+      over2m: `Votre chiffre d'affaire est supérieur à 2 millions d'euros`,
+      below2m: `Votre chiffre d'affaire est inférieur à 2 millions d'euros`,
+      provide_service: `Vote entreprise fournit un service`,
+      no_service: `Votre chiffre d'affaire est inférieur à 2 millions d'euros`,
+      over_employee_limit: `Votre entreprise compte plus de {count} employés ou employées.`,
+      under_employee_limit: `Votre entreprise compte moins de {count} employés ou employées.`
     },
     html: {
       no_legal_obligation_content: `<p>Aucune obligation légale.</p>
