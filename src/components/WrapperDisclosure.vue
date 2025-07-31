@@ -18,7 +18,7 @@ const isDisplayed = ref(false)
 
 /** Liste des slots */
 defineSlots<{
-  button(): unknown
-  default(): unknown
+  button: unknown
+  default: unknown
 }>()
 </script>
