@@ -20,6 +20,10 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * Rend une liste non ordonnée ou un paragraphe selon la valeur de `length`
+ * <p> et <ul> rendus par défaut mais modifiables via les propriétés `singleElement` et `listElement`
+ */
 import { useId } from 'vue'
 
 withDefaults(
@@ -38,7 +42,6 @@ withDefaults(
 defineSlots<{
   default(props: { index: number }): unknown
 }>()
-
 
 /** Id unique */
 const uid = useId()
