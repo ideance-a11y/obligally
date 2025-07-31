@@ -3,17 +3,20 @@ import Layout from '@layouts/Layout.astro'
 
 import ObligationsForm from '@/components/ObligationsForm.vue'
 
-import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const t = await initI18n(lang)
 
 export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
 }
 ---
 
-<Layout pageTitle={t('nav.simulation')}>
+<Layout
+  lang={lang}
+  pageTitle={t('nav.simulation')}
+>
   <h1>{t('nav.simulation')}</h1>
   <ObligationsForm client:load />
 </Layout>

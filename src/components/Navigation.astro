@@ -1,8 +1,8 @@
 ---
-import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const t = await initI18n(lang)
 
 const nav = [
   {
@@ -22,7 +22,7 @@ const nav = [
 
 <nav
   role="navigation"
-  aria-label={t('nav.main.label')}
+  aria-label={t('nav.label_main')}
 >
   <ul>
     {

@@ -1,15 +1,15 @@
 ---
 import '@styles/components/skiplinks.css'
 
-import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const t = await initI18n(lang)
 ---
 
 <a
   href="#main"
   class="visually-hidden visually-hidden-focusable"
 >
-  {t('skiplink.tocontent')}
+  {t('nav.skiplink_to_main')}
 </a>

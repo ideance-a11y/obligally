@@ -1,7 +1,12 @@
 ---
 import '@styles/components/footer.css'
+
+import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+
+const lang = getLangFromUrl(Astro.url)
+const t = await initI18n(lang)
 ---
 
 <footer role="contentinfo">
-  <p>Pied de page</p>
+  <p>{t('nav.footer')}</p>
 </footer>

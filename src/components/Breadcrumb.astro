@@ -1,10 +1,10 @@
 ---
 import '@/assets/styles/components/breadcrumb.css'
 
-import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const t = await initI18n(lang)
 
 export interface Props {
   breadcrumb: {
@@ -20,7 +20,7 @@ const { breadcrumb } = Astro.props
 <nav
   class="breadcrumb"
   role="navigation"
-  aria-label={t('nav.breadcrumb.label')}
+  aria-label={t('nav.label_breadcrumb')}
 >
   <ol class="breadcrumb-list list-unstyled">
     <li class="breadcrumb-item">

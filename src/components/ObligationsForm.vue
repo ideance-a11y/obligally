@@ -204,7 +204,8 @@ import WrapperDisclosure from './WrapperDisclosure.vue'
 
 import { ref, computed, useTemplateRef, provide, nextTick } from 'vue'
 import { createI18n } from 'vue-i18n'
-import { messages } from '@/i18n/i18n-vue'
+import { fr } from '@/i18n/fr'
+import { en } from '@/i18n/en'
 
 import type { Entity, Turnover, StringBoolean } from '@/assets/types/global'
 
@@ -213,7 +214,10 @@ const i18n = createI18n({
   legacy: false,
   locale: 'fr',
   fallbackLocale: 'fr',
-  messages
+  messages: {
+    fr,
+    en
+  }
 })
 const { t } = i18n.global
 provide('t', t)

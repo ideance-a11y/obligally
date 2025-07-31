@@ -9,16 +9,14 @@ import type { ComponentProps } from 'astro/types'
 import '@styles/main.css'
 
 interface Props {
+  lang: string
   pageTitle: string
   metaDescription?: string
   bodyClass?: string
   breadcrumb?: ComponentProps<typeof Breadcrumb>['breadcrumb']
 }
 
-const { pageTitle, metaDescription, bodyClass, breadcrumb } = Astro.props
-
-import { getLangFromUrl } from '@/i18n/utils'
-const lang = getLangFromUrl(Astro.url)
+const { lang, pageTitle, metaDescription, bodyClass, breadcrumb } = Astro.props
 
 const siteTitle = 'Obligally'
 const siteMetaDesc = `Obligations légales concernant l\'accessibilité numérique en France`
