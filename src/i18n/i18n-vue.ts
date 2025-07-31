@@ -34,7 +34,14 @@ export const messages = {
       reference_text: `Texte de référence | Textes de référence`,
       no_explicit_obligation: `Pas d'obligation explicite`,
       financial_penalties: `Sanction financière | Sanctions financières`,
-      legal_penalties: `Sanction juridique | Sanctions juridiques`
+      legal_penalties: `Sanction juridique | Sanctions juridiques`,
+      what_is_a_service: `Qu'est ce qu'un service ?`,
+      a_service_is: `Les services concernés sont :`,
+      result_title_subtext: `Ce que vous devez faire.`,
+      application_field_subtext: `Qu'est-ce qui est concerné ?`,
+      obligation_subtext: `Ce que la loi demande.`,
+      sanction_subtext: `Si vous ne respectez pas ces règles.`,
+      control_organism_subtext: `Qui contrôle ?`
     },
     error: {
       empty_entity: `Veuillez renseigner un type d'entité.`,
@@ -51,14 +58,14 @@ export const messages = {
       provide_service: `Vote entreprise fournit un service`,
       no_service: `Votre chiffre d'affaire est inférieur à 2 millions d'euros`,
       over_employee_limit: `Votre entreprise compte plus de {count} employés ou employées.`,
-      under_employee_limit: `Votre entreprise compte moins de {count} employés ou employées.`
+      below_employee_limit: `Votre entreprise compte moins de {count} employés ou employées.`
     },
     html: {
       no_legal_obligation_content: `<p>Aucune obligation légale.</p>
         <p>L'accessibilité est toutefois une nécessité et un droit fondamental pour les personnes en situation de handicap.</p>
         <p>Un contenu ou un service non-accessible représente une source de discrimination, qui est punie par la loi.</p>
         <p>N'hésitez pas à vous renseigner sur le sujet !</p>`,
-      hint_service_content: `Voir <a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj?locale=fr#002.002">services concernés</a> (Directive europééne 2019/882, chapitre 1, article 2).`
+      service_source_content: `Pour aller plus loin : <a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj?locale=fr#002.002">Directive europééne 2019/882, chapitre 1, article 2 - Services concernés</a>.`
     },
     law: {
       france: {

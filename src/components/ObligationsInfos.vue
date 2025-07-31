@@ -17,6 +17,7 @@
       >
         {{ t('general.your_legal_obligations') }}
       </h2>
+      <p>{{ t('general.result_title_subtext') }}</p>
 
       <template
         v-for="result in obligationResults"
@@ -25,6 +26,7 @@
         <article class="wrapper-obligation">
           <!-- Champ d'application -->
           <h3>{{ t('general.application_field') }}</h3>
+          <p>{{ t('general.application_field_subtext') }}</p>
           <template
             v-for="field in result.applicationFields"
             :key="field.id"
@@ -39,6 +41,7 @@
 
           <!-- Oligations légales -->
           <h3>{{ t('general.obligation', result.obligations.length) }}</h3>
+          <p>{{ t('general.obligation_subtext') }}</p>
           <ListWithSingle :length="result.obligations.length">
             <template v-slot:default="{ index }">
               {{ t(result.obligations[index].name) }}
@@ -47,6 +50,7 @@
 
           <!-- Sanctions -->
           <h3>{{ t('general.sanction', result.sanctions.length) }}</h3>
+          <p>{{ t('general.sanction_subtext') }}</p>
           <p v-if="filterSanctions(result.sanctions, 'penalty').length > 0">
             {{ t('general.legal_penalties', 2) }} :
           </p>
@@ -67,6 +71,7 @@
 
           <!-- Organismes de contrôle -->
           <h3>{{ t('general.control_organism', result.controlOrganizations.length) }}</h3>
+          <p>{{ t('general.control_organism_subtext') }}</p>
           <ListWithSingle :length="result.controlOrganizations.length">
             <template v-slot:default="{ index }">
               {{ t(result.controlOrganizations[index].name) }}
@@ -99,8 +104,9 @@
           </ListWithSingle>
         </article>
       </template>
-      <!-- Fin de boucle sur les obligations -->
+      <!-- Fin de boucle sur les obligations appliquables -->
     </template>
+    <!-- Fin de condition sur la présence ou non d'obligation(s) -->
   </div>
 </template>
 
