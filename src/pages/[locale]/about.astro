@@ -6,22 +6,11 @@ import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
-const breadcrumb = [
-  {
-    url: '/about',
-    label: t('nav.about'),
-    isCurrent: true
-  }
-]
-
 export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
 }
 ---
 
-<Layout
-  pageTitle={t('nav.about')}
-  breadcrumb={breadcrumb}
->
+<Layout pageTitle={t('nav.about')}>
   <h1>{t('nav.about')}</h1>
 </Layout>
