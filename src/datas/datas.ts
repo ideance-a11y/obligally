@@ -37,7 +37,7 @@ export type CaseData = {
   applicationFieldsId: ApplicationField['id'][]
   obligationsId: Obligation['id'][]
   sanctionsId: Sanction['id'][]
-  controlOrganizations: { id: Id; servicesId: 'all' | Service['id'][] }[]
+  controlOrganizations: { id: Id; servicesId: Service['id'][] }[]
 }
 
 /**
@@ -59,7 +59,14 @@ const cases: CaseData[] = [
     controlOrganizations: [
       {
         id: 'arcom',
-        servicesId: 'all'
+        servicesId: [
+          'website',
+          'mobile-app',
+          'internet',
+          'intranet',
+          'software-package',
+          'digital-urban-furniture'
+        ]
       }
     ]
   },
@@ -82,7 +89,14 @@ const cases: CaseData[] = [
     controlOrganizations: [
       {
         id: 'arcom',
-        servicesId: 'all'
+        servicesId: [
+          'website',
+          'mobile-app',
+          'internet',
+          'intranet',
+          'software-package',
+          'digital-urban-furniture'
+        ]
       }
     ]
   },
@@ -124,7 +138,7 @@ export type Data = {
   obligations: Obligation[]
   sanctions: Sanction[]
   controlOrganizations: (ControlOrganization & {
-    services: 'all' | Service[]
+    services: Service[]
   })[]
 }
 
@@ -157,12 +171,9 @@ export const datas: Data[] = cases.map((c) => {
     controlOrganizations: c.controlOrganizations.map((orgData) => {
       return {
         ...(controlOrganizations.find((org) => orgData.id === org.id) as ControlOrganization),
-        services:
-          orgData.servicesId === 'all'
-            ? orgData.servicesId
-            : orgData.servicesId.map(
-                (id) => services.find((service) => service.id === id) as Service
-              )
+        services: orgData.servicesId.map(
+          (id) => services.find((service) => service.id === id) as Service
+        )
       }
     })
   }

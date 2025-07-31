@@ -72,28 +72,53 @@
           <!-- Organismes de contrôle -->
           <h3>{{ t('general.control_organism', result.controlOrganizations.length) }}</h3>
           <p>{{ t('general.control_organism_subtext') }}</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>{{ t('general.control_organism') }}</th>
+                <th>{{ t('general.type_of_service_concerned', 2) }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="orga in result.controlOrganizations">
+                <td>
+                  {{ t(orga.name) }}
+                  {{ orga.acronym && `(${t(orga.acronym)})` }}
+                </td>
+                <td>
+                  <ListWithSingle :length="orga.services.length">
+                    <!-- Renommage de la prop enfant pour éviter les ambiguités -->
+                    <template v-slot:default="{ index: subIndex }">
+                      {{ t(orga.services[subIndex].name) }}
+                    </template>
+                  </ListWithSingle>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!--
           <ListWithSingle :length="result.controlOrganizations.length">
             <template v-slot:default="{ index }">
               {{ t(result.controlOrganizations[index].name) }}
               {{
                 result.controlOrganizations[index].acronym &&
                 `(${t(result.controlOrganizations[index].acronym)})`
-              }}<template v-if="result.controlOrganizations[index].services !== 'all'"
-                >&nbsp;:&ensp;</template
-              >
+              }}&nbsp;:&ensp;
 
               <ListWithSingle
-                v-if="result.controlOrganizations[index].services !== 'all'"
                 :length="result.controlOrganizations[index].services.length"
                 singleElement="SPAN"
               >
-                <!-- Renommage de la prop enfant pour éviter les ambiguités -->
+                <!- Renommage de la prop enfant pour éviter les ambiguités ->
                 <template v-slot:default="{ index: subIndex }">
                   {{ t(result.controlOrganizations[index].services[subIndex].name) }}
                 </template>
               </ListWithSingle>
             </template>
           </ListWithSingle>
+          -->
 
           <!-- Lois -->
           <h3>{{ t('general.reference_text', result.laws.length) }}</h3>

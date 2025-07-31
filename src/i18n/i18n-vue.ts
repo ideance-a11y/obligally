@@ -36,6 +36,7 @@ export const messages = {
       financial_penalties: `Sanction financière | Sanctions financières`,
       legal_penalties: `Sanction juridique | Sanctions juridiques`,
       what_is_a_service: `Qu'est ce qu'un service ?`,
+      type_of_service_concerned: `Type de service concerné | Type de services concernés`,
       a_service_is: `Les services concernés sont :`,
       result_title_subtext: `Ce que vous devez faire.`,
       application_field_subtext: `Qu'est-ce qui est concerné ?`,
