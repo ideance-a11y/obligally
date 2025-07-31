@@ -37,60 +37,80 @@ export type CaseData = {
   applicationFieldsId: ApplicationField['id'][]
   obligationsId: Obligation['id'][]
   sanctionsId: Sanction['id'][]
-  controlOrganizations: { id: Id, servicesId: 'all' | Service['id'][] }[]
+  controlOrganizations: { id: Id; servicesId: 'all' | Service['id'][] }[]
 }
 
 /**
  * Cas concrêts combinant les infos s'appliquant à une ou plusieurs conditions
  */
-const cases:CaseData[] = [
+const cases: CaseData[] = [
   {
-    conditions: [
-      { entity: 'public' }
-    ],
+    conditions: [{ entity: 'public' }],
     lawsId: ['fr-2005-102', 'eu-2016-2102'],
     applicationFieldsId: ['digital-content'],
     obligationsId: ['rgaa-compliance', 'declaration-schema-plan-publication', 'compliance-display'],
-    sanctionsId: ['public-notice', 'no-compliance-fine', 'no-declaration-fine', 'acrom-publication', 'six-month-renewable'],
-    controlOrganizations: [{
-      id: 'arcom',
-      servicesId: 'all'
-    }]
+    sanctionsId: [
+      'public-notice',
+      'no-compliance-fine',
+      'no-declaration-fine',
+      'acrom-publication',
+      'six-month-renewable'
+    ],
+    controlOrganizations: [
+      {
+        id: 'arcom',
+        servicesId: 'all'
+      }
+    ]
   },
   {
-    conditions: [
-      { entity: 'private', turnover: 'over250m' }
-    ],
+    conditions: [{ entity: 'private', turnover: 'over250m' }],
     lawsId: ['fr-2005-102'],
     applicationFieldsId: ['digital-content'],
-    obligationsId: ['general-compliance', 'declaration-schema-plan-publication', 'compliance-display'],
-    sanctionsId: ['public-notice', 'no-compliance-fine', 'no-declaration-fine', 'acrom-publication', 'six-month-renewable'],
-    controlOrganizations: [{
-      id: 'arcom',
-      servicesId: 'all'
-    }]
+    obligationsId: [
+      'general-compliance',
+      'declaration-schema-plan-publication',
+      'compliance-display'
+    ],
+    sanctionsId: [
+      'public-notice',
+      'no-compliance-fine',
+      'no-declaration-fine',
+      'acrom-publication',
+      'six-month-renewable'
+    ],
+    controlOrganizations: [
+      {
+        id: 'arcom',
+        servicesId: 'all'
+      }
+    ]
   },
   {
     conditions: [
       { entity: 'private', turnover: 'over250m', provideService: 'true' },
       { entity: 'private', turnover: 'over2m', provideService: 'true' },
-      { entity: 'private', exceedEmployeeLimit: 'true', provideService: 'true' },
+      { entity: 'private', exceedEmployeeLimit: 'true', provideService: 'true' }
     ],
     lawsId: ['fr-2023-171', 'eu-2019-882'],
     applicationFieldsId: ['digital-services'],
-    obligationsId: ['en-301-549-compliance', 'user-accessibility-information', 'maintaining-compliance-procedures', 'informing-authorities-of-noncompliance', 'providing-compliance-proof-ability'],
+    obligationsId: [
+      'en-301-549-compliance',
+      'user-accessibility-information',
+      'maintaining-compliance-procedures',
+      'informing-authorities-of-noncompliance',
+      'providing-compliance-proof-ability'
+    ],
     sanctionsId: ['five-class-fine', 'injunction-daily-fine', 'fine-in-europe'],
     controlOrganizations: [
       { id: 'dgccrf', servicesId: ['digital-book', 'ecommerce', 'transport'] },
       { id: 'amf', servicesId: ['bank'] },
       { id: 'bdf', servicesId: ['bank'] },
       { id: 'arcom', servicesId: ['audiovisual'] },
-      { id: 'arcep', servicesId: ['digital-communication'] },
+      { id: 'arcep', servicesId: ['digital-communication'] }
     ]
   }
 ]
-
-
 
 export type Data = {
   id: string
@@ -112,28 +132,37 @@ export type Data = {
  * Tableau de données finales
  * Construit à partir de `cases` en replaçant les id par leurs données correspondantes
  */
-export const datas: Data[] = cases.map(c => {
+export const datas: Data[] = cases.map((c) => {
   return {
     id: useId(),
     conditions: c.conditions,
-    laws: c.lawsId.map(id => laws.find(law => law.id === id) as Law),
-    applicationFields: c.applicationFieldsId.map(id => {
-      const field = applicationFields.find(field => field.id === id) as ApplicationField
+    laws: c.lawsId.map((id) => laws.find((law) => law.id === id) as Law),
+    applicationFields: c.applicationFieldsId.map((id) => {
+      const field = applicationFields.find((field) => field.id === id) as ApplicationField
       /** Récupèration les sous-références aux services */
       return {
         id: field.id,
         name: field.name,
-        services: field.servicesId.map(id => services.find(service => service.id === id) as Service)
+        services: field.servicesId.map(
+          (id) => services.find((service) => service.id === id) as Service
+        )
       }
     }),
-    obligations: c.obligationsId.map(id => obligations.find(obligation => obligation.id === id) as Obligation),
-    sanctions: c.sanctionsId.map(id => sanctions.find(sanction => sanction.id === id) as Sanction),
-    controlOrganizations: c.controlOrganizations.map(orgData => {
+    obligations: c.obligationsId.map(
+      (id) => obligations.find((obligation) => obligation.id === id) as Obligation
+    ),
+    sanctions: c.sanctionsId.map(
+      (id) => sanctions.find((sanction) => sanction.id === id) as Sanction
+    ),
+    controlOrganizations: c.controlOrganizations.map((orgData) => {
       return {
-        ...(controlOrganizations.find(org => orgData.id === org.id) as ControlOrganization),
-        services: orgData.servicesId === 'all' ?
-          orgData.servicesId :
-          orgData.servicesId.map(id => services.find(service => service.id === id) as Service)
+        ...(controlOrganizations.find((org) => orgData.id === org.id) as ControlOrganization),
+        services:
+          orgData.servicesId === 'all'
+            ? orgData.servicesId
+            : orgData.servicesId.map(
+                (id) => services.find((service) => service.id === id) as Service
+              )
       }
     })
   }
