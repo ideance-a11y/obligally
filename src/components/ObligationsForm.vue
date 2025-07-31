@@ -5,6 +5,7 @@
     novalidate
     v-on:submit.prevent="handleFormSubmit"
     v-on:change="handleFormChange"
+    v-if="!isDisplayedResults"
   >
     <p class="text-center">{{ t('general.form_mandatory_fields_legend') }}</p>
 
@@ -165,13 +166,6 @@
         {{ t('general.next') }}
       </template>
     </button>
-
-    <button
-      v-if="isDisplayedResetBtn"
-      v-on:click="handleReset"
-    >
-      {{ t('general.reset') }}
-    </button>
   </form>
 
   <FormSummary
@@ -181,7 +175,14 @@
     :turnover="turnoverValue !== '' ? turnoverValue : undefined"
     :exceedEmployeeLimit="exceedEmployeeLimitValue !== '' ? exceedEmployeeLimitValue : undefined"
     :provideService="provideServiceValue !== '' ? provideServiceValue : undefined"
-  />
+  >
+    <button
+      v-if="isDisplayedResetBtn"
+      v-on:click="handleReset"
+    >
+      {{ t('general.reset') }}
+    </button>
+  </FormSummary>
 
   <!-- Obligations légales selon données complétées -->
   <ObligationsInfos

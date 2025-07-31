@@ -25,6 +25,7 @@
         t('summary.below_employee_limit', { count: 10 })
       }}</template>
     </p>
+    <slot />
   </div>
 </template>
 
@@ -39,6 +40,10 @@ defineProps<{
   turnover?: Turnover | ''
   provideService?: StringBoolean
   exceedEmployeeLimit?: StringBoolean
+}>()
+
+defineSlots<{
+  default: unknown
 }>()
 
 const t = inject<(key: string, number?: number | { count: number }) => string>('t')
