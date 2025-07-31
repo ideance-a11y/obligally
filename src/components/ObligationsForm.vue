@@ -89,9 +89,18 @@
       >
         {{ t('error.empty_service') }}
       </template>
-      <template v-slot:hint>
-        <span v-html="t('html.hint_service_content')"></span>
-      </template>
+      <WrapperDisclosure>
+        <template v-slot:button>
+          {{ t('general.what_is_a_service') }}
+        </template>
+        <p>{{ t('general.a_service_is') }}</p>
+        <ul>
+          <li v-for="service in digitalServices">
+            {{ t(service.name) }}
+          </li>
+        </ul>
+        <span v-html="t('html.service_source_content')"></span>
+      </WrapperDisclosure>
       <InputRadio
         name="service"
         value="true"
@@ -190,6 +199,7 @@ import FieldsetGroup from '@/components/form/FieldsetGroup.vue'
 import FormSummary from './FormSummary.vue'
 import InputRadio from '@/components/form/InputRadio.vue'
 import ObligationsInfos from '@/components/ObligationsInfos.vue'
+import WrapperDisclosure from './WrapperDisclosure.vue'
 
 import { ref, computed, useTemplateRef, provide, nextTick } from 'vue'
 import { createI18n } from 'vue-i18n'
@@ -292,7 +302,8 @@ const isErrorEmployees = computed(
   () => currentStep.value === 3 && exceedEmployeeLimitValue.value === ''
 )
 const isError = computed(
-  () => isErrorEntity.value || isErrorTurnover.value || isErrorService || isErrorEmployees
+  () =>
+    isErrorEntity.value || isErrorTurnover.value || isErrorService.value || isErrorEmployees.value
 )
 
 /**
@@ -377,6 +388,17 @@ function handleFocus() {
       obligationsTitleElem.value?.titleRef?.focus()
   }
 }
+
+/**
+ * Récupération des services numériques appliquables
+ * dans le cadre de la directive européene
+ */
+import { services, type Service } from '@/datas/services'
+import { applicationFields } from '@/datas/application-fields'
+
+const digitalServices = applicationFields
+  .find((app) => app.id === 'digital-services')
+  ?.servicesId.map((item) => services.find((serv) => serv.id === item)) as Service[]
 </script>
 
 <style>
