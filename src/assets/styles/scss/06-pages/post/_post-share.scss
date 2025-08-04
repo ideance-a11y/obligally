@@ -1,0 +1,47 @@
+
+$share-bg: $light-gray;
+$share-bd-c: #E4EBF1;
+
+.ice-post-share {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	font-size: 1.2rem;
+	font-weight: 900;
+	text-transform: uppercase;
+
+	@include for-tablet-and-upper {
+		flex: 0 0 $col-4;
+		font-size: 1.3rem;
+	}
+
+	@include for-desktop {
+		flex-basis: $col-3;
+	}
+
+	.ice-post-share-intro {
+		display: inline-flex;
+		align-items: flex-end;
+		margin: 0;
+		padding-bottom: 0.6rem;
+		font-size: 1.35rem;
+		font-weight: bold;
+		line-height: $font-body-l-hgt;		
+
+		@include for-tablet-and-upper {
+			flex: 0 0 calc(#{$author-avatar-wth} /2);
+		}
+	}
+
+	.ice-social-links {
+		padding: 1.2rem $gutter-hz-mob 1.3rem;
+		background: $share-bg;
+
+		@include for-tablet-and-upper {
+			flex: 0 0 calc(#{$author-avatar-wth} /2);
+			padding: 0.6rem 1.1rem 0.9rem;
+			border-top: 0.2rem solid $share-bd-c;
+		}
+	}
+}

@@ -1,0 +1,117 @@
+$search-bg: #fcfbfb;
+$search-bx-shw: inset 0.1rem 0.2rem 0.8rem 0 rgba(23,24,29,0.14);
+$search-bd-c: #d5cece;
+$search-placeholder-c: $gray-1;
+$search-hgt-mob: 3.3rem;
+$search-hgt-dtp: 3.6rem;
+
+.ice-search-form {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 37rem;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: calc(#{$search-hgt-mob}/2);
+  box-shadow: $search-bx-shw;
+
+  @include for-tablet {
+    flex: 0 0 100%;
+    margin-top: 3rem;
+  }
+
+  @include for-desktop {
+    flex: 0 0 calc(#{$col-4} - 2* #{$gutter-hz});
+    margin: 0;
+    margin-right: $gutter-hz;
+    border-radius: calc(#{$search-hgt-dtp}/2);
+  }
+
+  @include for-large-screen {
+    max-width: 50%;
+    margin-left: $gutter-hz;
+  }
+
+  .ice-home & {
+    position: relative;
+    z-index: 2;
+    
+    @include for-tablet {
+      margin-top: 1rem;
+    }
+
+    @include for-desktop {  
+      flex: 0 0 50%;
+      margin: 2rem calc(25% + #{$gutter-hz}) 0;
+    }
+  }
+}
+
+.ice-search-input {
+  @extend %reset-input;
+  display: inline-flex;
+  flex: 0 1 100%;
+  min-height: $search-hgt-mob;
+  width: auto;
+  padding: 0.3rem 0.5rem 0.3rem 1.8rem;
+  background: $search-bg;
+  border: 0.1rem solid $search-bd-c;
+  border-right: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: calc(#{$search-hgt-mob}/2) 0 0 calc(#{$search-hgt-mob}/2);
+  @include transition-default(box-shadow);
+
+  &:focus {
+    outline-color: $secondary-color;
+    outline-offset: -0.1rem;
+    box-shadow: 0 0 0 0.5rem rgba($white-color, 0.6);
+  }
+
+  @include for-mobile {
+    flex: 0 1 calc(100% - 3.5rem);
+  }
+
+  @include for-desktop {
+    display: block;
+    min-height: $search-hgt-dtp;
+    width: calc(100% - 3.5rem);
+    border-radius: calc(#{$search-hgt-dtp}/2) 0 0 calc(#{$search-hgt-dtp}/2);
+  }
+
+  @include input-placeholder {
+    opacity: 1;
+    color: #605D5D;
+    font-size: 1.45rem;
+    line-height: 1.1;
+    text-align: center;
+  }
+}
+
+.ice-search-submit {
+  @extend %reset-button;
+  z-index: 1;
+  display: inline-flex;
+  flex: 0 0 3.5rem;
+  min-height: $search-hgt-mob;
+  background: $search-bg url("#{$img-path}/search.png") no-repeat center center;
+  background-size: 1.6rem auto;
+  border: 0.1rem solid $search-bd-c;
+  border-left: 0;
+  border-radius: 0 calc(#{$search-hgt-mob}/2) calc(#{$search-hgt-mob}/2) 0;
+  color: transparent;
+  font-size: 0.1rem;
+  @include transition-default(box-shadow);
+
+  @include for-desktop {
+    flex: 0 0 5rem;
+    min-height: $search-hgt-dtp;
+    border-radius: 0 calc(#{$search-hgt-dtp}/2) calc(#{$search-hgt-dtp}/2) 0;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.5rem rgba($white-color, 0.6);
+  }
+}

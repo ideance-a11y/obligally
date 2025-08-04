@@ -12,7 +12,8 @@ export const ui = {
     'nav.main.label': 'Menu principal',
     'nav.breadcrumb.label': 'Vous êtes ici',
     'nav.home': 'Accueil',
-    'nav.about': 'À propos'
+    'nav.about': 'À propos',
+    'nav.styles' : 'Styles'
   },
   en: {
     'skiplink.tocontent': 'To main content',

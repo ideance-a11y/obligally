@@ -1,0 +1,38 @@
+/* Simple page like "Privacy policy" or "Accessibility" */
+.ice-page-header {
+  margin-bottom: 3.5rem;
+  text-align: center;
+
+  @include for-desktop {
+    margin-bottom: 5rem;
+  }
+		
+  @include for-large-screen {
+    padding-left: $col-2;
+    padding-right: $col-2;
+  }
+
+  .ice-page-header-desc {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+.ice-section-category-title {
+  display: block;
+  margin-bottom: 2.6rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1rem solid #d7e3eb;
+}
+
+.ice-section-category {
+  margin-bottom: 6rem;
+  
+  @include for-desktop {
+    margin-bottom: 8rem;
+  }
+  
+  .ice-btn-see-all {
+    margin-top: 3rem;
+  }
+}

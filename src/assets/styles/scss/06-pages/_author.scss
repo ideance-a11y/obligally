@@ -1,0 +1,84 @@
+.ice-page-author-title {
+  @extend %h1;
+
+  &.is-level-2 {
+    @extend %h2-sidebar;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.8rem;
+    border: 0;
+
+    @include for-tablet-and-upper {
+      margin-bottom: 3rem;
+      padding-bottom: 2.5rem;
+    }
+
+    &:not(.with-red-separator) {
+      margin-bottom: 2.5rem;
+      padding-bottom: 0;
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+.ice-author-pres {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+
+  @include for-small-mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include for-desktop {
+    margin-top: 1rem;
+    font-size: 1.7rem;
+  }
+
+  .ice-author-avatar {
+    @include avatar($author-avatar-hgt-mob, $author-avatar-hgt-dtp);
+    margin-right: calc(2* #{$gutter-hz-mob});
+
+    @include for-small-mobile {
+      margin-bottom: 2rem;
+      margin-right: 0;
+    }
+
+    @include for-tablet-and-upper {
+      margin-right: calc(2* #{$gutter-hz});
+    }
+  }
+}
+
+.ice-author-desc {
+  margin-top: 4rem;
+  width: 100%;
+
+  @include for-small-mobile {
+    margin-top: 0;
+  }
+
+  .ice-social-links {
+    margin-top: 1.5rem;
+
+    @include for-tablet-and-upper {
+      margin-top: 1rem;
+    }
+    
+    .ice-social-link:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .ice-typography {
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.ice-section {
+  clear: both;
+  max-width: 100%;
+  margin-bottom: 6rem;
+
+  @include for-tablet-and-upper {
+    margin-bottom: 6rem;
+  }
+
+  &.is-narrow {
+    @include for-tablet-and-upper {
+      margin-left: $col-1;
+      margin-right: $col-1;
+    }
+
+    @include for-desktop {
+      margin-left: $col-2;
+      margin-right: $col-2;
+    }
+  }
+
+  &.is-last {
+    margin-bottom: 7rem;
+
+    @include for-tablet-and-upper {
+      margin-bottom: 10rem;
+    }
+  }
+
+  &.with-border-top {
+    position: relative;
+    padding-top: 5rem;
+
+    @include for-tablet-and-upper {
+      padding-top: 5rem;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0.1rem;
+      background: $light-blue;
+    }
+  }
+}

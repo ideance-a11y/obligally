@@ -1,0 +1,63 @@
+.ice-home,
+.ice-categories,
+.ice-single-category {
+  .ice-body-inner {
+    @include for-large-mobile-and-upper {
+      background: $white-color;
+      border: 0.2rem dashed $tertiary-color;
+      border-top: 0;
+    }
+  }
+
+  .ice-body,
+  .ice-sidebar-left,
+  .ice-sidebar-right {
+    @include for-tablet {
+      order: initial;
+    }
+  }
+
+  .ice-sidebar-left {
+    @include for-tablet {
+      padding-right: calc(2* #{$gutter-hz});
+    }
+
+    @include for-desktop {
+      order: 1;
+    }
+  }
+
+  .ice-body {
+    @include for-desktop {
+      order: 2;
+    }
+  }
+
+  .ice-sidebar-right {
+    @include for-tablet {
+      padding-left: calc(2* #{$gutter-hz});
+    }
+
+    @include for-desktop {
+      order: 3;
+    }
+  }
+}
+
+.ice-home {
+  .ice-sidebar-left,
+  .ice-sidebar-right {
+    @include for-desktop {
+      margin-top: 19rem;
+    }
+  }
+}
+
+.ice-categories {
+  .ice-sidebar-left,
+  .ice-sidebar-right {
+    @include for-desktop {
+      margin-top: 2.1rem;
+    }
+  }
+}

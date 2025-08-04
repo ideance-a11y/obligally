@@ -1,0 +1,122 @@
+$thumbnail-wth-mob: 15rem;
+$thumbnail-wth-tbt: 12rem;
+$thumbnail-wth: 17rem;
+
+.ice-post {
+	.ice-sidebar-left {
+		@include for-mobile {
+			margin-bottom: 2.5rem;
+		}
+	}
+}
+
+.ice-sidebar-left {
+	.ice-post-link {
+		color: $button-secondary-c;
+    @include button-style('secondary', 'normal');
+		justify-content: flex-start;
+		min-height: 2rem;
+		padding: 0;
+		background: none;
+		border: 0;
+		border-radius: 0;
+		text-align: left;
+
+		&:hover,
+		&:focus {
+			box-shadow: none;
+		}
+
+    .ice-icon {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+
+      &:before {
+        padding-bottom: 0.1rem;
+        letter-spacing: -0.85rem;
+      }
+    }
+
+		@include for-tablet-and-lower {
+			display: none;
+		}
+
+		@include for-desktop {
+			min-height: 2.5rem;
+			margin-bottom: calc(#{$gutter-typo-dtp}*1.5);
+			padding: 0;
+		}
+	}   
+}
+
+.ice-post-thumbnail {
+	height: $thumbnail-wth-mob;
+	width: $thumbnail-wth-mob;
+	margin: 0 auto 4rem;
+
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+		border-radius: 0 1.5rem;
+		box-shadow: 0 0 0.1rem 0.1rem #b5cbda, -0.6rem 0.6rem 0 0 $secondary-color;
+	}
+
+	@include for-desktop {
+		margin: 0 0 calc(#{$gutter-typo-dtp}*2) 0.5rem;
+	}
+
+	@include for-tablet {
+		height: $thumbnail-wth;
+		width: $thumbnail-wth;
+	}
+
+	@include for-small-desktop {
+		height: $thumbnail-wth-tbt;
+		width: $thumbnail-wth-tbt;
+	}
+
+	@include for-large-screen {
+		height: $thumbnail-wth;
+		width: $thumbnail-wth;
+
+		img {
+			border-radius: 0 1.6rem;
+			box-shadow: 0 0 0.1rem 0.1rem #b5cbda, -0.9rem 0.9rem 0 0px $secondary-color;
+		}
+	}
+}
+
+.ice-table-of-contents-wrapper {
+	@include for-tablet-and-lower {
+		margin-left: -10%;
+		margin-right: -10%;
+		padding: 2.5rem $col-1;
+		background: lighten(#d7e3eb, 9%);
+		border-radius: 0.3rem;
+	}
+
+	@include for-small-mobile {
+		margin-left: -$gutter-hz-mob;
+		margin-right: -$gutter-hz-mob;
+		padding: 2rem $gutter-hz-mob;
+	}
+}
+
+.ice-table-of-contents {
+	font-size: 1.5rem;
+
+	.ice-titles-list {
+		@extend %reset-list;
+		padding-left: 1.5rem;
+
+		li {
+			margin-bottom: 0.8rem;
+			text-indent: -1.5rem;
+		}
+
+		a {
+			@include link($link-c, transparent, $link-underline-c);
+		}
+	}
+}

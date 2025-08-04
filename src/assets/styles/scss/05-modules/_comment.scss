@@ -1,0 +1,225 @@
+.ice-comment {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @include for-mobile {
+    padding-bottom: 2.5rem;
+  }
+
+  @include for-tablet-and-upper {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.ice-comment-avatar-wrapper {
+  flex: 0 0 calc(#{map-get($comment-avatar, "mobile")} + #{$gutter-hz-mob});
+  padding-left: 0;
+
+  @include for-tablet-and-upper {
+    flex-basis: calc(#{map-get($comment-avatar, "tablet")}+ #{$gutter-hz});
+    padding-right: $gutter-hz;
+  }
+
+  @include for-large-screen {
+    flex-basis: 12.5%;
+  }
+
+  .ice-comment-avatar {
+    overflow: hidden;
+    display: block;
+    height: map-get($comment-avatar, "mobile");
+    width: map-get($comment-avatar, "mobile");
+    background: $white-color linear-gradient(to bottom, #dacce3, #cad8e1);
+    border-radius: calc(#{map-get($comment-avatar, "large")} / 2);
+
+    @include for-tablet-and-upper {
+      height: map-get($comment-avatar, "default");
+      width: map-get($comment-avatar, "default");
+    }
+
+    @include for-large-screen {
+      height: map-get($comment-avatar, "large");
+      width: map-get($comment-avatar, "large");
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &.is-author {
+      border: 0.3rem solid $secondary-color;
+      box-sizing: content-box;
+    }
+
+    &.is-from-ideance {
+      border: 0.3rem solid $primary-color;
+      box-sizing: content-box;
+    }
+  }
+}
+
+.ice-comment-content {
+  flex: 0 0 calc(100% - #{map-get($comment-avatar, "mobile")} - #{$gutter-hz-mob});
+
+  @include for-small-mobile {
+    flex-basis: 100%;
+    margin-left: calc(-#{map-get($comment-avatar, "mobile")} - #{$gutter-hz-mob});
+  }
+
+  @include for-large-mobile {
+    flex: 0 1 calc(100% - #{map-get($comment-avatar, "mobile")} - #{$gutter-hz-mob});
+  }
+
+
+  @include for-tablet-and-upper {
+    flex: 1 0 $col-8;
+    margin-right: $col-1;
+  }
+
+  @include for-large-screen {
+    flex: 0 1 calc(100% - 12.5%);
+    margin-right: 0;
+  }
+
+  a {
+    @include link($link-c, $link-underline-c);
+  }
+
+  .reply {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+
+    @include for-tablet-and-upper {
+      font-size: 1.5rem;
+    }
+
+    .ice-icon {
+      color: $primary-darker;
+      font-size: 2rem;
+    }
+  }
+}
+
+.ice-comment-infos {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  line-height: 1.55;
+
+  @include for-mobile {
+    min-height: map-get($comment-avatar, "mobile");
+  }
+
+  @include for-small-mobile {
+    margin-left: calc(#{map-get($comment-avatar, "mobile")} + #{$gutter-hz-mob});
+  }
+
+  @include for-desktop {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .says,
+  .ice-date {
+    margin-left: -0.2rem;
+    padding-right: 0.3rem;
+  }
+
+  .ice-tag {
+    margin-left: 0.3rem;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .is-author {
+    background: $secondary-color;
+    color: $global-c;
+  }
+
+  .is-from-ideance {
+    background: $primary-color;
+    color: $white-color;
+  }
+}
+
+.ice-comment-awaiting-moderation {
+  margin: 0 0 0.7rem;
+  color: $primary-darker;
+  font-style: italic;
+}
+
+.ice-comment-body {
+  font-size: 1.4rem;
+  line-height: 1.55;
+
+  @include for-desktop {
+    font-size: 1.5rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*** Comment number : #1 ***/
+.ice-comment-order {
+  margin-left: auto;
+  padding-left: 3rem;
+  color: $primary-darker;
+  font-size: 1.7rem;
+  font-weight: 900;
+  text-align: right;
+
+  &:before {
+    content: "#" counter(comment-depth-1);
+
+    .children &,
+    .depth-2 & {
+      content: "#" counter(comment-depth-1) "." counter(comment-depth-2);
+    }
+  }
+}
+
+/*** 'Let a comment' form ***/
+.comment-reply-title {
+  color: $comment-c;
+  font-size: $font-body-size;
+  font-weight: bold;
+  text-align: left;
+}
+
+.children .ice-comment,
+.depth-2 .ice-comment {
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @include for-mobile {
+    margin-bottom: 2rem;
+    padding: 1.6rem $gutter-hz-mob;
+    background: lighten($comments-bg, 5%);
+    border-radius: 0.3rem;
+    box-shadow: 0 0 1rem 0.3rem rgba($global-c, 0.1);
+  }
+
+  @include for-large-mobile {
+    padding: 1.6rem $gutter-hz 1.6rem $gutter-hz-mob;
+  }
+
+  @include for-tablet-and-upper {
+    border-top: 0.1rem solid #DCCCF1;
+  }
+
+  @include for-desktop {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}

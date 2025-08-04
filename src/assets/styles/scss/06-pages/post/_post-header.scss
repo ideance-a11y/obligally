@@ -1,0 +1,35 @@
+.ice-post-infos {
+	margin: 2rem 0 0;
+	color: $tertiary-color;
+	font-size: 1.4rem;
+	line-height: 1.45;
+	font-weight: bold;
+	text-align: center;
+
+	@include for-large-mobile {
+		font-size: 1.5rem;
+	}
+
+	@include for-tablet-and-upper {
+		margin: 2.5rem 0 0;
+		font-size: 1.7rem;
+	}
+
+	a {
+		@include link($tertiary-color);
+	}
+
+	.ice-post-edit-link,
+	.post-edit-link {
+		display: inline-flex;
+		align-items: center;
+		text-transform: capitalize;
+		@include link($link-c, $link-underline-c);
+
+		.ice-icon {
+			overflow: hidden;
+			margin-right: 0.7rem;
+			text-decoration: none; 
+		}
+	}
+}

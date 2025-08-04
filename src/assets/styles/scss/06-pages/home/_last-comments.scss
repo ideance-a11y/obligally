@@ -1,0 +1,90 @@
+.ice-last-comments {
+  @extend %reset-list;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.ice-last-comment {
+  flex: 0 0 100%;
+
+  @include for-mobile {
+    &:not(:last-of-type) {
+      margin-bottom: 3rem;
+      padding: 0 0 1.7rem;
+      border-bottom: 0.1rem solid #b4cbd9;
+    }
+  }
+
+  @include for-tablet {
+    flex: 0 0 $col-4;
+    padding-left: $gutter-hz;
+    padding-right: $gutter-hz; 
+  }
+
+  @include for-desktop {
+    flex: 0 0 $col-4;
+    padding-left: $gutter-hz;
+    padding-right: $gutter-hz;    
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+
+    @include for-tablet-and-upper {
+      position: relative;
+      padding-bottom: 1.5rem;
+      border-bottom: 0.1rem solid $global-c;
+      font-size: 1.5rem;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+      }
+
+      &:before {
+        z-index: 1;
+        left: 2.5rem;
+        bottom: -1.2rem;
+        height: 1.2rem;
+        width: 2rem;
+        background: $gray-3;
+        border-left: 0.1rem solid $global-c;
+      }
+
+      &:after {
+        z-index: 2;
+        left: 4.5rem;
+        bottom: -2.2rem;
+        height: 2.2rem;
+        width: 0.1rem;
+        border-left: 0.1rem solid $global-c;
+        transform-origin: top left;
+        transform: rotate(61deg);
+      }
+    }
+  }
+
+  .ice-last-comment-infos {
+    margin: 1.2rem 0 0;
+    font-size: 1.3rem;
+
+    @include for-tablet-and-upper {
+      min-height: 4.6rem;
+      margin-top: 1.7rem;
+    }
+  }
+
+  .ice-last-comment-author {
+    font-weight: bold;
+  }
+
+  .ice-last-comment-post {
+    @include link();
+  }
+}

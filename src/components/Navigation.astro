@@ -12,12 +12,17 @@ const nav = [
   {
     label: 'nav.about',
     route: '/about'
+  },
+  {
+    label: 'nav.styles',
+    route: '/styles'
   }
 ] as const
 ---
 
 <nav
   role="navigation"
+  class="ice-header-nav"
   aria-label={t('nav.main.label')}
 >
   <ul>

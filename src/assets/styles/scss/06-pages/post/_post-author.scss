@@ -1,0 +1,107 @@
+.ice-post-footer {
+	z-index: 1;
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	@include for-tablet-and-upper {
+		flex-wrap: nowrap;
+	}
+}
+
+.ice-post-author-wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	@include for-mobile {
+		margin-bottom: 2.5rem;
+	}
+
+	@include for-tablet {
+		flex: 0 0 $col-8;
+	}
+
+	@include for-desktop {
+		flex-basis: $col-9;
+	}
+
+	.ice-post-author-avatar {
+		@include avatar($author-avatar-wth-mob, $author-avatar-wth);
+		@include transition-default(border-color, box-shadow);
+
+		img {
+			@include transition-default(filter, transform);
+		}
+
+		&:hover,
+		&:focus {
+			border-color: rgba($secondary-color, 0.25);
+			box-shadow: 0 0 0 0.1rem rgba($secondary-color, 0.25);
+
+			img {
+				filter: grayscale(90%);
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	.ice-post-author-infos {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-end;
+
+		@include for-small-mobile {
+			font-size: 1.5rem;
+		}
+		
+		@include for-tablet-and-upper {
+			flex: 0 0 calc(100% - #{$author-avatar-wth});
+		}
+	}
+
+	.ice-post-author {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-end;
+		margin: 0;
+		padding-left: $gutter-hz-mob;
+		padding-bottom: 1.5rem;
+
+		@include for-mobile {
+			min-height: $author-avatar-hgt-mob;
+		}
+
+		@include for-tablet-and-upper {
+			flex: 0 0 calc(#{$author-avatar-wth} /2);
+			padding-left: calc(#{$gutter-hz} *2);
+		}
+
+		a {
+			@include link($tertiary-color);
+			font-size: 1.7rem;
+			font-weight: bold;
+		}
+	}
+
+	.ice-post-author-bio {
+		margin: 0;
+		padding-left: calc(#{$gutter-hz-mob} - 0.2rem);
+
+		@include for-mobile {
+			margin-left: -(#{$author-avatar-hgt-mob});
+		}
+
+		@include for-tablet-and-upper {
+			flex: 0 0 calc(#{$author-avatar-wth} /2);
+			border-top: 0.1rem solid $secondary-color;
+			padding-top: 1.5rem;
+			padding-left: calc(#{$gutter-hz} *2); 
+		}
+	}
+}

@@ -1,0 +1,50 @@
+.ice-sidebar-right,
+.ice-sidebar-left {
+  .ice-sidebar-title,
+  .ice-categories-list-title {
+    @extend %h2-sidebar;
+  }
+
+  .ice-list-categories {
+		@extend %reset-list;
+		color: $tertiary-color;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+
+      @include for-tablet-and-upper {
+        margin-bottom: 6rem;
+      }
+    }
+
+    & > li:not(:last-of-type) {
+      margin-bottom: 0.4rem;
+    }
+	}
+
+  .ice-category {
+    @extend %reset-link;
+    @include smooth-underline('ice-category-name');
+
+    @include for-mobile {
+      font-size: 1.5rem;
+    }
+
+    @include for-small-desktop {
+      font-size: 1.5rem;
+    }
+  }
+
+  .ice-category-count {
+    color: $tertiary-color;
+  }
+
+  .ice-post-comments-link {
+    color: $tertiary-color;
+    text-decoration: none;
+
+    .ice-label {
+      @include link($global-c, $global-c);
+    }
+  }
+}

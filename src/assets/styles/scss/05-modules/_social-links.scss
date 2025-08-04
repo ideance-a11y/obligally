@@ -1,0 +1,44 @@
+$social-icon-hgt-mob: 4.2rem;
+$social-icon-hgt: 4.7rem;
+$social-icon-bg: $primary-color;
+$social-icon-c: white;
+
+.ice-social-links {
+  @extend %reset-list;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ice-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $social-icon-hgt-mob;
+  height: $social-icon-hgt-mob;
+  margin: 0 1rem 0 0;
+  background: $social-icon-bg;
+  border-radius: calc(#{$social-icon-hgt} /2);
+  color: $social-icon-c;
+  text-decoration: none;
+  @include halo-button($social-icon-bg);
+
+  .ice-icon {
+    font-size: 2.1rem;
+
+    @include for-desktop {
+      font-size: 2.4rem;
+    }
+  }
+
+  &:focus {
+    outline: 0.3rem solid $white-color;
+  }
+
+  @include for-tablet-and-upper {
+    width: $social-icon-hgt;
+    height: $social-icon-hgt;
+    margin: 0.6rem;
+  }
+}

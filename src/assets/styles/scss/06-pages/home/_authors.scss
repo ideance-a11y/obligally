@@ -1,0 +1,187 @@
+.ice-list-authors-title {
+  @extend %h2-sidebar;
+}
+
+.ice-list-authors {
+  @extend %reset-list;
+
+  &:not(.has-grey-bg) {
+    .ice-list-author {
+      &:not(:last-of-type) {
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+
+  //--- Section "other writers" on one author page 
+  &.has-grey-bg {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 1rem 0.8rem;
+    background: #f5f7fa;
+    border-top: 0.1rem solid $light-blue;
+
+    @include for-tablet-and-upper {
+      padding: 1.8rem 2rem 1.5rem;
+    }
+
+    @include for-desktop {
+      justify-content: flex-start;
+    }
+
+    .ice-list-author {
+      flex: 0 0 50%;
+  
+      @include for-tablet {
+        flex-basis: 33.333333%;
+      }
+      
+      @include for-desktop {
+        flex-basis: 25%;
+      }
+    }
+  }
+}
+
+.ice-author {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  color: $gray-1;
+  text-decoration: none;
+  @include smooth-underline('ice-author-name');
+
+  .ice-list-authors.has-grey-bg & {
+    flex-direction: column;
+    margin: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .ice-author-avatar {
+    overflow: hidden;
+    display: inline-flex;
+    flex: 0 0 7rem;
+    width: 7rem;
+    height: 7rem;
+    margin-right: 1.3rem;
+    border-radius: 3.5rem;
+
+    @include for-tablet-and-upper {
+      flex: 0 0 5rem;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 2.5rem;
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      filter: grayscale(0);
+      @include transition-default(filter);
+    }
+
+    .ice-home & {
+      @include for-small-desktop {
+        display: none;
+      }
+    }
+
+    .ice-list-authors.has-grey-bg & {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+
+      @include for-desktop {
+        flex: 0 0 8rem;
+        width: 8rem;
+        border-radius: 4rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .ice-author-name {
+    @include for-mobile {
+      font-size: 1.5rem;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .ice-author-avatar {
+      img {
+        filter: grayscale(1);
+      }
+    }
+  }
+}
+
+.ice-author-and-you {
+  margin-top: 6rem;
+
+  @include for-desktop {
+    margin-top: 5rem;
+  }
+
+  h3 {
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding-left: calc(7rem + #{$gutter-hz-mob});
+    color: $global-c;
+    font-size: $font-body-size;
+    font-weight: bold;
+
+    @include for-desktop {
+      margin-bottom: 1rem;
+      padding-left: calc(5rem + #{$gutter-typo-dtp});
+    }
+
+    @include for-large-screen {
+      font-size: $font-body-size-dtp;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      display: inline-flex;
+      @include round-shape(7rem);
+      margin-right: calc(2* #{$gutter-hz-mob});
+      background: transparent url("#{$img-path}/avatar-et-vous.jpg");
+      background-size: auto 100%;
+      transform: translateY(-50%);
+
+      @include for-desktop {
+        @include round-shape(5rem);
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 1.5rem 2rem;
+    background: #e9efef;
+    font-size: 1.4rem;
+    font-weight: normal;
+    border-radius: 0.2rem;
+
+    @include for-desktop {
+      padding: 1.5rem 1.8rem 1.7rem;
+      font-size: 1.5rem;
+    }
+
+    @include for-large-screen {
+      font-size: 1.6rem;
+    }
+
+    a {
+      @include link($link-c, $link-c, transparent);
+    }
+  }
+}
+

@@ -1,7 +1,18 @@
 ---
 import '@styles/components/footer.css'
+import logoIdeance from '@assets/img/lg_ideance.svg'
 ---
 
-<footer role="contentinfo">
-  <p>Pied de page</p>
+<footer 
+  role="contentinfo" 
+  class="ice-footer">
+  <div class="ice-footer-inner ice-container">
+    <div class="ice-footer-logo">
+      <img alt="Ideance" src={logoIdeance.src}>
+    </div>
+    <div class="ice-footer-infos">
+      <p>Pied de page</p>
+    </div>
+    <div class="ice-footer-links"></div>
+  </div>
 </footer>

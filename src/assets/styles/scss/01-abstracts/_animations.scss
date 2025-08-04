@@ -1,0 +1,16 @@
+//--- Animations buttons
+@mixin halo-button($color) {
+  box-shadow: none;
+  @include transition-default(color, box-shadow);
+
+  &:hover,
+  &:focus {
+    background: darken($color, 10%);
+    box-shadow: 0 0 0 0.4rem rgba($color, 0.2);
+  }
+
+  &:focus {
+    outline-offset: -0.2rem;
+    box-shadow: 0 0 0 0.5rem rgba($color, 0.3), 0 0 0.3rem 0.3rem rgba($color, 0.65); 
+  }
+}

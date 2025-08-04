@@ -54,9 +54,12 @@ const siteMetaDesc = `Obligations légales concernant l\'accessibilité numériq
     <main
       id="main"
       role="main"
+      class="ice-main-content-wrapper"
     >
-      {breadcrumb && <Breadcrumb breadcrumb={breadcrumb} />}
-      <slot />
+      <div class="ice-container">
+        {breadcrumb && <Breadcrumb breadcrumb={breadcrumb} />}
+        <slot />
+      </div>
     </main>
     <Footer />
   </body>

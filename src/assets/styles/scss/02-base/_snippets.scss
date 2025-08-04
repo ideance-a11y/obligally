@@ -1,0 +1,47 @@
+.sr-only {
+	overflow: hidden !important;
+	position: absolute !important;
+	height: 1px !important;
+	width: 1px !important;
+	padding: 0 !important;
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	clip-path: inset(50%) !important;
+	white-space: nowrap !important;
+}
+
+/*.no-margin {
+  margin: 0;
+}
+
+.not-on-mobile {
+	@include for-mobile {
+		display: none;
+	}
+}
+
+.on-mobile-only {
+	@include for-tablet-and-upper {
+		display: none;
+	}
+}
+
+.is-align-center {
+	text-align: center;
+}
+
+.is-bold {
+	font-weight: 900;
+}
+
+.is-normal {
+	font-weight: normal;
+}
+
+.is-med-size {
+	font-size: 1.8rem;
+}
+
+.is-tertiary {
+	color: $tertiary-color;
+}*/

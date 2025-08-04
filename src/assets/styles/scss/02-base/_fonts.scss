@@ -1,0 +1,79 @@
+//--- Text Fonts
+@font-face {
+  font-family: 'Lato';
+  src:  /*url('#{$font-path}/Lato/Lato-Regular.woff2') format('woff2'),
+        url('#{$font-path}/Lato/Lato-Regular.woff') format('woff'),*/
+        url('#{$font-path}/Lato/Lato-Regular.svg') format('svg'),
+        url('#{$font-path}/Lato/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:  /*url('#{$font-path}/Lato/Lato-Bold.woff2') format('woff2'),
+        url('#{$font-path}/Lato/Lato-Bold.woff') format('woff'),*/
+        url('#{$font-path}/Lato/Lato-Bold.svg') format('svg'),
+        url('#{$font-path}/Lato/Lato-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:  /*url('#{$font-path}/Lato/Lato-Black.woff2') format('woff2'),
+        url('#{$font-path}/Lato/Lato-Black.woff') format('woff'),*/
+        url('#{$font-path}/Lato/Lato-Black.svg') format('svg'),
+        url('#{$font-path}/Lato/Lato-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:  /*url('#{$font-path}/Lato/Lato-Italic.woff2') format('woff2'),
+        url('#{$font-path}/Lato/Lato-Italic.woff') format('woff'),*/
+        url('#{$font-path}/Lato/Lato-Italic.svg') format('svg'),
+        url('#{$font-path}/Lato/Lato-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src:  /*url('#{$font-path}/Lato/Lato-Regular.woff2') format('woff2'),
+        url('#{$font-path}/Lato/Lato-Regular.woff') format('woff'),*/
+        url('#{$font-path}/Lato/Lato-Regular.svg') format('svg'),
+        url('#{$font-path}/Lato/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vera Mono";
+  src:  /*url('#{$font-path}/Vera/VeraMono.woff2') format('woff2'),
+        url('#{$font-path}/Vera/VeraMono.woff') format('woff'),*/
+        url('#{$font-path}/Vera/VeraMono.svg') format('svg'),
+        url('#{$font-path}/Vera/VeraMono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+//--- Icon Font
+/*@font-face {
+  font-family: 'fonticon';
+  src:  url('#{$font-path}/Fonticon/icomoon.eot');
+  src:  url('#{$font-path}/Fonticon/icomoon.woff') format('woff'),
+        url('#{$font-path}/Fonticon/icomoon.svg#icomoon') format('svg'),
+        url('#{$font-path}/Fonticon/icomoon.eot#iefix') format('embedded-opentype'),
+        url('#{$font-path}/Fonticon/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}*/

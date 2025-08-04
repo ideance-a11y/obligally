@@ -1,0 +1,149 @@
+$comments-bg: $gray-3;
+$comment-c: $gray-1;
+$comment-avatar-hgt: 6rem;
+$comment-avatar: ("mobile": 5rem, "default": 6.5rem, "large": 7rem);  
+
+.ice-comments {
+  background: $comments-bg;
+  color: $comment-c;
+
+  .ice-home & {
+    @include for-tablet-and-lower {
+      @include with-gradient;
+    }
+
+    @include for-desktop {
+      position: relative;
+
+      &:before {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        left: calc(50% - 50vw);
+        right: calc(50% - 50vw);
+        width: 100vw;
+        bottom: 100%;
+        height: 80vh;
+        @include with-gradient;
+      }
+    }
+  }
+}
+
+.ice-comments-title {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 4rem;
+  color: $comment-c;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include for-tablet-and-upper {
+    margin-bottom: 4rem;
+    font-size: 1.7rem;
+  }
+
+  .ice-icon {
+    color: $primary-darker;
+    font-size: 1.9rem;
+
+    @include for-tablet-and-upper {
+      padding: 0 0 0.2rem;
+      font-size: 4rem;
+    }
+  }
+
+  & > .ice-icon,
+  .ice-comments-title-inner {
+    z-index: 2;
+    position: relative;
+    background: $comments-bg;
+
+    .ice-home & {
+      @include for-tablet-and-lower {
+        background: $white-color;
+      }
+    }
+  }
+
+  .ice-comments-title-inner {
+    z-index: 1;
+    padding: 0.2rem 1.3rem 0;
+
+    @include for-tablet-and-upper {
+      padding: 0 3rem;
+    }
+  }
+
+  &:before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: block;
+    height: 0.1rem;
+    border-top: 0.1rem solid $primary-darker;
+  }
+}
+
+.ice-comments-list {
+  @extend %reset-list;
+  counter-reset: comment-depth-1;
+
+  & > li {
+    counter-increment: comment-depth-1;
+
+    &:nth-child(n+2) {
+      & > .ice-comment {
+        @include for-tablet-and-upper {
+          position: relative;
+
+          &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 0.1rem;
+            background: $primary-darker;
+          }
+        }
+      }
+    }
+  }
+
+  .ice-comment-replies,
+  .children {
+    @extend %reset-list;
+    counter-reset: comment-depth-2;
+    margin-bottom: 3.5rem;
+
+    @include for-large-mobile {
+      margin-left: calc(#{map-get($comment-avatar, "mobile")} + #{$gutter-hz-mob});
+    }
+
+    @include for-tablet-and-upper {
+      margin-left: calc(6.5rem + #{$gutter-hz});
+      margin-bottom: 1rem;
+      border-top: 0.1rem solid $primary-darker;
+    }
+
+    @include for-large-screen {
+      margin-left: 12.5%;
+    }
+
+    & > li {
+      counter-increment: comment-depth-2;
+    }
+  }
+}

@@ -1,0 +1,215 @@
+$card-bg: $light-blue;
+$card-heading-c: $tertiary-color;
+$card-c: $global-c;
+
+.ice-list-options {
+  @extend %reset-list;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  @include for-mobile {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  &.is-horizontal {
+    @include for-tablet {
+      padding-left: $col-1;
+      padding-right: $col-1;
+    }
+
+    @include for-desktop {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: stretch;
+      justify-content: center;
+    }
+  }
+}
+
+.ice-option {
+  position: relative;
+  margin: 0 0 4rem;
+  padding: 3.3rem 2rem 2.6rem;
+  background: $card-bg;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  color: $card-c;
+  font-size: 1.7rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  &:hover,
+  &:focus-within {
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  }
+
+  @include for-mobile {
+    max-width: 45rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include for-large-mobile {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 1rem;
+  }
+
+  @include for-tablet-and-upper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2.5rem;
+    border-radius: 1rem;
+  }
+
+  @include for-desktop {
+    padding: 3.7rem 2.5rem 3.5rem;
+  }
+
+  .is-horizontal & {
+    flex: 0 1 calc(33% - 5.6rem);
+
+    @include for-tablet {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include for-desktop {
+      margin: 0 2.8rem;
+      padding: 3rem 2.5rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  .ice-option-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include for-tablet-and-upper {
+      flex: 0 0 17rem;
+      margin-right: 4rem;
+    }
+
+    .is-horizontal & {
+      @include for-desktop {
+        flex-basis: auto;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .ice-option-body {
+    flex: 0 1 100%;
+    color: $global-c;
+    text-align: left;
+    line-height: 1.6;
+
+    @include for-tablet-and-upper {
+      margin-top: -0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+
+      & + ul {
+        position: relative;
+        margin-top: -0.8rem;
+      }
+    }
+
+    a {
+      @include link($card-heading-c);
+
+      &:before {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      @include for-mobile {
+        display: block;
+        width: 100%;
+        margin-bottom: 2.8rem;
+        text-align: center;
+      }
+    }
+
+    ul {
+      @extend %reset-list;
+      margin-bottom: 0.8rem;
+
+      li {
+        position: relative;
+        margin-bottom: 0.2rem;
+        padding-left: 2rem;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 1.2rem;
+          display: block;
+          height: 0.6rem;
+          width: 0.6rem;
+          background-color: $card-c;
+          border-radius: 0.3rem;
+        }
+      }
+    }
+
+    .is-horizontal & {
+      @include for-desktop {
+        margin-top: 0.5rem;
+      }
+
+      a {
+        @include for-tablet-and-upper {
+          margin-bottom: 3rem;
+        }
+
+        @include for-desktop {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .ice-option-icon {
+    display: block;
+    height: 8rem;
+    width: auto;
+    margin-bottom: 1.6rem;
+    background-size: 100% auto;
+
+    @include for-tablet-and-upper {
+      height: 6rem;
+    }
+  }
+
+  .ice-option-title {
+    margin-bottom: 0rem;
+    color: $card-heading-c;
+    font-size: 2.3rem;
+    font-weight: 900;
+    line-height: 1.4;
+
+    @include for-tablet-and-upper {
+      font-size: 2.2rem;
+    }
+  }
+}

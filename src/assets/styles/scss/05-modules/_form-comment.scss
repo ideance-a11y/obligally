@@ -1,0 +1,115 @@
+.ice-comment-form-wrapper {
+  @include container;
+
+  @include for-mobile {
+    padding-left: $gutter-hz-mob;
+    padding-right: $gutter-hz-mob;
+  }
+
+  @include for-tablet-and-upper {
+    margin-top: 6rem;
+    padding: 0;
+  }
+}
+
+.ice-comment-form-title {
+  margin-bottom: 2rem;
+  color: $global-c;
+  font-size: 1.8rem;
+  font-weight: bold;
+  
+  @include for-large-mobile {
+    padding: 0 $col-1;
+  }
+
+  @include for-tablet-and-upper {
+    font-size: 1.6rem;
+  }
+}
+
+.ice-comment-form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding: 2.2rem $gutter-hz-mob 2.5rem;
+  background: $white-color;
+  border-top: 0.3rem solid $primary-darker;
+  box-shadow: 0.1rem 0.1rem 0.6rem darken($comments-bg, 15%);
+
+  @include for-large-mobile {
+    padding: 3rem $col-1 3rem;
+  }
+
+  @include for-tablet-and-upper {
+    padding: 4rem $col-1;
+  }
+
+  @include for-desktop {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  @include for-large-screen {
+    padding-left: $col-2;
+    padding-right: $col-2;
+  }
+
+  .comment-notes,
+  .logged-in-as,
+  .ice-comment-form-intro {
+    flex: 0 0 100%;
+
+    a {
+      @extend %link;
+    }
+  }
+
+  .ice-form-item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    max-width: 100%;
+    margin-bottom: 2rem; 
+    flex: 0 0 100%;
+
+    .ice-form-label {
+      padding-bottom: 0.5rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  @include for-tablet-and-upper {
+    .ice-comment-form-author,
+    .ice-comment-form-email {
+      flex-basis: 50%;
+    }
+
+    .ice-comment-form-author {
+      padding-right: $gutter-hz;
+    }
+
+    .ice-comment-form-email {
+      padding-left: $gutter-hz;
+    }
+  }
+}
+
+.ice-form-input {
+  min-height: 3rem;
+  max-width: 100%;
+  width: 100%;
+  padding: 0.2rem 0.7rem;
+  background: $light-gray;
+  border: 0;
+  border-bottom: 0.1rem solid $primary-darker;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ice-comment-form-submit {
+  margin-top: 1rem;
+  @include button-style('primary');
+}

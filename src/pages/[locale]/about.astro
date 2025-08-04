@@ -23,5 +23,20 @@ export async function getStaticPaths() {
   pageTitle={t('nav.about')}
   breadcrumb={breadcrumb}
 >
-  <h1>{t('nav.about')}</h1>
+  <h1 class="ice-page-title">{t('nav.about')}</h1>
+  <div class="ice-section is-narrow ice-text">
+    <p>Nous sommes ravis de vous présenter le projet <a href="#">Obligally</a>.</p>
+    <h2>Contexte et objectif</h2>
+    <p>Ce document, maintenu par la société Ideance, constitue une ressource complémentaire au RGAA (Référentiel Général d’Amélioration de l’Accessibilité) - version 4.1.2.</p>
+    <p>Le RGAA étant, en résumé, le référentiel français d’évaluation de la conformité des sites web au regard des obligations légales d’accessibilité numérique.</p>
+    <p>Ce présent document a pour objectif de mettre en avant un certain nombre d’impacts potentiels du non-respect des critères de ce RGAA pour les personnes handicapées (déficientes auditives, cognitives, mentales, motrices, psychiques ou encore visuelles).</p>
+    <p>Qui sont des informations absentes de la méthode technique du RGAA actuel et de ses annexes.</p>
+    <p class="ice-block">Cette ressource vise donc à faire assimiler l’importance, pour l’accessibilité aux personnes handicapées, de respecter les critères du RGAA lors de la réalisation et la maintenance d’un site web.</p>
+    <p>Points importants concernant cette ressource :</p>
+    <ul>
+      <li>Elle n’est pas exhaustive. Tous les impacts potentiels n’y figurant pas. (Elle ne pourra d’ailleurs jamais l’être. Ces derniers ne pouvant aucunement être tous connus.)</li>
+      <li>Elle n’est pas officielle et n'a donc <strong>aucune valeur normative/réglementaire.</strong></li>
+    </ul>
+
+  </div>
 </Layout>

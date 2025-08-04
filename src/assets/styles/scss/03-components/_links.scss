@@ -1,0 +1,66 @@
+@mixin link($color: $link-c, $underline-color-start: $color, $underline-color-end: transparent) {
+  color: $color;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.15rem;
+  text-decoration-color: $underline-color-start;
+  transition: text-decoration-color 250ms ease-out;
+
+  &:hover,
+  &:focus {
+    text-decoration-color: $underline-color-end;
+  }
+}
+
+%link {
+  color: $link-c;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-color: $link-underline-c;
+  text-decoration-thickness: 0.15rem;
+  transition: text-decoration-color 250ms ease-out, color $transition-dur $transition-ftn;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-c;
+    text-decoration-color: transparent;
+  }
+}
+
+.ice-link {
+  @extend %link;
+
+  &.with-icon {
+    .ice-icon {
+      margin-right: 0.6rem;
+    }
+  }
+}
+
+.skip-link {
+  display: block;
+  overflow: hidden;
+  min-height: 0;
+  height: 0;
+  background: $white-color;
+  color: $primary-color;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include transition-default(height);
+
+  /*@include for-tablet-and-upper {
+    display: none;
+    background: $button-primary-bg;
+    color: $button-primary-c;
+  }*/
+
+  &:focus {
+    overflow: visible;
+    height: auto;
+    padding: 0.6rem 1.5rem;
+    outline-offset: -0.2rem;
+    box-shadow: 0 0 0.2rem 0.2rem rgba(0,0,0,0.4);
+  }
+}

@@ -1,0 +1,63 @@
+.ice-pagination {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+
+  @include for-desktop {
+    margin-top: 6rem;
+    padding-top: 3rem;
+  }
+
+  & > ul,
+  .ice-pagination-list {
+    @extend %reset-list;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+
+    .page-numbers {
+      @include button-style('primary', 'normal', 'no', 'round');
+    }
+
+    .first,
+    .prev,
+    .next,
+    .last {
+      @include button-style('primary', 'normal', 'yes', 'round');
+
+      .ice-icon {
+        font-size: 1.8rem;
+
+        &:before {
+          padding-bottom: 0.1rem;
+        }
+      }
+    }
+
+    .first,
+    .last {
+      .ice-icon {
+        margin-left: -0.7rem;
+
+        &:before {
+          letter-spacing: -0.85rem;
+        }
+      }
+    }
+
+    .current {
+      @include button-style('secondary', 'normal', 'no', 'round');
+      background: $secondary-color;
+      pointer-events: none;
+    }
+
+    & > li,
+    .ice-pagination-item {
+      margin: 0 1.3rem 1rem 0;
+
+      @include for-tablet-and-upper {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

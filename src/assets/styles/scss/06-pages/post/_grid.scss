@@ -1,0 +1,72 @@
+.ice-post {
+  @include for-large-mobile {
+    padding-left: $gutter-hz-mob;
+    padding-right: $gutter-hz-mob;
+  }
+
+  @include for-tablet {
+    padding-left: $gutter-hz;
+    padding-right: $gutter-hz;
+  }
+  
+  .ice-sidebar-left,
+  .ice-sidebar-right {
+    @include for-small-desktop {
+      padding-left: $gutter-hz;
+      padding-right: 0;
+      font-size: 1.5rem;
+    }
+  }
+  
+  .ice-sidebar-right {
+    @include for-small-desktop {
+      padding-left: 0;
+      padding-right: $gutter-hz;
+      font-size: 1.5rem;
+    }
+  }
+
+  .ice-typography {
+    .wp-block-code {
+      width: calc(100% + #{$gutter-hz-mob}*2);
+      max-width: calc(100% + #{$gutter-hz-mob}*2);
+      margin-left: -$gutter-hz-mob;
+      margin-right: -$gutter-hz-mob;
+
+      @include for-large-mobile-and-upper {
+        width: 120%;
+        max-width: 120%;
+        margin-left: -10%;
+        margin-right: -10%;
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+    }
+    
+    .wp-block-table {
+      width: calc(100% + #{$gutter-hz-mob}*2);
+      margin-left: -$gutter-hz-mob;
+      margin-right: -$gutter-hz-mob;
+
+      @include for-large-mobile-and-upper {
+        width: 120%;
+        max-width: 120%;
+        margin-left: -10%;
+        margin-right: -10%;
+      }
+      
+      caption,
+      figcaption {
+        @include for-small-mobile {
+          padding-left: $gutter-hz-mob;
+          padding-right: $gutter-hz-mob;
+        }
+
+        @include for-large-mobile-and-upper {
+          padding-left: $col-1;
+          padding-right: $col-1;
+        }
+      }
+    }
+  }
+}

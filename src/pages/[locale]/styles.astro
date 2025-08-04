@@ -1,0 +1,133 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+import icon1 from '@assets/img/arrow-progress.png'
+import icon2 from '@assets/img/lightbulb-on.png'
+import icon3 from '@assets/img/diagram.png'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+export async function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
+}
+---
+
+<Layout pageTitle={t('nav.home')}>
+  <h1 class="ice-page-title">Découvrir les lois qui favorisent l'accès au numérique pour les personnes handicapées</h1>
+
+  <div class="ice-section is-narrow">
+    <ul class="ice-list-options">
+      <li class="ice-option">
+        <div class="ice-option-heading">
+          <img alt="" class="ice-option-icon" src={icon1.src}>
+          <h2 class="ice-option-title">Simuler</h2>
+        </div>
+        <div class="ice-option-body">
+          <p><a href="/">Ce que la loi attend de vous :</a></p>
+          <p>Vous souhaitez connaître vos obligations ?</p>
+          <p>Répondez à ce questionnaire et découvrez les obligations légales qui s'appliquent à votre situation ou à celle de votre entreprise.</p>
+        </div>
+      </li>
+      <li class="ice-option">
+        <div class="ice-option-heading">
+          <img alt="" class="ice-option-icon" src={icon2.src}>
+          <h2 class="ice-option-title">Comprendre</h2>
+        </div>
+        <div class="ice-option-body">
+          <p><a href="/">Ce que dit la loi :</a></p>
+          <p>Accédez à un article détaillé pour comprendre les règles en matière d'accessibilité numérique.</p>
+        </div>
+      </li>
+      <li class="ice-option">
+        <div class="ice-option-heading">
+          <img alt="" class="ice-option-icon" src={icon3.src}>
+          <h2 class="ice-option-title">Visualiser</h2>
+        </div>
+        <div class="ice-option-body">
+          <p><a href="/">L'essentiel de la loi :</a></p>
+          <p>Accédez à une infographie détaillée pour comprendre les règles en matière d'accessibilité numérique.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ice-section">
+    <ul class="ice-list-options is-horizontal">
+      <li class="ice-option">
+        <div class="ice-option-heading">
+          <img alt="" class="ice-option-icon" src={icon1.src}>
+          <h2 class="ice-option-title">Simuler</h2>
+        </div>
+        <div class="ice-option-body">
+          <p><a href="/">Ce que la loi attend de vous :</a></p>
+          <p>Vous souhaitez connaître vos obligations ?</p>
+          <p>Répondez à ce questionnaire et découvrez les obligations légales qui s'appliquent à votre situation ou à celle de votre entreprise.</p>
+        </div>
+      </li>
+      <li class="ice-option">
+        <div class="ice-option-heading">
+          <img alt="" class="ice-option-icon" src={icon2.src}>
+          <h2 class="ice-option-title">Comprendre</h2>
+        </div>
+        <div class="ice-option-body">
+          <p><a href="/">Ce que dit la loi :</a></p>
+          <p>Accédez à un article détaillé pour comprendre les règles en matière d'accessibilité numérique.</p>
+        </div>
+      </li>
+      <li class="ice-option">
+        <div class="ice-option-heading">
+          <img alt="" class="ice-option-icon" src={icon3.src}>
+          <h2 class="ice-option-title">Visualiser</h2>
+        </div>
+        <div class="ice-option-body">
+          <a href="/" class="ice-option-link">L'essentiel de la loi :</a>
+          <div class="ice-option-description">
+            <p>Accédez à une infographie détaillée pour comprendre les règles en matière d'accessibilité numérique.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ice-section with-border-top is-narrow">
+    <div class="ice-block">
+      <p>Vous devez répondre à chaque question. <a href="#">Lien</a></p>
+    </div>
+    <div class="ice-question">
+      <div class="ice-question-legend">Quel type d'entité représentez-vous ? <span class="ice-required">*</span></div>
+      <div role="group" class="ice-question-options">
+        <ul>
+          <li>
+            <input type="radio" id="radio1">
+            <label for="radio1" class="ice-question-option">Un organisme public (ou assimilé)</label>
+          </li>
+          <li>
+            <input type="radio" id="radio2">
+            <label for="radio2" class="ice-question-option">Une entreprise privée</label>
+          </li>
+        </ul>
+      </div>
+      <div class="ice-question-actions">
+        <button type="button" class="ice-btn-secondary">Précédent</button>
+        <button type="button" class="ice-btn-primary">Suivant</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ice-section with-border-top">
+    <h1 class="ice-page-title">Nom de l'infographie</h1>
+    <div class="ice-page-content">
+      <h2>Champ d'application</h2>
+      
+      <details class="ice-disclosure">
+        <summary class="ice-disclosure-heading"><span class="ice-disclosure-heading-inner">Description détaillée de l'image</span></summary>
+        <div class="ice-disclosure-panel">
+          <p>Voici la description détaillée de l'image</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+</Layout>
