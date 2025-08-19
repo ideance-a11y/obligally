@@ -1,13 +1,13 @@
 <template>
   <form
-    class="wrapper-form"
+    class="ice-section is-narrow"
     action=""
     novalidate
     v-on:submit.prevent="handleFormSubmit"
     v-on:change="handleFormChange"
     v-if="!isDisplayedResults"
   >
-    <p class="text-center">{{ t('general.form_mandatory_fields_legend') }}</p>
+    <p class="ice-block no-margin-top">{{ t('general.form_mandatory_fields_legend') }}</p>
 
     <!-- 0 : Type d'entité -->
     <FieldsetGroup
@@ -39,7 +39,7 @@
       >
     </FieldsetGroup>
 
-    <!-- 1 : Chiffre d'affaire -->
+    <!-- 1 : Chiffre d'affaires -->
     <FieldsetGroup
       v-if="isDisplayedTurnover"
       ref="fieldset-turnover"
@@ -148,24 +148,28 @@
       >
     </FieldsetGroup>
 
-    <button
-      v-if="isDisplayedPreviousBtn"
-      type="button"
-      v-on:click="handleFormPrevious"
-    >
-      {{ t('general.previous') }}
-    </button>
-    <button
-      v-if="isDisplayedNextBtn"
-      type="submit"
-    >
-      <template v-if="nextStep === 10">
-        {{ t('general.validate') }}
-      </template>
-      <template v-else>
-        {{ t('general.next') }}
-      </template>
-    </button>
+    <div class="ice-question-actions">
+      <button
+        v-if="isDisplayedPreviousBtn"
+        type="button"
+        v-on:click="handleFormPrevious"
+        class="ice-btn-secondary"
+      >
+        {{ t('general.previous') }}
+      </button>
+      <button
+        v-if="isDisplayedNextBtn"
+        type="submit"
+        class="ice-btn-primary"
+      >
+        <template v-if="nextStep === 10">
+          {{ t('general.validate') }}
+        </template>
+        <template v-else>
+          {{ t('general.next') }}
+        </template>
+      </button>
+    </div>
   </form>
 
   <FormSummary
@@ -179,6 +183,7 @@
     <button
       v-if="isDisplayedResetBtn"
       v-on:click="handleReset"
+      class="ice-btn-tertiary"
     >
       {{ t('general.reset') }}
     </button>
@@ -227,7 +232,7 @@ provide('t', t)
  */
 /** Valeur des radios "Entité" */
 const entityValue = ref<Entity | ''>('')
-/** Valeur des radios "Chiffre d'affaire" */
+/** Valeur des radios "Chiffre d'affaires" */
 const turnoverValue = ref<Turnover | ''>('')
 /** Valeur des radios "Fournit un service" */
 const provideServiceValue = ref<StringBoolean | ''>('')
@@ -240,7 +245,7 @@ const isFormSubmitted = ref(false)
 /**
  * Etape courante du formulaire:
  * - 0 : Entité
- * - 1 : Chiffre d'affaire
+ * - 1 : Chiffre d'affaires
  * - 2 : Service ou non
  * - 3 : Nombre d'employés
  * - 10 : Résultats
@@ -405,10 +410,3 @@ const digitalServices = applicationFields
   .find((app) => app.id === 'digital-services')
   ?.servicesId.map((item) => services.find((serv) => serv.id === item)) as Service[]
 </script>
-
-<style>
-q .wrapper-form {
-  display: grid;
-  row-gap: var(--size-20);
-}
-</style>

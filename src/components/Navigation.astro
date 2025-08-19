@@ -22,8 +22,14 @@ const nav = [
 
 <nav
   role="navigation"
+  class="ice-header-nav"
   aria-label={t('nav.label_main')}
 >
+  <button type="button" class="ice-header-nav-trigger">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </button>
   <ul>
     {
       nav.map((item) => (

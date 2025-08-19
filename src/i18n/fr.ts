@@ -6,7 +6,7 @@ export const fr = {
     home: `Accueil`,
     about: `À propos`,
     simulation: `Simulation`,
-    footer: `Pied de page`
+    footer: `Expertise, formations et audits accessibilité numérique. Sensibilisation et aménagement pour le handicap en entreprise.`
   },
   general: {
     a11y_legal_obligations_france: `Obligations légales pour l'accessibilité des contenus et services numériques en France`,
@@ -54,20 +54,20 @@ export const fr = {
   },
   error: {
     empty_entity: `Veuillez renseigner un type d'entité.`,
-    empty_turnover: `Veuillez renseigner votre chiffre d'affaire.`,
+    empty_turnover: `Veuillez renseigner votre chiffre d'affaires.`,
     empty_employees: `Veuillez renseigner votre nombre de salariés.`,
     empty_service: `Veuillez renseigner si vous fournissez un service.`
   },
   summary: {
-    public: `Vous êtes un organisme publique (ou assimilé).`,
+    public: `Vous êtes un organisme public (ou assimilé).`,
     private: `Vous êtes une entreprise privée.`,
-    over250m: `Votre chiffre d'affaire est supérieur à 250 millions d'euros`,
-    over2m: `Votre chiffre d'affaire est supérieur à 2 millions d'euros`,
-    below2m: `Votre chiffre d'affaire est inférieur à 2 millions d'euros`,
+    over250m: `Votre chiffre d'affaires est supérieur à 250 millions d'euros`,
+    over2m: `Votre chiffre d'affaires est supérieur à 2 millions d'euros`,
+    below2m: `Votre chiffre d'affaires est inférieur à 2 millions d'euros`,
     provide_service: `Vote entreprise fournit un service`,
-    no_service: `Votre chiffre d'affaire est inférieur à 2 millions d'euros`,
-    over_employee_limit: `Votre entreprise compte plus de {count} employés ou employées.`,
-    below_employee_limit: `Votre entreprise compte moins de {count} employés ou employées.`
+    no_service: `Votre chiffre d'affaires est inférieur à 2 millions d'euros`,
+    over_employee_limit: `Votre entreprise compte plus de {count} employés et employées.`,
+    below_employee_limit: `Votre entreprise compte moins de {count} employés et employées.`
   },
   html: {
     no_legal_obligation_content: `<p>Aucune obligation légale.</p>

@@ -1,6 +1,5 @@
 <template>
   <div
-    class="wrapper-checkable"
     v-bind="wrapperAttrs"
   >
     <input
@@ -12,7 +11,7 @@
     />
     <label
       :for="uid"
-      class="label"
+      class="ice-question-option"
     >
       <slot />
     </label>

@@ -1,0 +1,202 @@
+$logo-hgt-mob: 7rem;
+$logo-hgt-dtp: 9rem;
+
+.ice-header {
+  position: relative;
+  margin-bottom: 6rem;
+  border: 0;
+  color: $header-c;
+
+  @include for-large-mobile-and-upper {
+    margin-bottom: 6.5rem;
+  }
+
+  @include for-desktop {
+    margin-bottom: 10rem;
+  }
+
+  &.on-home {
+    margin-bottom: 0;
+  }
+}
+
+.ice-header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: $header-hgt-mobile;
+  padding: 1.3rem $col-1 3.2rem;
+  background: transparent;
+
+  @include for-tablet-and-upper {
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2.2rem $col-1 3rem;
+  }
+
+  @include for-desktop {
+    padding: 3rem $col-2 4rem;
+  }
+
+  @include for-very-large-screen {
+    padding: 3.5rem $col-3 4.5rem;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: -50%;
+    right: -50%;
+    top: 0;
+    bottom: 0;
+    border-radius: 50% 50% 55% 45% / 0% 0% 60% 60%;
+
+    @include for-large-mobile {
+      border-radius: 50% 50% 55% 45% / 0% 0% 90% 90%;
+    }
+
+    @include for-desktop {
+      top: $header-top-hgt-dtp;
+      left: -35%;
+      right: -35%;
+      border-radius: 50% 50% 60% 40% / 0% 0% 100% 100%;
+    }
+  }
+
+  &:before {
+    z-index: -2;
+    background: $header-bg;
+  }
+
+  &:after {
+    z-index: -1;
+    opacity: 0.7;
+    background: transparent url("#{$img-path}/bg_pattern.png") center top/1rem auto;
+  }
+}
+
+.ice-logo {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: $logo-hgt-mob;
+  width: $logo-hgt-mob;
+  padding-top: 0.1rem;
+  padding-right: 0.3rem;
+  background: $white-color;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem 0 rgba(23, 24, 29, 0.3);
+
+  @include for-mobile {
+    order: 2;
+    margin-top: 1rem;
+  }
+
+  @include for-tablet-and-upper {
+    flex: 0 0 $logo-hgt-dtp;
+    height: $logo-hgt-dtp;
+    width: $logo-hgt-dtp;
+    margin-right: 4.5rem;
+    padding-right: 0.4rem;
+  }
+
+  @include for-desktop {
+    margin-right: 6rem;
+  }
+
+  img {
+    height: 65%;
+    width: auto;
+    object-fit: cover;
+  }
+}
+
+.ice-site-title-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  text-shadow: 0 0 1rem rgba(23, 24, 29, 0.3);
+
+  @include for-mobile {
+    order: 1;
+  }
+}
+
+.ice-site-title {
+  color: $header-c;
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-decoration: none;
+
+  @include for-tablet-and-upper {
+    font-size: 3.2rem;
+  }
+
+  &:hover,
+  &:focus {
+    color: $header-c;
+    text-decoration: none;
+  }
+}
+
+.ice-site-slogan {
+  position: relative;
+  margin-top: 0.7rem;
+  padding: 1.8rem 0 0;
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.5;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 0.45rem;
+    width: 5rem;
+    background-color: $secondary-color;
+    box-shadow: 0 0 1rem 0 rgba(23, 24, 29, 0.3);
+
+    @include for-tablet-and-upper {
+      width: 6rem;
+      height: 0.25rem;
+    }
+  }
+
+  @include for-tablet-and-upper {
+    margin-top: 1.1rem;
+    padding: 1.7rem 0 0;
+    font-size: 2rem;
+    line-height: 1.45;
+  }
+
+  /*.ice-header.on-home & {
+    position: relative;
+    width: 90%;
+    margin: 2rem 0 2.5rem;
+    padding: 0;
+    border: 0;
+
+    @include for-tablet-and-upper {
+      line-height: 1.45;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 16.5rem;
+        height: 0.1rem;
+        background: $secondary-color;
+        border-radius: 0.1rem;
+      }
+    }
+  }*/
+}

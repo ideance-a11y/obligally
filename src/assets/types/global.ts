@@ -1,6 +1,6 @@
 /** Entité sujette aux obligations */
 export type Entity = 'public' | 'private'
-/** Chiffre d'affaire */
+/** Chiffre d'affaires */
 export type Turnover = 'over250m' | 'over2m' | 'below2m'
 /** Booléen en chaines de caractères */
 export type StringBoolean = 'true' | 'false'

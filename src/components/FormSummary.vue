@@ -1,31 +1,35 @@
 <template>
-  <div
-    role="region"
-    aria-labelledby="summary-title"
-  >
-    <h2 id="summary-title">{{ t('general.summary') }}</h2>
-    <p>
-      <template v-if="entity === 'public'">{{ t('summary.public') }}</template>
-      <template v-if="entity === 'private'">{{ t('summary.private') }}</template>
-    </p>
-    <p v-if="currentStep > 1">
-      <template v-if="turnover === 'over250m'">{{ t('summary.over250m') }}</template>
-      <template v-if="turnover === 'over2m'">{{ t('summary.over2m') }}</template>
-      <template v-if="turnover === 'below2m'">{{ t('summary.below2m') }}</template>
-    </p>
-    <p v-if="currentStep > 2">
-      <template v-if="provideService === 'true'">{{ t('summary.provide_service') }}</template>
-      <template v-if="provideService === 'false'">{{ t('summary.no_service') }}</template>
-    </p>
-    <p v-if="currentStep > 3">
-      <template v-if="exceedEmployeeLimit === 'true'">{{
-        t('summary.over_employee_limit', { count: 10 })
-      }}</template>
-      <template v-if="exceedEmployeeLimit === 'false'">{{
-        t('summary.below_employee_limit', { count: 10 })
-      }}</template>
-    </p>
-    <slot />
+  <div class="ice-section is-narrow">
+    <div
+      role="region"
+      aria-labelledby="summary-title"
+      class="ice-summary"
+    >
+      <span class="ice-icon icon-company" aria-hidden="true"></span>
+      <h2 id="summary-title" class="ice-summary-title">{{ t('general.summary') }}</h2>
+      <p>
+        <template v-if="entity === 'public'">{{ t('summary.public') }}</template>
+        <template v-if="entity === 'private'">{{ t('summary.private') }}</template>
+      </p>
+      <p v-if="currentStep > 1">
+        <template v-if="turnover === 'over250m'">{{ t('summary.over250m') }}</template>
+        <template v-if="turnover === 'over2m'">{{ t('summary.over2m') }}</template>
+        <template v-if="turnover === 'below2m'">{{ t('summary.below2m') }}</template>
+      </p>
+      <p v-if="currentStep > 2">
+        <template v-if="provideService === 'true'">{{ t('summary.provide_service') }}</template>
+        <template v-if="provideService === 'false'">{{ t('summary.no_service') }}</template>
+      </p>
+      <p v-if="currentStep > 3">
+        <template v-if="exceedEmployeeLimit === 'true'">{{
+          t('summary.over_employee_limit', { count: 10 })
+        }}</template>
+        <template v-if="exceedEmployeeLimit === 'false'">{{
+          t('summary.below_employee_limit', { count: 10 })
+        }}</template>
+      </p>
+      <slot />
+    </div>
   </div>
 </template>
 

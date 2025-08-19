@@ -1,6 +1,6 @@
 <template>
   <fieldset
-    class="fieldset"
+    class="ice-question"
     :class="[
       {
         'has-error': $slots.error
@@ -10,7 +10,7 @@
     ref="fieldset"
     tabindex="-1"
   >
-    <legend class="legend">
+    <legend class="ice-question-legend">
       <slot name="legend" />
     </legend>
     <p
@@ -23,11 +23,13 @@
     <p
       v-if="$slots.error"
       :id="`error-${uid}`"
-      class="input-error"
+      class="ice-block is-red no-margin-top"
     >
       <slot name="error" />
     </p>
-    <slot />
+    <div class="ice-question-options">
+      <slot />
+    </div>
   </fieldset>
 </template>
 

@@ -1,0 +1,123 @@
+$footer-bg: $white-color;
+$footer-c: $global-c;
+$footer-bd-c: #D0DEE7;
+$footer-logo-size: 6rem;
+
+.ice-footer {
+  min-height: $footer-hgt;
+  padding-top: 3.5rem;
+  padding-bottom: 4.5rem;
+  background: $footer-bg;
+  border-top: 1.8rem solid $footer-bd-c;
+  color: $footer-c;
+
+  @include for-tablet-and-upper {
+    padding-top: 4.5rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
+.ice-footer-inner {
+  @include for-tablet-and-upper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  ul {
+    @extend %reset-list;
+  }
+
+  a:not(.ice-social-link) {
+    @include link();
+
+    &.is-bold {
+      font-weight: bold;
+    }
+  }
+}
+
+.ice-footer-logo {
+  display: none;
+
+  @include for-tablet-and-upper {
+    display: inline-flex;
+    flex: 0 0 $col-2;
+    padding-left: $gutter-hz;
+    padding-right: $gutter-hz;
+
+    img {
+      max-width: 100%;
+      width: $footer-logo-size;
+      height: auto;
+    }
+  }
+
+  @include for-desktop {
+    flex-basis: $col-1;
+    margin-left: $col-1;
+  }
+}
+
+.ice-footer-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @include for-tablet {
+    flex: 0 0 $col-5;
+  }
+
+  @include for-desktop {
+    flex: 0 0 $col-5;
+    padding-left: $gutter-hz;
+    padding-right: $gutter-hz;
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+
+  a {
+    display: inline-flex;
+    line-height: 1.25;
+    margin-bottom: 0.7rem;
+  }
+}
+
+.ice-footer-links {
+  @include for-mobile {
+    margin-top: 3rem;
+  }
+
+  @include for-tablet-and-upper {
+    flex: 0 0 $col-3;
+    margin-left: $col-1;
+    margin-right: $col-1;
+  }
+
+  @include for-desktop {
+    padding-left: $gutter-hz;
+    margin-top: 0;
+  }
+
+  .ice-social-links {
+    margin-bottom: 1.9rem;
+
+    .ice-social-link {
+      width: 4rem;
+      height: 4rem;
+      margin: 0 1rem 0 0;
+
+      .ice-icon {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  a[aria-current="page"] {
+    font-weight: bold;
+  }
+}

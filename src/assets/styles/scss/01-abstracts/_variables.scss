@@ -1,0 +1,65 @@
+//--- 1. ABSTRACTS ------------------------------------------------//
+
+///--- Global variables
+$global-bg: white;
+$global-c: $gray-1;
+
+///--- Transitions
+$transition-dur: 0.35s;
+$transition-ftn: ease-in-out;
+
+//--- 2. BASE -----------------------------------------------------//
+///--- Images
+$img-path: '../img';
+
+///--- Fonts
+$font-path: '../fonts';
+$font-default: Arial, Helvetica, sans-serif;
+$font-global: 'Lato', $font-default;
+$font-heading: 'Lato', $font-default;
+$font-global-size: 62.5%;
+$font-body-size: 1.6rem;
+$font-body-size-dtp: 1.7rem;
+$font-body-l-hgt: 1.5;
+
+///--- Grid
+$container-xxl: 150rem;
+$container-xl: 120rem;
+$container-lg: 99.2rem;
+$container-md: 76.8rem;
+$gutter-vert-xl: 2rem;
+$gutter-hz-mob: 1.5rem;
+$gutter-hz: 2rem;
+
+
+//--- 3. COMPONENTS -----------------------------------------------//
+///--- Links
+$link-c: $global-c;
+$link-hover-c: darken($link-c, 10%);
+$link-underline-c: $primary-darker;
+
+///--- Avatar
+//-- "Les plumes" section
+$author-avatar-hgt-mob: 12rem;
+$author-avatar-hgt-dtp: 15rem;
+//-- Article footer
+$author-avatar-wth-mob: 11rem;
+$author-avatar-wth: 16rem;
+
+
+//--- 4. LAYOUT --------------------------------------------------//
+///--- Header
+$header-hgt: 16rem;
+$header-hgt-mobile: 6.5rem;
+$header-bg: $primary-color linear-gradient($primary-darker 0%, transparent  80%);
+$header-c: $white-color;
+
+///--- Nav main
+$nav-bg: $white-color;
+$nav-link-c: $link-c;
+
+///--- Footer
+$footer-hgt: 9rem;
+$footer-bg: $global-bg;
+$footer-c: $global-c;
+$footer-bd-c: $primary-color;

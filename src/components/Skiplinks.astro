@@ -1,5 +1,5 @@
 ---
-import '@styles/components/skiplinks.css'
+//import '@styles/components/skiplinks.css'
 
 import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
 
@@ -9,7 +9,7 @@ const t = await initI18n(lang)
 
 <a
   href="#main"
-  class="visually-hidden visually-hidden-focusable"
+  class="skip-link"
 >
   {t('nav.skiplink_to_main')}
 </a>

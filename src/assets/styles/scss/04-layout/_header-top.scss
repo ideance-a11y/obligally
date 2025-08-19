@@ -1,0 +1,130 @@
+$header-top-hgt-dtp: 6rem;
+$header-top-bg: $light-blue;
+$header-top-c: $global-c;
+$header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
+
+.ice-header-top {
+  position: relative;
+  background: transparent;
+  color: $header-c;
+  font-size: 1.5rem;
+
+  @include for-tablet-and-upper {
+    background: $header-top-bg;
+    box-shadow: $header-top-bx-shw;
+    color: $header-top-c;
+  }
+}
+
+.ice-header-top-inner {
+  min-height: 6rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @include for-tablet {
+    min-height: 5rem;
+  }
+
+  @include for-desktop {
+    min-height: $header-top-hgt-dtp;
+  }
+
+  .ice-btn {
+    @extend %reset-button;
+    @extend %button;
+    border: 0.1rem solid $gray-1;
+
+    .ice-icon {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+
+      &:before {
+        padding-bottom: 0.1rem;
+        letter-spacing: -0.85rem;
+      }
+    }
+  }
+}
+
+.ice-header-nav-trigger {
+  min-height: 4.7rem;
+  margin-top: 0.45rem;
+  padding: 0.5rem 1rem;
+  background: $primary-color;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 1rem 1rem 0 #00000026;
+
+  .line {
+    display: block;
+    margin: 0.7rem auto;
+    background-color: white;
+    border-radius: 0.2rem;
+    height: 0.25rem;
+    width: 2.7rem;
+    @include transition-default(all);
+  }
+
+  &[aria-expanded="true"] {
+    .line:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .line:nth-child(3) {
+      transform: rotate(-45deg);
+      margin-top: -1.9rem;
+    }
+  }
+
+  @include for-tablet-and-upper {
+    display: none;
+  }
+}
+
+.ice-header-nav {
+  display: flex;
+  margin-left: auto;
+
+  ul {
+    @extend %reset-list;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: $global-c;
+    text-align: center;
+
+    @include for-tablet-and-lower {
+      //display: none;
+    }
+
+    li {
+      margin: 0 1rem;
+
+      @include for-tablet-and-upper {
+        margin: 0 2rem;
+      }
+    }
+  }
+
+  a {
+    @include link($white-color, transparent, $white-color);
+    font-size: 1.4rem;
+
+    @include for-tablet-and-upper {
+      @include link($link-c, transparent, $link-underline-c);
+      font-size: 1.5rem;
+    }
+
+    &[aria-current="page"] {
+      font-weight: bold;
+    }
+  }
+}

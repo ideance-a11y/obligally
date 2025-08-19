@@ -1,0 +1,106 @@
+.ice-question-legend {
+  width: 100%;
+
+  h1,
+  h2,
+  h3 {
+    @extend .ice-page-title;
+    margin-top: 0.6rem;
+    margin-bottom: 2rem;
+
+    @include for-desktop {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.ice-question-options {
+  ul {
+    @extend %reset-list;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    margin: 3.5rem 0;
+    padding-left: 4rem;
+
+    @include for-tablet-and-upper {
+      margin: 4rem 0;
+      padding-left: 5.5rem;
+    }
+  }
+
+  input[type="radio"] {
+    @extend .sr-only;
+
+    & + label {
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 1.3rem;
+        border: 0.2rem solid $global-c;
+        @include transition-default(border-color, box-shadow);
+      }
+    }
+
+    &:focus {
+      & + label:before {
+        outline-color: transparent;
+        border-color: $primary-color;
+        outline-offset: -0.2rem;
+        box-shadow: 0 0 0 0.5rem rgba(10, 66, 247, 0.3);
+      }
+    }
+
+    &:checked {
+      & + label:after {
+        content: "";
+        z-index: 5;
+        position: absolute;
+        left: 0.4rem;
+        top: 0.4rem;
+        display: block;
+        height: 1.7rem;
+        width: 1.7rem;
+        background: $primary-color;
+        border: 0.2rem solid $primary-color;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+.ice-question-actions {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+
+  @include for-desktop {
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+  }
+
+  & > * {
+    margin-right: 2rem;
+
+    @include for-mobile {
+      flex: 0 0 calc(50% - 1rem);
+    }
+
+    @include for-tablet-and-upper {
+      margin-right: 3rem;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

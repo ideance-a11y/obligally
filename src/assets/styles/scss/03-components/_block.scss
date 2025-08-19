@@ -1,0 +1,82 @@
+.ice-block {
+  margin: 3rem auto;
+  padding: 1.3rem 1.8rem;
+  background: $light-blue;
+  border-radius: 1rem;
+  color: $tertiary-color;
+  font-weight: bold;
+  text-align: left;
+  line-height: 1.45;
+
+  @include for-tablet-and-upper {
+    padding: 2.2rem 2.8rem;
+    line-height: 1.55;
+  }
+
+  a {
+    @include link($tertiary-color, $primary-darker);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &.is-red {
+    color: darken(#C56D6F, 20%);
+    background-color: #feeced;
+  }
+
+  &.no-margin-top {
+    margin-top: 0;
+  }
+}
+
+.ice-summary {
+  margin: 2rem -1.5rem;
+  padding: 2rem 2.5rem 2.5rem;
+  border: 0.15rem solid $tertiary-color;
+  border-left: 0;
+  border-right: 0;
+  color: $global-c;
+  font-weight: normal;
+  text-align: center;
+
+  @include for-tablet-and-upper {
+    padding: 2.3rem 2.8rem;
+    border: 0.15rem solid $tertiary-color;
+    border-radius: 1.2rem;
+    text-align: left;
+  }
+
+  .ice-icon {
+    color: $tertiary-color;
+    font-size: 5rem;
+  }
+
+  .ice-summary-title {
+    margin-top: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: $tertiary-color;
+    font-size: 1.9rem;
+    font-weight: 900;
+    line-height: 1.2;
+
+    @include for-desktop {
+      margin-bottom: 0.7rem;
+      font-size: 2.1rem;
+    }
+  }
+
+  p {
+    margin-bottom: 1rem;
+    text-align: left;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ice-btn-tertiary {
+    margin-top: 1rem;
+  }
+}

@@ -1,13 +1,17 @@
 <template>
-  <button
-    type="button"
-    :aria-expanded="isDisplayed"
-    v-on:click="isDisplayed = !isDisplayed"
-  >
-    <slot name="button" />
-  </button>
-  <div v-show="isDisplayed">
-    <slot />
+  <div class="ice-disclosure">
+    <button
+      type="button"
+      class="ice-disclosure-heading"
+      :aria-expanded="isDisplayed"
+      v-on:click="isDisplayed = !isDisplayed"
+    >
+      <slot name="button" />
+      <span class="ice-icon icon-question" aria-hidden="true"></span>
+    </button>
+    <div class="ice-disclosure-panel" v-show="isDisplayed">
+      <slot />
+    </div>
   </div>
 </template>
 

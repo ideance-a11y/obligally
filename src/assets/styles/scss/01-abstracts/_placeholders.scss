@@ -1,0 +1,32 @@
+//--- 1. RESETS
+%reset-button {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+%reset-input {
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  white-space: normal;
+}
+
+%reset-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+%reset-link {
+  color: $global-c;
+  text-decoration: none;
+}
