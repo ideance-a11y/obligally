@@ -1,0 +1,39 @@
+---
+import Layout from '@layouts/Layout.astro'
+
+import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+
+const lang = getLangFromUrl(Astro.url)
+const t = await initI18n(lang)
+
+export async function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
+}
+---
+
+<Layout
+  lang={lang}
+  pageTitle={t('comprendre.page_titre')}
+>
+  <div class="ice-header-page-details" slot="header">
+    <h1 class="ice-header-page-title">{t('comprendre.page_titre')}</h1>
+    <div class="ice-header-page-subheading">
+      <span class="ice-icon icon-info" aria-hidden="true"></span>
+      <p>Un article complet pour comprendre le sujet.</p>
+    </div>
+  </div>
+
+  <div class="ice-page-content ice-container is-narrow with-typo-styles">
+    <h2 class="ice-title-level-2">Champ d'application</h2>
+    <p class="ice-subtitle">Qu'est-ce-qui est concerné ?</p>
+    <p>Tout contenu numérique, y compris :</p>
+    <ul>
+      <li>Site web,</li>
+      <li>Application mobile,</li>
+      <li>Internet,</li>
+      <li>Intranet,</li>
+      <li>Progiciel,</li>
+      <li>Mobilier urbain numérique</li>
+    </ul>
+  </div>
+</Layout>

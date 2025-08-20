@@ -1,5 +1,5 @@
 <template>
-  <div class="ice-section is-narrow">
+  <div class="ice-section is-narrow with-typo-styles">
     <template v-if="obligationResults.length === 0">
       <h2
         tabindex="-1"

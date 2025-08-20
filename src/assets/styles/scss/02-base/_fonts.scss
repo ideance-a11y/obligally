@@ -90,6 +90,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-info:before {
+  content: "\e910";
+}
 .icon-up-page:before {
   content: "\e906";
 }

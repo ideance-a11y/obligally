@@ -6,12 +6,16 @@ const t = await initI18n(lang)
 
 const nav = [
   {
-    label: 'nav.home',
-    route: '/'
-  },
-  {
     label: 'nav.simulation',
     route: '/simulation'
+  },
+  {
+    label: 'nav.comprendre',
+    route: '/comprendre'
+  },
+  {
+    label: 'nav.visualisation',
+    route: '/visualisation'
   },
   {
     label: 'nav.about',
@@ -19,16 +23,26 @@ const nav = [
   }
 ] as const
 ---
+<script>
+const discBtn = document.querySelector('.ice-header-nav-trigger')
+ 
+const toggleExpanded = () => {
+  discBtn?.setAttribute('aria-expanded', (!(discBtn.getAttribute('aria-expanded') === 'true')).toString() )
+}
+ 
+discBtn?.addEventListener('click', toggleExpanded)
+</script>
 
 <nav
   role="navigation"
   class="ice-header-nav"
   aria-label={t('nav.label_main')}
 >
-  <button type="button" class="ice-header-nav-trigger">
+  <button type="button" class="ice-header-nav-trigger" aria-expanded="false">
     <span class="line"></span>
     <span class="line"></span>
     <span class="line"></span>
+    <span class="sr-only">{t('nav.label_main')}</span>
   </button>
   <ul>
     {

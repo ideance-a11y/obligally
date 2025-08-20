@@ -1,5 +1,4 @@
 ---
-//import '@styles/components/footer.css'
 import logoIdeance from '@assets/img/lg_ideance.svg'
 
 import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
@@ -15,9 +14,22 @@ const t = await initI18n(lang)
     <div class="ice-footer-logo">
       <img alt="Ideance" src={logoIdeance.src}>
     </div>
-    <div class="ice-footer-infos">
-      <p>{t('nav.footer')}</p>
+    <div class="ice-footer-infos" set:html={t('footer.legal')} />
+    <div class="ice-footer-links">
+      <ul aria-label="{t'(footer.social)}" class="ice-social-links">
+        <li class="no-margin">
+          <a class="ice-social-link" href="https://www.linkedin.com/company/ideance/">
+            <span class="ice-icon icon-linkedin" aria-hidden="true"></span>
+            <span class="sr-only">Linkedin</span>
+          </a>
+        </li>
+        <li>
+          <a class="ice-social-link" href="https://www.youtube.com/channel/UCx2yDE6oVrncbS0isnjMBPw">
+            <span class="ice-icon icon-youtube" aria-hidden="true"></span>
+            <span class="sr-only">Youtube</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="ice-footer-links"></div>
   </div>
 </footer>

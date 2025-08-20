@@ -1,15 +1,22 @@
 export const fr = {
   nav: {
+    go_to_ideance: `Aller sur ideance.net`,
     skiplink_to_main: `Aller au contenu`,
     label_main: `Menu principal`,
     label_breadcrumb: `Vous êtes ici`,
     home: `Accueil`,
     about: `À propos`,
-    simulation: `Simulation`,
-    footer: `Expertise, formations et audits accessibilité numérique. Sensibilisation et aménagement pour le handicap en entreprise.`
+    simulation: `Simuler`,
+    comprendre: `Comprendre`,
+    visualisation: `Visualiser`
+  },
+  footer: {
+    legal: `<p><b>Expertise, formations et audits accessibilité numérique.</b><br><b>Sensibilisation et aménagement pour le handicap en entreprise.</b></p><p>SAS au capital de 4000 €, immatriculée au <abbr title="Registre du Commerce et des Sociétés">RCS</abbr> de Rouen sous le numéro 888 808 383. Organisme de formation enregistré sous le numéro 28 76 06172 76.</p>
+      <ul class="ice-menu"><li><a href="mailto:contact@ideance.fr">contact@ideance.fr</a></li><li><a href="tel:+33278775982">+33 (0)2 78 77 59 82</a></li></ul>`,
+    social: `Réseaux sociaux`
   },
   general: {
-    a11y_legal_obligations_france: `Obligations légales pour l'accessibilité des contenus et services numériques en France`,
+    a11y_legal_obligations_france: `Les obligations légales d'accessibilité numérique en France`,
     form_collect_no_data: `Ce formulaire ne collecte aucune donnée.`,
     form_mandatory_fields_legend: `Une réponse est requise pour chaque question.`,
     what_entity_are_you: `Quel type d'entité représentez-vous ?`,
@@ -137,5 +144,27 @@ export const fr = {
     rgaa_long: `Référentiel Général d'Amélioration de l'Accessibilité`,
     raweb: `RAWeb`,
     raweb_long: `Référentiel d'Évaluation de l'Accessibilité Web`
+  },
+  accueil: {
+    page_titre: `Découvrir les lois qui favorisent l'accès au numérique pour les personnes handicapées`,
+    option_1_titre: `Simuler`,
+    option_1_lien: `Ce que la loi attend de vous :`,
+    option_1_description: `<p>Vous souhaitez connaître vos obligations ?</p>
+      <p>Répondez à ce questionnaire et découvrez les obligations légales qui s'appliquent à votre situation ou à celle de votre entreprise.</p>`,
+    option_2_titre: `Approfondir`,
+    option_2_lien: `Ce que dit la loi :`,
+    option_2_description: ` <p>Vous voulez étudier le sujet en profondeur ?</p>
+      <p>Accédez à un article détaillé pour comprendre l'historique des obligations légales en France, et le détail du cadre légal actue.</p>`,
+    option_3_titre: `Synthétiser`,
+    option_3_lien: `L'essentiel de la loi :`,
+    option_3_description: ` <p>Vous préférez visualiser de manière synthétique ?</p>
+      <p>Une infographie vos permettra de découvrir en un coup d'oeil les règles en vigueur en matière d'accessibilité numérique.</p>`
+  },
+  comprendre: {
+    page_titre: `Approfondir`
+  },
+  visualisation: {
+    page_titre: `Visualiser`,
+    image_alt: `Infographie représentant les obligations légales d'accessibilité numérique en fonction des types d'entreprises et services fournis (voir description détaillée ci-après)`
   }
 }

@@ -3,119 +3,165 @@ $logo-hgt-dtp: 9rem;
 
 .ice-header {
   position: relative;
-  margin-bottom: 6rem;
+  margin-bottom: 4.5rem;
   border: 0;
   color: $header-c;
 
-  @include for-large-mobile-and-upper {
-    margin-bottom: 6.5rem;
+  @include for-mobile {
+    background: $header-bg;
+  }
+
+  @include for-tablet-and-upper {
+    background: $primary-color linear-gradient($primary-darker 5rem, transparent 80%);
   }
 
   @include for-desktop {
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
   }
 
   &.on-home {
-    margin-bottom: 0;
+    margin-bottom: 6rem;
+    background: none;
+
+    @include for-large-mobile-and-upper {
+      margin-bottom: 6.5rem;
+    }
   }
 }
 
 .ice-header-inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   min-height: $header-hgt-mobile;
-  padding: 1.3rem $col-1 3.2rem;
+  padding: 1.3rem 4rem 4.5rem;
   background: transparent;
+
+  &:after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.7;
+    background: transparent url("#{$img-path}/bg_pattern.png") center top/1rem auto;
+  }
+
+  @include for-large-mobile {
+    padding-left: $col-2;
+    padding-right: $col-2;
+    padding-bottom: 5rem;
+  }
 
   @include for-tablet-and-upper {
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    padding: 2.2rem $col-1 3rem;
+    padding: 4rem $col-1 5rem;
   }
 
   @include for-desktop {
-    padding: 3rem $col-2 4rem;
+    padding: 4rem $col-2 5rem;
   }
 
   @include for-very-large-screen {
-    padding: 3.5rem $col-3 4.5rem;
+    padding: 3.5rem $col-3 5rem;
   }
 
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: -50%;
-    right: -50%;
-    top: 0;
-    bottom: 0;
-    border-radius: 50% 50% 55% 45% / 0% 0% 60% 60%;
+  .on-home & {
+    align-items: center;
+    justify-content: center;
+    padding: 1.3rem $col-1 3.2rem;
 
-    @include for-large-mobile {
-      border-radius: 50% 50% 55% 45% / 0% 0% 90% 90%;
+    @include for-tablet {
+      padding: 3rem $col-2 4rem;
     }
 
-    @include for-desktop {
-      top: $header-top-hgt-dtp;
-      left: -35%;
-      right: -35%;
-      border-radius: 50% 50% 60% 40% / 0% 0% 100% 100%;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: -50%;
+      right: -50%;
+      top: 0;
+      bottom: 0;
+      border-radius: 50% 50% 55% 45% / 0% 0% 60% 60%;
+
+      @include for-large-mobile {
+        border-radius: 50% 50% 55% 45% / 0% 0% 90% 90%;
+      }
+
+      @include for-desktop {
+        top: $header-top-hgt-dtp;
+        left: -35%;
+        right: -35%;
+        border-radius: 50% 50% 60% 40% / 0% 0% 100% 100%;
+      }
     }
-  }
 
-  &:before {
-    z-index: -2;
-    background: $header-bg;
-  }
+    &:before {
+      z-index: -2;
+      background: $header-bg;
+    }
 
-  &:after {
-    z-index: -1;
-    opacity: 0.7;
-    background: transparent url("#{$img-path}/bg_pattern.png") center top/1rem auto;
+    &:after {
+      z-index: -1;
+      opacity: 0.7;
+      background: transparent url("#{$img-path}/bg_pattern.png") center top/1rem auto;
+    }
+
+    @include for-tablet-and-upper {
+      background: none;
+    }
   }
 }
 
 .ice-logo {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  height: $logo-hgt-mob;
-  width: $logo-hgt-mob;
-  padding-top: 0.1rem;
-  padding-right: 0.3rem;
-  background: $white-color;
-  border-radius: 50%;
-  box-shadow: 0 0 1rem 0 rgba(23, 24, 29, 0.3);
+  display: none;
 
-  @include for-mobile {
-    order: 2;
-    margin-top: 1rem;
-  }
+  .on-home & {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    height: $logo-hgt-mob;
+    width: $logo-hgt-mob;
+    padding-top: 0.1rem;
+    padding-right: 0.3rem;
+    background: $white-color;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem 0 rgba(23, 24, 29, 0.3);
 
-  @include for-tablet-and-upper {
-    flex: 0 0 $logo-hgt-dtp;
-    height: $logo-hgt-dtp;
-    width: $logo-hgt-dtp;
-    margin-right: 4.5rem;
-    padding-right: 0.4rem;
-  }
+    @include for-mobile {
+      order: 2;
+      margin-top: 1rem;
+    }
 
-  @include for-desktop {
-    margin-right: 6rem;
-  }
+    @include for-tablet-and-upper {
+      flex: 0 0 $logo-hgt-dtp;
+      height: $logo-hgt-dtp;
+      width: $logo-hgt-dtp;
+      margin-right: 4.5rem;
+      padding-right: 0.4rem;
+    }
 
-  img {
-    height: 65%;
-    width: auto;
-    object-fit: cover;
+    @include for-desktop {
+      margin-right: 6rem;
+    }
+
+    img {
+      height: 65%;
+      width: auto;
+      object-fit: cover;
+    }
   }
 }
 
 .ice-site-title-wrapper {
+  z-index: 2;
   display: flex;
   flex-flow: column;
   align-items: flex-start;
@@ -123,14 +169,16 @@ $logo-hgt-dtp: 9rem;
   text-align: left;
   text-shadow: 0 0 1rem rgba(23, 24, 29, 0.3);
 
-  @include for-mobile {
-    order: 1;
+  .on-home & {
+    @include for-mobile {
+      order: 1;
+    }
   }
 }
 
 .ice-site-title {
   color: $header-c;
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 900;
   text-decoration: none;
 
@@ -146,57 +194,117 @@ $logo-hgt-dtp: 9rem;
 }
 
 .ice-site-slogan {
-  position: relative;
-  margin-top: 0.7rem;
-  padding: 1.8rem 0 0;
-  font-size: 1.6rem;
-  font-weight: normal;
-  line-height: 1.5;
+  display: none;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+  .on-home & {
+    position: relative;
     display: block;
-    height: 0.45rem;
-    width: 5rem;
-    background-color: $secondary-color;
-    box-shadow: 0 0 1rem 0 rgba(23, 24, 29, 0.3);
+    margin-top: 0.7rem;
+    padding: 1.8rem 0 0;
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 1.5;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 0.45rem;
+      width: 5rem;
+      background-color: $secondary-color;
+      box-shadow: 0 0 1rem 0 rgba(23, 24, 29, 0.3);
+
+      @include for-tablet-and-upper {
+        width: 6rem;
+        height: 0.3rem;
+      }
+    }
 
     @include for-tablet-and-upper {
-      width: 6rem;
-      height: 0.25rem;
+      margin-top: 1.2rem;
+      padding: 1.8rem 0 0;
+      font-size: 2.2rem;
+      line-height: 1.45;
+    }
+
+    @include for-desktop {
+      max-width: 45rem;
+    }
+  }
+}
+
+.ice-header-page-details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  margin-bottom: 0;
+
+  @include for-mobile {
+    margin-top: 1.3rem;
+    padding-top: 2.4rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 0.4rem;
+      width: 5rem;
+      background-color: $secondary-color;
+      box-shadow: 0 0 1rem 0 rgba(23, 24, 29, 0.3);
     }
   }
 
   @include for-tablet-and-upper {
-    margin-top: 1.1rem;
-    padding: 1.7rem 0 0;
+    margin-left: 4rem;
+    padding-left: 3.8rem;
+    border-left: 0.4rem solid $secondary-color;
+
+    &:before {
+      //content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 5rem;
+      width: 0.4rem;
+      background-color: $secondary-color;
+      box-shadow: 0 0 1rem 0 rgba(23, 24, 29, 0.3);
+    }
+  }
+}
+
+.ice-header-page-title {
+  margin-bottom: 1.1rem;
+  font-size: 2.6rem;
+  font-weight: 200;
+  line-height: 1;
+
+  @include for-desktop {
+    margin-bottom: 1rem;
+    font-size: 2.8rem;
+  }
+}
+
+.ice-header-page-subheading {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 1.6rem;
+
+  .ice-icon {
+    margin-top: 0.2rem;
+    margin-right: 1.5rem;
     font-size: 2rem;
-    line-height: 1.45;
   }
 
-  /*.ice-header.on-home & {
-    position: relative;
-    width: 90%;
-    margin: 2rem 0 2.5rem;
-    padding: 0;
-    border: 0;
-
-    @include for-tablet-and-upper {
-      line-height: 1.45;
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 16.5rem;
-        height: 0.1rem;
-        background: $secondary-color;
-        border-radius: 0.1rem;
-      }
-    }
-  }*/
+  p {
+    margin-bottom: 0;
+    font-style: italic;
+  }
 }

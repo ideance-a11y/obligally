@@ -15,7 +15,7 @@
       ref="fieldset-entity"
     >
       <template v-slot:legend>
-        <h3>{{ t('general.what_entity_are_you') }}</h3>
+        <h2>{{ t('general.what_entity_are_you') }}</h2>
       </template>
       <template
         v-if="isErrorEntity && isFormSubmitted"
@@ -45,7 +45,7 @@
       ref="fieldset-turnover"
     >
       <template v-slot:legend>
-        <h3>{{ t('general.what_is_your_turnover') }}</h3>
+        <h2>{{ t('general.what_is_your_turnover') }}</h2>
       </template>
       <template
         v-if="isErrorTurnover && isFormSubmitted"
@@ -82,7 +82,7 @@
       ref="fieldset-service"
     >
       <template v-slot:legend>
-        <h3>{{ t('general.do_you_provide_service') }}</h3>
+        <h2>{{ t('general.do_you_provide_service') }}</h2>
       </template>
       <template
         v-if="isErrorService && isFormSubmitted"
@@ -124,7 +124,7 @@
       ref="fieldset-employees"
     >
       <template v-slot:legend>
-        <h3>{{ t('general.how_many_employees') }}</h3>
+        <h2>{{ t('general.how_many_employees') }}</h2>
       </template>
       <template
         v-if="isErrorEmployees && isFormSubmitted"

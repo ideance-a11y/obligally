@@ -2,26 +2,32 @@
 import Navigation from '@components/Navigation.astro'
 // import Lang from '@components/Lang.astro'
 
-//import '@styles/components/header.css'
 import logoIdeance from '@assets/img/lg_ideance.svg';
+
+import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+
+const lang = getLangFromUrl(Astro.url)
+const t = await initI18n(lang)
 
 interface Props {
   siteTitle: string
+  class: string
 }
 
-const { siteTitle } = Astro.props
+const { siteTitle, class: className, ...rest } = Astro.props;
 ---
 
 <header
-  class="ice-header"
   role="banner"
+  class:list={["ice-header", className]}
+   {...rest}
 >
   <div class="ice-header-top">
     <div class="ice-header-top-inner ice-container">
       <!-- <Lang /> -->
       <a href="www.ideance.net" class="ice-btn-tertiary with-icon">
         <span class="ice-icon icon-two-chevrons-left" aria-hidden="true"></span>
-        <span>Aller sur ideance.net</span>
+        <span>{t("nav.go_to_ideance")}</span>
       </a>
       <Navigation />
     </div>
@@ -32,7 +38,8 @@ const { siteTitle } = Astro.props
     </div>
     <div class="ice-site-title-wrapper">
       <a href="/" class="ice-site-title">{siteTitle}</a>
-      <p class="ice-site-slogan">Les obligations légales pour l'accessibilité des contenus et services numériques en France</p>
+      <p class="ice-site-slogan">{t("general.a11y_legal_obligations_france")}</p>
     </div>
+    <slot />
   </div>
 </header>

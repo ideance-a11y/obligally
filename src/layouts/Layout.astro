@@ -12,11 +12,12 @@ interface Props {
   lang: string
   pageTitle: string
   metaDescription?: string
+  headerClass?: string
   bodyClass?: string
   breadcrumb?: ComponentProps<typeof Breadcrumb>['breadcrumb']
 }
 
-const { lang, pageTitle, metaDescription, bodyClass, breadcrumb } = Astro.props
+const { lang, pageTitle, metaDescription, headerClass, bodyClass, breadcrumb } = Astro.props
 
 const siteTitle = 'Obligally'
 const siteMetaDesc = `Obligations légales concernant l\'accessibilité numérique en France`
@@ -48,7 +49,9 @@ const siteMetaDesc = `Obligations légales concernant l\'accessibilité numériq
 
   <body class={`body wrapper-main ${bodyClass}`}>
     <Skiplinks />
-    <Header siteTitle="Obligally" />
+    <Header siteTitle="Obligally" class={`${headerClass}`}>
+      <slot name="header" />
+    </Header>
     <main
       id="main"
       role="main"

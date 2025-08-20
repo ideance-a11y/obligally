@@ -34,7 +34,7 @@
 .ice-summary {
   margin: 2rem -1.5rem;
   padding: 2rem 2.5rem 2.5rem;
-  border: 0.15rem solid $tertiary-color;
+  border: 0.2rem solid lighten($tertiary-color, 25%);
   border-left: 0;
   border-right: 0;
   color: $global-c;

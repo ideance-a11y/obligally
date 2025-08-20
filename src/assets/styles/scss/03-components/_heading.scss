@@ -5,14 +5,14 @@
 
 %h1 {
   @extend %heading-base;
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   font-weight: 900;
   line-height: 1.35;
   font-weight: 900;
   text-align: center;
 
   @include for-tablet {
-    font-size: 2.9rem;
+    font-size: 2.8rem;
   }
 
   @include for-desktop {
@@ -85,6 +85,12 @@
 .ice-page-title {
   @extend %h1;
   margin-bottom: 4rem;
+
+  @include for-mobile {
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   @include for-tablet-and-upper {
     padding-left: $col-1;

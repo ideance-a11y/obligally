@@ -7,6 +7,8 @@
     @extend .ice-page-title;
     margin-top: 0.6rem;
     margin-bottom: 2rem;
+    padding-left: 0;
+    padding-right: 0;
 
     @include for-desktop {
       margin-bottom: 3rem;

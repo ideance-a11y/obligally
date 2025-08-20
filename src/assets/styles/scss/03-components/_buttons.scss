@@ -23,7 +23,7 @@ $button-tertiary-c: $global-c;
   text-decoration: none;
   text-align: center;
   @include transition-default(background-color, box-shadow, color);
-  outline-offset: 0.2rem;
+  //outline-offset: 0.2rem;
 
   &:hover,
   &:focus-within {
@@ -79,7 +79,7 @@ $button-tertiary-c: $global-c;
   @extend %reset-button;
   @extend %button;
   min-height: 3.2rem;
-  padding: 0.5rem 1.4rem;
+  padding: 0.6rem 1.4rem 0.4rem;
   background: $gray-3;
   border: 0.15rem solid white;
   color: $global-c;
@@ -89,12 +89,12 @@ $button-tertiary-c: $global-c;
   text-transform: uppercase;
 
   &.with-icon {
-    padding: 0.4rem 1.6rem 0.4rem 0.6rem;
+    padding: 0.4rem 1.6rem 0.2rem 0.7rem;
 
     .ice-icon {
       margin-top: -0.1rem;
       margin-right: 0.5rem;
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       color: $primary-color;
     }
   }

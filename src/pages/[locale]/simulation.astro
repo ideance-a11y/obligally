@@ -17,6 +17,14 @@ export async function getStaticPaths() {
   lang={lang}
   pageTitle={t('nav.simulation')}
 >
-  <!--<h1 class="ice-page-title">{t('nav.simulation')}</h1>-->
+  <div slot="header">
+    <div class="ice-header-page-details">
+      <h1 class="ice-header-page-title">{t('nav.simulation')}</h1>
+      <div class="ice-header-page-subheading">
+        <span class="ice-icon icon-timer" aria-hidden="true"></span>
+        <p>Entre 1 à 5 questions.</p>
+      </div>
+    </div>
+  </div>
   <ObligationsForm client:load />
 </Layout>

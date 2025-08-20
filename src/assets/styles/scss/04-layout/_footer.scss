@@ -5,6 +5,7 @@ $footer-logo-size: 6rem;
 
 .ice-footer {
   min-height: $footer-hgt;
+  margin-top: 3rem;
   padding-top: 3.5rem;
   padding-bottom: 4.5rem;
   background: $footer-bg;
@@ -12,6 +13,7 @@ $footer-logo-size: 6rem;
   color: $footer-c;
 
   @include for-tablet-and-upper {
+    margin-top: 5rem;
     padding-top: 4.5rem;
     padding-bottom: 6.5rem;
   }
@@ -67,11 +69,11 @@ $footer-logo-size: 6rem;
   justify-content: flex-start;
 
   @include for-tablet {
-    flex: 0 0 $col-5;
+    flex: 0 0 $col-6;
   }
 
   @include for-desktop {
-    flex: 0 0 $col-5;
+    flex: 0 0 $col-6;
     padding-left: $gutter-hz;
     padding-right: $gutter-hz;
   }
@@ -93,7 +95,7 @@ $footer-logo-size: 6rem;
   }
 
   @include for-tablet-and-upper {
-    flex: 0 0 $col-3;
+    flex: 0 0 $col-2;
     margin-left: $col-1;
     margin-right: $col-1;
   }
@@ -104,15 +106,28 @@ $footer-logo-size: 6rem;
   }
 
   .ice-social-links {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin-bottom: 1.9rem;
 
     .ice-social-link {
-      width: 4rem;
-      height: 4rem;
-      margin: 0 1rem 0 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      background-color: $primary-color;
+      border-radius: 2.3rem;
+      box-shadow: none;
+      color: white;
+      text-decoration: none;
+      width: 4.5rem;
+      height: 4.5rem;
+      margin: 0 1.2rem 0 0;
 
       .ice-icon {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
     }
   }

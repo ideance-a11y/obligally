@@ -4,6 +4,7 @@ $header-top-c: $global-c;
 $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
 
 .ice-header-top {
+  z-index: 5;
   position: relative;
   background: transparent;
   color: $header-c;
@@ -17,7 +18,7 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
 }
 
 .ice-header-top-inner {
-  min-height: 6rem;
+  min-height: 7rem;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -50,9 +51,61 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
   }
 }
 
+.ice-header-nav {
+  display: flex;
+  margin-left: auto;
+
+  ul {
+    @extend %reset-list;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: $global-c;
+    text-align: center;
+
+    @include for-mobile {
+      position: absolute;
+      z-index: 10000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: auto;
+      width: 100vw;
+      padding: 6rem 3rem;
+      background: white;
+      box-shadow: 0 0.3rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+      @include transition-default(left);
+    }
+
+    li {
+      margin: 1.5rem 0;
+
+      @include for-tablet-and-upper {
+        margin: 0 2rem;
+      }
+    }
+  }
+
+  a {
+    @include link($global-c, $primary-darker, transparent);
+    font-size: 1.9rem;
+
+    @include for-tablet-and-upper {
+      @include link($link-c, transparent, $link-underline-c);
+      font-size: 1.5rem;
+    }
+
+    &[aria-current="page"] {
+      font-weight: bold;
+    }
+  }
+}
+
 .ice-header-nav-trigger {
   min-height: 4.7rem;
-  margin-top: 0.45rem;
   padding: 0.5rem 1rem;
   background: $primary-color;
   border: 0;
@@ -84,47 +137,15 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
     }
   }
 
+  @include for-mobile {
+    &[aria-expanded="false"] + ul {
+      visibility: hidden;
+      left: 100%;
+      transition: visibility 0s $transition-dur, left $transition-dur $transition-ftn;
+    }
+  }
+
   @include for-tablet-and-upper {
     display: none;
-  }
-}
-
-.ice-header-nav {
-  display: flex;
-  margin-left: auto;
-
-  ul {
-    @extend %reset-list;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    color: $global-c;
-    text-align: center;
-
-    @include for-tablet-and-lower {
-      //display: none;
-    }
-
-    li {
-      margin: 0 1rem;
-
-      @include for-tablet-and-upper {
-        margin: 0 2rem;
-      }
-    }
-  }
-
-  a {
-    @include link($white-color, transparent, $white-color);
-    font-size: 1.4rem;
-
-    @include for-tablet-and-upper {
-      @include link($link-c, transparent, $link-underline-c);
-      font-size: 1.5rem;
-    }
-
-    &[aria-current="page"] {
-      font-weight: bold;
-    }
   }
 }
