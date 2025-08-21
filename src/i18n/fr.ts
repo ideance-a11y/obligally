@@ -39,6 +39,7 @@ export const fr = {
     reset: `Réinitialiser`,
     validate: `Valider`,
     summary: `Résumé`,
+    summary_result: `Vous êtes`,
     all_digital_content_including: `Tout contenu numérique, y compris`,
     following_digital_services: `Les services numériques suivants`,
     your_legal_obligations: `Vos obligations légales`,

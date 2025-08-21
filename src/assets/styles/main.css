@@ -880,6 +880,10 @@ strong {
   text-align: center; }
   @media screen and (min-width: 768px) {
     .ice-summary {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      justify-content: flex-start;
       padding: 2.3rem 2.8rem;
       border: 0.15rem solid #37738E;
       border-radius: 1.2rem;
@@ -887,8 +891,13 @@ strong {
   .ice-summary .ice-icon {
     color: #37738E;
     font-size: 5rem; }
+  .ice-summary .ice-summary-body {
+    margin-top: 1.5rem; }
+    @media screen and (min-width: 768px) {
+      .ice-summary .ice-summary-body {
+        margin-top: 0;
+        margin-left: 2.5rem; } }
   .ice-summary .ice-summary-title {
-    margin-top: 1.3rem;
     margin-bottom: 1.2rem;
     color: #37738E;
     font-size: 1.9rem;
