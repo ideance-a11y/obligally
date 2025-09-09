@@ -46,15 +46,14 @@ $card-c: $global-c;
   }
 
   @include for-mobile {
-    max-width: 45rem;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
 
   @include for-large-mobile {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     border-radius: 1rem;
   }
 
@@ -177,7 +176,7 @@ $card-c: $global-c;
 
     .is-horizontal & {
       @include for-desktop {
-        margin-top: 0.5rem;
+        margin-top: 0.1rem;
       }
 
       a {

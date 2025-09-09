@@ -239,7 +239,7 @@ p,
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    padding: 1.2rem 2rem;
+    padding: 1.3rem 2rem;
     background: transparent;
     border-radius: 2.7rem;
     border: 0.1rem solid #D9D9D9;
@@ -250,7 +250,7 @@ p,
     @include transition-default(border-radius, border);
 
     @include for-tablet-and-upper {
-      padding: 1.4rem 2.5rem;
+      padding: 1.5rem 2.5rem;
     }
 
     &[aria-expanded="true"] {

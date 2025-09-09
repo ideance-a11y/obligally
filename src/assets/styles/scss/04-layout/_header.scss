@@ -80,6 +80,10 @@ $logo-hgt-dtp: 9rem;
       padding: 3rem $col-2 4rem;
     }
 
+    @include for-desktop {
+      padding: 3rem $col-2 5rem;
+    }
+
     &:before,
     &:after {
       content: "";
@@ -183,7 +187,7 @@ $logo-hgt-dtp: 9rem;
   text-decoration: none;
 
   @include for-tablet-and-upper {
-    font-size: 3.2rem;
+    font-size: 3.6rem;
   }
 
   &:hover,
@@ -218,19 +222,15 @@ $logo-hgt-dtp: 9rem;
 
       @include for-tablet-and-upper {
         width: 6rem;
-        height: 0.3rem;
+        height: 0.45rem;
       }
     }
 
     @include for-tablet-and-upper {
-      margin-top: 1.2rem;
+      margin-top: 1rem;
       padding: 1.8rem 0 0;
       font-size: 2.2rem;
       line-height: 1.45;
-    }
-
-    @include for-desktop {
-      max-width: 45rem;
     }
   }
 }

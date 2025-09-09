@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   pageTitle={t('nav.home')}
   headerClass={"on-home"}
 >
-  <h1 class="ice-page-title">{t('accueil.page_titre')}</h1>
+  <h1 class="ice-page-title" set:html={t('accueil.page_titre')}></h1>
 
   <div class="ice-section">
     <ul class="ice-list-options no-style is-horizontal">

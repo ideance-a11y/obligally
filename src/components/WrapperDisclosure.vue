@@ -9,7 +9,7 @@
       <slot name="button" />
       <span class="ice-icon icon-question" aria-hidden="true"></span>
     </button>
-    <div class="ice-disclosure-panel" v-show="isDisplayed">
+    <div class="ice-disclosure-panel with-typo-styles" v-show="isDisplayed">
       <slot />
     </div>
   </div>

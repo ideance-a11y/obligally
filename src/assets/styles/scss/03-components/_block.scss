@@ -1,6 +1,6 @@
 .ice-block {
   margin: 3rem auto;
-  padding: 1.3rem 1.8rem;
+  padding: 1.8rem 1.8rem;
   background: $light-blue;
   border-radius: 1rem;
   color: $tertiary-color;
@@ -54,7 +54,11 @@
 
   .ice-icon {
     color: $tertiary-color;
-    font-size: 5rem;
+    font-size: 6rem;
+
+    @include for-tablet-and-upper {
+      font-size: 5.5rem;
+    }
   }
 
   .ice-summary-body {
@@ -69,13 +73,13 @@
   .ice-summary-title {
     margin-bottom: 1.2rem;
     color: $tertiary-color;
-    font-size: 1.9rem;
+    font-size: 2.1rem;
     font-weight: 900;
     line-height: 1.2;
 
     @include for-desktop {
       margin-bottom: 0.7rem;
-      font-size: 2.1rem;
+      font-size: 2.2rem;
     }
   }
 

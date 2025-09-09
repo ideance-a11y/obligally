@@ -36,7 +36,7 @@ export const fr = {
     service_no: `Non, je ne fournis pas l'un de ces services.`,
     previous: `Précédent`,
     next: `Suivant`,
-    reset: `Réinitialiser`,
+    reset: `Recommencer`,
     validate: `Valider`,
     summary: `Résumé`,
     summary_result: `Vous êtes`,
@@ -147,7 +147,7 @@ export const fr = {
     raweb_long: `Référentiel d'Évaluation de l'Accessibilité Web`
   },
   accueil: {
-    page_titre: `Découvrir les lois qui favorisent l'accès au numérique pour les personnes handicapées`,
+    page_titre: `Découvrir les lois qui favorisent l'accès<br>au numérique pour les personnes handicapées`,
     option_1_titre: `Simuler`,
     option_1_lien: `Ce que la loi attend de vous :`,
     option_1_description: `<p>Vous souhaitez connaître vos obligations ?</p>
