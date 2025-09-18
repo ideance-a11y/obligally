@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
 
-import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
 const t = await initI18n(lang)
@@ -14,40 +14,52 @@ export async function getStaticPaths() {
 <Layout
   lang={lang}
   pageTitle={t('nav.home')}
-  headerClass={"on-home"}
+  headerClass={'on-home'}
 >
-  <h1 class="ice-page-title" set:html={t('accueil.page_titre')}></h1>
+  <h1
+    class="ice-page-title"
+    set:html={t('accueil.page_titre')}
+  />
 
   <div class="ice-section">
     <ul class="ice-list-options no-style is-horizontal">
       <li class="ice-option">
         <div class="ice-option-heading">
-          <span class="ice-icon icon-route" aria-hiden="true"></span>
+          <span
+            class="ice-icon icon-route"
+            aria-hiden="true"
+          ></span>
           <h2 class="ice-option-title">{t('accueil.option_1_titre')}</h2>
         </div>
         <div class="ice-option-body">
           <p><a href="simulation">{t('accueil.option_1_lien')}</a></p>
-          <div set:html={t('accueil.option_1_description')}></div>
+          <div set:html={t('accueil.option_1_description')} />
         </div>
       </li>
       <li class="ice-option">
         <div class="ice-option-heading">
-          <span class="ice-icon icon-lightbulb" aria-hiden="true"></span>
+          <span
+            class="ice-icon icon-lightbulb"
+            aria-hiden="true"
+          ></span>
           <h2 class="ice-option-title">{t('accueil.option_2_titre')}</h2>
         </div>
         <div class="ice-option-body">
           <p><a href="comprendre">{t('accueil.option_2_lien')}</a></p>
-          <div set:html={t('accueil.option_2_description')}></div>
+          <div set:html={t('accueil.option_2_description')} />
         </div>
       </li>
       <li class="ice-option">
         <div class="ice-option-heading">
-          <span class="ice-icon icon-diagram" aria-hiden="true"></span>
+          <span
+            class="ice-icon icon-diagram"
+            aria-hiden="true"
+          ></span>
           <h2 class="ice-option-title">{t('accueil.option_3_titre')}</h2>
         </div>
         <div class="ice-option-body">
           <p><a href="visualisation">{t('accueil.option_3_lien')}</a></p>
-          <div set:html={t('accueil.option_3_description')}></div>
+          <div set:html={t('accueil.option_3_description')} />
         </div>
       </li>
     </ul>

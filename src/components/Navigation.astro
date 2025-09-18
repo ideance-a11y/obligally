@@ -1,5 +1,5 @@
 ---
-import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
 const t = await initI18n(lang)
@@ -23,14 +23,18 @@ const nav = [
   }
 ] as const
 ---
+
 <script>
-const discBtn = document.querySelector('.ice-header-nav-trigger')
- 
-const toggleExpanded = () => {
-  discBtn?.setAttribute('aria-expanded', (!(discBtn.getAttribute('aria-expanded') === 'true')).toString() )
-}
- 
-discBtn?.addEventListener('click', toggleExpanded)
+  const discBtn = document.querySelector('.ice-header-nav-trigger')
+
+  const toggleExpanded = () => {
+    discBtn?.setAttribute(
+      'aria-expanded',
+      (!(discBtn.getAttribute('aria-expanded') === 'true')).toString()
+    )
+  }
+
+  discBtn?.addEventListener('click', toggleExpanded)
 </script>
 
 <nav
@@ -38,7 +42,11 @@ discBtn?.addEventListener('click', toggleExpanded)
   class="ice-header-nav"
   aria-label={t('nav.label_main')}
 >
-  <button type="button" class="ice-header-nav-trigger" aria-expanded="false">
+  <button
+    type="button"
+    class="ice-header-nav-trigger"
+    aria-expanded="false"
+  >
     <span class="line"></span>
     <span class="line"></span>
     <span class="line"></span>

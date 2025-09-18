@@ -12,12 +12,15 @@
  */
 
 // Données fragmentées
-import { laws } from '@/datas/laws'
-import { applicationFields } from '@/datas/application-fields'
-import { obligations } from '@/datas/obligations'
-import { sanctions } from '@/datas/sanctions'
-import { controlOrganizations, type ControlOrganization } from '@/datas/control-organizations'
-import { services } from '@/datas/services'
+import { laws } from '@/assets/datas/laws'
+import { applicationFields } from '@/assets/datas/application-fields'
+import { obligations } from '@/assets/datas/obligations'
+import { sanctions } from '@/assets/datas/sanctions'
+import {
+  controlOrganizations,
+  type ControlOrganization
+} from '@/assets/datas/control-organizations'
+import { services } from '@/assets/datas/services'
 
 import { useId } from 'vue'
 
@@ -25,11 +28,11 @@ import { useId } from 'vue'
 import type { Id, ItemConditions } from '@/assets/types/global'
 
 // Types de données
-import type { Law } from '@/datas/laws'
-import type { ApplicationField } from '@/datas/application-fields'
-import type { Obligation } from '@/datas/obligations'
-import type { Sanction } from '@/datas/sanctions'
-import type { Service } from '@/datas/services'
+import type { Law } from '@/assets/datas/laws'
+import type { ApplicationField } from '@/assets/datas/application-fields'
+import type { Obligation } from '@/assets/datas/obligations'
+import type { Sanction } from '@/assets/datas/sanctions'
+import type { Service } from '@/assets/datas/services'
 
 export type CaseData = {
   conditions: ItemConditions[]

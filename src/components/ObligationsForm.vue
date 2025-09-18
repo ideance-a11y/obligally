@@ -209,8 +209,8 @@ import WrapperDisclosure from './WrapperDisclosure.vue'
 
 import { ref, computed, useTemplateRef, provide, nextTick } from 'vue'
 import { createI18n } from 'vue-i18n'
-import { fr } from '@/i18n/fr'
-import { en } from '@/i18n/en'
+import { fr } from '@/assets/i18n/fr'
+import { en } from '@/assets/i18n/en'
 
 import type { Entity, Turnover, StringBoolean } from '@/assets/types/global'
 
@@ -403,8 +403,8 @@ function handleFocus() {
  * Récupération des services numériques appliquables
  * dans le cadre de la directive européene
  */
-import { services, type Service } from '@/datas/services'
-import { applicationFields } from '@/datas/application-fields'
+import { services, type Service } from '@/assets/datas/services'
+import { applicationFields } from '@/assets/datas/application-fields'
 
 const digitalServices = applicationFields
   .find((app) => app.id === 'digital-services')

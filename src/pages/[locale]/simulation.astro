@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro'
 
 import ObligationsForm from '@/components/ObligationsForm.vue'
 
-import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
 const t = await initI18n(lang)
@@ -21,7 +21,10 @@ export async function getStaticPaths() {
     <div class="ice-header-page-details">
       <h1 class="ice-header-page-title">{t('nav.simulation')}</h1>
       <div class="ice-header-page-subheading">
-        <span class="ice-icon icon-timer" aria-hidden="true"></span>
+        <span
+          class="ice-icon icon-timer"
+          aria-hidden="true"
+        ></span>
         <p>Entre 1 à 5 questions.</p>
       </div>
     </div>

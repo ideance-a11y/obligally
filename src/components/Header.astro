@@ -2,9 +2,9 @@
 import Navigation from '@components/Navigation.astro'
 // import Lang from '@components/Lang.astro'
 
-import logoIdeance from '@assets/img/lg_ideance.svg';
+import logoIdeance from '@assets/img/lg_ideance.svg'
 
-import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
 const t = await initI18n(lang)
@@ -14,31 +14,44 @@ interface Props {
   class: string
 }
 
-const { siteTitle, class: className, ...rest } = Astro.props;
+const { siteTitle, class: className, ...rest } = Astro.props
 ---
 
 <header
   role="banner"
-  class:list={["ice-header", className]}
-   {...rest}
+  class:list={['ice-header', className]}
+  {...rest}
 >
   <div class="ice-header-top">
     <div class="ice-header-top-inner ice-container">
       <!-- <Lang /> -->
-      <a href="www.ideance.net" class="ice-btn-tertiary with-icon">
-        <span class="ice-icon icon-two-chevrons-left" aria-hidden="true"></span>
-        <span>{t("nav.go_to_ideance")}</span>
+      <a
+        href="www.ideance.net"
+        class="ice-btn-tertiary with-icon"
+      >
+        <span
+          class="ice-icon icon-two-chevrons-left"
+          aria-hidden="true"
+        ></span>
+        <span>{t('nav.go_to_ideance')}</span>
       </a>
       <Navigation />
     </div>
   </div>
   <div class="ice-header-inner ice-container">
     <div class="ice-logo">
-      <img alt="Ideance" src={logoIdeance.src} />
+      <img
+        alt="Ideance"
+        src={logoIdeance.src}
+      />
     </div>
     <div class="ice-site-title-wrapper">
-      <a href="/" class="ice-site-title">{siteTitle}</a>
-      <p class="ice-site-slogan">{t("general.a11y_legal_obligations_france")}</p>
+      <a
+        href="/"
+        class="ice-site-title"
+        >{siteTitle}</a
+      >
+      <p class="ice-site-slogan">{t('general.a11y_legal_obligations_france')}</p>
     </div>
     <slot />
   </div>

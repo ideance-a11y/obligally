@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
 
-import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
 const t = await initI18n(lang)

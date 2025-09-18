@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
 
-import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
 const t = await initI18n(lang)
@@ -15,10 +15,16 @@ export async function getStaticPaths() {
   lang={lang}
   pageTitle={t('comprendre.page_titre')}
 >
-  <div class="ice-header-page-details" slot="header">
+  <div
+    class="ice-header-page-details"
+    slot="header"
+  >
     <h1 class="ice-header-page-title">{t('comprendre.page_titre')}</h1>
     <div class="ice-header-page-subheading">
-      <span class="ice-icon icon-info" aria-hidden="true"></span>
+      <span
+        class="ice-icon icon-info"
+        aria-hidden="true"
+      ></span>
       <p>Un article complet pour comprendre le sujet.</p>
     </div>
   </div>

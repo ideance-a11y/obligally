@@ -42,7 +42,9 @@
           </template>
 
           <!-- Oligations légales -->
-          <h3 class="ice-title-level-2">{{ t('general.obligation', result.obligations.length) }}</h3>
+          <h3 class="ice-title-level-2">
+            {{ t('general.obligation', result.obligations.length) }}
+          </h3>
           <p class="ice-subtitle">{{ t('general.obligation_subtext') }}</p>
           <ListWithSingle :length="result.obligations.length">
             <template v-slot:default="{ index }">
@@ -72,7 +74,9 @@
           </ListWithSingle>
 
           <!-- Organismes de contrôle -->
-          <h3 class="ice-title-level-2">{{ t('general.control_organism', result.controlOrganizations.length) }}</h3>
+          <h3 class="ice-title-level-2">
+            {{ t('general.control_organism', result.controlOrganizations.length) }}
+          </h3>
           <p class="ice-subtitle">{{ t('general.control_organism_subtext') }}</p>
 
           <table class="ice-table">
@@ -123,7 +127,9 @@
           -->
 
           <!-- Lois -->
-          <h3 class="ice-title-level-2 with-no-subtitle">{{ t('general.reference_text', result.laws.length) }}</h3>
+          <h3 class="ice-title-level-2 with-no-subtitle">
+            {{ t('general.reference_text', result.laws.length) }}
+          </h3>
           <ListWithSingle :length="result.laws.length">
             <template v-slot:default="{ index }">
               {{ t(result.laws[index].name) }}
@@ -139,12 +145,12 @@
 
 <script setup lang="ts">
 import { computed, inject, useTemplateRef } from 'vue'
-import { datas } from '@/datas/datas'
+import { datas } from '@/assets/datas/datas'
 
 import ListWithSingle from '@/components/ListWithSingle.vue'
 
 import type { Entity, Turnover, StringBoolean, ItemConditions } from '@/assets/types/global'
-import type { Sanction } from '@/datas/sanctions'
+import type { Sanction } from '@/assets/datas/sanctions'
 
 const t = inject<(key: string, number?: number) => string>('t')
 if (!t) throw Error('I18n non fourni')

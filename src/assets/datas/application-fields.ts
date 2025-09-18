@@ -5,7 +5,7 @@
  */
 
 import type { Id } from '@/assets/types/global'
-import type { Service } from '@/datas/services'
+import type { Service } from '@/assets/datas/services'
 
 export type ApplicationField = {
   id: Id

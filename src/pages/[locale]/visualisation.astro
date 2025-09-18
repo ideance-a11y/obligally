@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro'
 
 import infographie from '@assets/img/Arbre.jpg'
 
-import { initI18n, getLangFromUrl } from '@/i18n/i18n.ts'
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
 const lang = getLangFromUrl(Astro.url)
 const t = await initI18n(lang)
@@ -12,35 +12,52 @@ export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
 }
 ---
+
 <script>
-const discBtn = document.querySelector('.ice-disclosure-heading')
- 
-const toggleExpanded = () => {
-  discBtn?.setAttribute('aria-expanded', (!(discBtn.getAttribute('aria-expanded') === 'true')).toString() )
-}
- 
-discBtn?.addEventListener('click', toggleExpanded)
+  const discBtn = document.querySelector('.ice-disclosure-heading')
+
+  const toggleExpanded = () => {
+    discBtn?.setAttribute(
+      'aria-expanded',
+      (!(discBtn.getAttribute('aria-expanded') === 'true')).toString()
+    )
+  }
+
+  discBtn?.addEventListener('click', toggleExpanded)
 </script>
 
 <Layout
   lang={lang}
   pageTitle={t('visualiser.page_titre')}
 >
-  <div class="ice-header-page-details" slot="header">
+  <div
+    class="ice-header-page-details"
+    slot="header"
+  >
     <h1 class="ice-header-page-title">{t('visualisation.page_titre')}</h1>
     <div class="ice-header-page-subheading">
-      <span class="ice-icon icon-diagram" aria-hidden="true"></span>
+      <span
+        class="ice-icon icon-diagram"
+        aria-hidden="true"
+      ></span>
       <p>Une infographie et une description détaillée.</p>
     </div>
   </div>
 
   <div class="ice-container">
-    <img class="ice-infographic" alt="{t'(visualisation.image_alt)}" src={infographie.src}>
+    <img
+      class="ice-infographic"
+      alt="{t'(visualisation.image_alt)}"
+      src={infographie.src}
+    />
     <div class="ice-disclosure">
-      <button type="button" class="ice-disclosure-heading" aria-expanded="false"><h2>Description détaillée de l'infographie</h2></button>
-      <div class="ice-disclosure-panel with-typo-styles">
-        Description détaillée...
-      </div>
+      <button
+        type="button"
+        class="ice-disclosure-heading"
+        aria-expanded="false"
+        ><h2>Description détaillée de l'infographie</h2></button
+      >
+      <div class="ice-disclosure-panel with-typo-styles">Description détaillée...</div>
     </div>
   </div>
 </Layout>
