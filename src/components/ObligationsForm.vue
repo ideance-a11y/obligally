@@ -90,7 +90,7 @@
       >
         {{ t('error.empty_service') }}
       </template>
-      <WrapperDisclosure>
+      <WrapperDisclosure iconClass="icon-question">
         <template v-slot:button>
           {{ t('general.what_is_a_service') }}
         </template>

@@ -1866,7 +1866,8 @@ p + h3,
       border-bottom: 0; }
     .ice-disclosure .ice-disclosure-heading .ice-icon {
       margin-left: 0.8rem; }
-  .ice-disclosure .ice-disclosure-heading > * {
+  .ice-disclosure .ice-disclosure-heading > *,
+  .ice-disclosure .ice-disclosure-heading :where(h1, h2, h3, h4) {
     margin: 0;
     font-size: inherit; }
 

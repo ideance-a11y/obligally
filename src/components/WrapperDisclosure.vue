@@ -7,9 +7,16 @@
       v-on:click="isDisplayed = !isDisplayed"
     >
       <slot name="button" />
-      <span class="ice-icon icon-question" aria-hidden="true"></span>
+      <span
+        v-if="iconClass"
+        :class="[`ice-icon`, iconClass]"
+        aria-hidden="true"
+      ></span>
     </button>
-    <div class="ice-disclosure-panel with-typo-styles" v-show="isDisplayed">
+    <div
+      class="ice-disclosure-panel with-typo-styles"
+      v-show="isDisplayed"
+    >
       <slot />
     </div>
   </div>
@@ -19,6 +26,10 @@
 import { ref } from 'vue'
 
 const isDisplayed = ref(false)
+
+defineProps<{
+  iconClass?: string
+}>()
 
 /** Liste des slots */
 defineSlots<{
