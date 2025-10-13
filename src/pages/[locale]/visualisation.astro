@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import WrapperDisclosure from '@/components/WrapperDisclosure.vue'
 
 import infographie from '@assets/img/Arbre.jpg'
 
@@ -11,20 +12,12 @@ const t = await initI18n(lang)
 export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
 }
+
+import PageContentFr from '@/content/pages/visualisation.fr.astro'
+import PageContentEn from '@/content/pages/visualisation.en.astro'
+
+const PageContent = lang === 'fr' ? PageContentFr : PageContentEn
 ---
-
-<script>
-  const discBtn = document.querySelector('.ice-disclosure-heading')
-
-  const toggleExpanded = () => {
-    discBtn?.setAttribute(
-      'aria-expanded',
-      (!(discBtn.getAttribute('aria-expanded') === 'true')).toString()
-    )
-  }
-
-  discBtn?.addEventListener('click', toggleExpanded)
-</script>
 
 <Layout
   lang={lang}
@@ -45,19 +38,6 @@ export async function getStaticPaths() {
   </div>
 
   <div class="ice-container">
-    <img
-      class="ice-infographic"
-      alt="{t'(visualisation.image_alt)}"
-      src={infographie.src}
-    />
-    <div class="ice-disclosure">
-      <button
-        type="button"
-        class="ice-disclosure-heading"
-        aria-expanded="false"
-        ><h2>Description détaillée de l'infographie</h2></button
-      >
-      <div class="ice-disclosure-panel with-typo-styles">Description détaillée...</div>
-    </div>
+    <PageContent />
   </div>
 </Layout>

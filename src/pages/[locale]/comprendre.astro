@@ -9,6 +9,11 @@ const t = await initI18n(lang)
 export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
 }
+
+import PageContentFr from '@/content/pages/comprendre.fr.astro'
+import PageContentEn from '@/content/pages/comprendre.en.astro'
+
+const PageContent = lang === 'fr' ? PageContentFr : PageContentEn
 ---
 
 <Layout
@@ -30,16 +35,6 @@ export async function getStaticPaths() {
   </div>
 
   <div class="ice-page-content ice-container is-narrow with-typo-styles">
-    <h2 class="ice-title-level-2">Champ d'application</h2>
-    <p class="ice-subtitle">Qu'est-ce-qui est concerné ?</p>
-    <p>Tout contenu numérique, y compris :</p>
-    <ul>
-      <li>Site web,</li>
-      <li>Application mobile,</li>
-      <li>Internet,</li>
-      <li>Intranet,</li>
-      <li>Progiciel,</li>
-      <li>Mobilier urbain numérique</li>
-    </ul>
+    <PageContent />
   </div>
 </Layout>
