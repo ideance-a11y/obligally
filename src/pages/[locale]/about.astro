@@ -9,6 +9,11 @@ const t = await initI18n(lang)
 export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
 }
+
+import PageContentFr from '@/content/pages/about.fr.astro'
+import PageContentEn from '@/content/pages/about.en.astro'
+
+const PageContent = lang === 'fr' ? PageContentFr : PageContentEn
 ---
 
 <Layout
@@ -16,4 +21,8 @@ export async function getStaticPaths() {
   pageTitle={t('nav.about')}
 >
   <h1 class="ice-page-title">{t('nav.about')}</h1>
+
+  <div class="ice-page-content ice-container is-narrow with-typo-styles">
+    <PageContent />
+  </div>
 </Layout>
