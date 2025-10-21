@@ -69,11 +69,11 @@ export const fr = {
   summary: {
     public: `Vous êtes un organisme public (ou assimilé).`,
     private: `Vous êtes une entreprise privée.`,
-    over250m: `Votre chiffre d'affaires est supérieur à 250 millions d'euros`,
-    over2m: `Votre chiffre d'affaires est supérieur à 2 millions d'euros`,
-    below2m: `Votre chiffre d'affaires est inférieur à 2 millions d'euros`,
-    provide_service: `Vote entreprise fournit un service`,
-    no_service: `Votre chiffre d'affaires est inférieur à 2 millions d'euros`,
+    over250m: `Votre chiffre d'affaires est supérieur à 250 millions d'euros.`,
+    over2m: `Votre chiffre d'affaires est supérieur à 2 millions d'euros.`,
+    below2m: `Votre chiffre d'affaires est inférieur à 2 millions d'euros.`,
+    provide_service: `Vote entreprise fournit un service.`,
+    no_service: `Vote entreprise ne fournit pas de service.`,
     over_employee_limit: `Votre entreprise compte plus de {count} employés et employées.`,
     below_employee_limit: `Votre entreprise compte moins de {count} employés et employées.`
   },
