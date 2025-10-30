@@ -13,8 +13,8 @@ export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
 }
 
-import PageContentFr from '@/content/pages/visualisation.fr.astro'
-import PageContentEn from '@/content/pages/visualisation.en.astro'
+import PageContentFr from '@/components/page-content/visualisation.fr.astro'
+import PageContentEn from '@/components/page-content/visualisation.en.astro'
 
 const PageContent = lang === 'fr' ? PageContentFr : PageContentEn
 ---

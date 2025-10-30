@@ -10,8 +10,8 @@ export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'fr' } }]
 }
 
-import PageContentFr from '@/content/pages/comprendre.fr.astro'
-import PageContentEn from '@/content/pages/comprendre.en.astro'
+import PageContentFr from '@/components/page-content/comprendre.fr.astro'
+import PageContentEn from '@/components/page-content/comprendre.en.astro'
 
 const PageContent = lang === 'fr' ? PageContentFr : PageContentEn
 ---
