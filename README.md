@@ -1,6 +1,6 @@
 # Ideance Obligally
 
-Affiche les obligations légales en termes d'accessbilité numérique des contenus et services numériques en France selon le profil.
+Site web permettant de mieux cerner les obligations légales en termes d'accessbilité numérique des contenus et services numériques en France selon le profil.
 
 ## Installation et informations techniques
 
@@ -52,18 +52,43 @@ En cas de soucis, consulter la documentation technique correspondante :
 
 ## Structure du projet 🚀
 
-Structure d'un projet Astro classique :
+Le framework utilisé est [Astro](https://astro.build/).
 
-```text
+L'arborescence de dossiers et fichiers du projet et la suivante:
+
+```
 /
 ├── public/
-│   └── favicon.svg
+│       └── fonts/
+│       └── img/
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
+│   └── assets/
+│       └── datas/
+│       └── i18n/
+│       └── styles/
+│       └── types/
+│   └── components/
+│   └── content/
+│       └── pages/
+│   └── layout/
 │   └── pages/
 │       └── index.astro
 └── package.json
 ```
+
+- `public`: dossier de structure d'Astro. Tous les assets statiques (qui n'ont pas besoin de compilation particulière), comme les images, fonts, etc. peuvent être placés dans ce dossier.
+  - `fonts`: polices d'écriture utilisées.
+  - `images`: images utilisées dans le projet.
+- `src`: dossier de structure d'Astro. Stoque les fichiers sources qui vont servir à builder le projet.
+  - `assets`:
+    - `data`: Données en rapports avec la directive européene et le RGAA. Divisées en différents contenus : lois, sanctions, services, champs d'applications, etc. Les données sont mergées dans le fichier `data.ts`.
+    - `i18n`: internationalisation. Clés de traduction dans les fichiers `fr.ts` et `en.ts` et script d'initialisation de i18n.
+    - `styles`: feuilles de styles découpées selon la thématique et les composants.
+    - `types`: définitions de types pour typescript.
+  - `components`: composants nécessaires au fonctionnement du projet. C'est ici qu'on aime mettre les composants Astro/React/Vue/Svelte/Preact.
+  - `content`: dossier de structure d'Astro. Stoque des "Collections". Format de données statiques internes d'Astro.
+    - `pages`: contenus des pages selon les différentes langues. Permet de fournir un contenu statique complet dans la langue désirée. Utiliser les chaines de traduciton i18n n'est pas obligatoire ici.
+  - `layout`: composants de structures de page. Coquilles communes de contenu de pages
+  - `pages`: dossier de sctructure d'Astro. Représente l'arborescence du site. Astro recherche les fichiers `.astro` ou `.md` dans le dossier `src/pages/`. Chaque page est exposée comme une route basée sur le nom de son fichier.
 
 Pour en savoir plus sur la structure de fichiers d'un projet Astro, se référer au [guide sur la structure du projet](https://docs.astro.build/fr/basics/project-structure/).

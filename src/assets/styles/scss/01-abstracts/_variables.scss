@@ -10,10 +10,10 @@ $transition-ftn: ease-in-out;
 
 //--- 2. BASE -----------------------------------------------------//
 ///--- Images
-$img-path: '../img';
+$img-path: '/images';
 
 ///--- Fonts
-$font-path: '../fonts';
+$font-path: '/fonts';
 $font-default: Arial, Helvetica, sans-serif;
 $font-global: 'Lato', $font-default;
 $font-heading: 'Lato', $font-default;
@@ -31,7 +31,6 @@ $gutter-vert-xl: 2rem;
 $gutter-hz-mob: 1.5rem;
 $gutter-hz: 2rem;
 
-
 //--- 3. COMPONENTS -----------------------------------------------//
 ///--- Links
 $link-c: $global-c;
@@ -46,12 +45,11 @@ $author-avatar-hgt-dtp: 15rem;
 $author-avatar-wth-mob: 11rem;
 $author-avatar-wth: 16rem;
 
-
 //--- 4. LAYOUT --------------------------------------------------//
 ///--- Header
 $header-hgt: 16rem;
 $header-hgt-mobile: 6.5rem;
-$header-bg: $primary-color linear-gradient($primary-darker 0%, transparent  80%);
+$header-bg: $primary-color linear-gradient($primary-darker 0%, transparent 80%);
 $header-c: $white-color;
 
 ///--- Nav main
