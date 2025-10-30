@@ -57,7 +57,6 @@ Le framework utilisé est [Astro](https://astro.build/).
 L'arborescence de dossiers et fichiers du projet et la suivante:
 
 ```
-/
 ├── public/
 │       └── fonts/
 │       └── img/
@@ -68,8 +67,9 @@ L'arborescence de dossiers et fichiers du projet et la suivante:
 │       └── styles/
 │       └── types/
 │   └── components/
+│       └── form/
+│       └── page-content/
 │   └── content/
-│       └── pages/
 │   └── layout/
 │   └── pages/
 │       └── index.astro
@@ -85,10 +85,51 @@ L'arborescence de dossiers et fichiers du projet et la suivante:
     - `i18n`: internationalisation. Clés de traduction dans les fichiers `fr.ts` et `en.ts` et script d'initialisation de i18n.
     - `styles`: feuilles de styles découpées selon la thématique et les composants.
     - `types`: définitions de types pour typescript.
-  - `components`: composants nécessaires au fonctionnement du projet. C'est ici qu'on aime mettre les composants Astro/React/Vue/Svelte/Preact.
+
+  - `components`: composants nécessaires au fonctionnement du projet. C'est ici qu'on aime mettre les composants Astro/React/Vue/Svelte/Preact
+    - `form`: composants de formulaires en vue.
+    - `page-content`: composants de contenus dans différentes langues pour les pages principales. Permet de fournir un contenu statique complet dans la langue désirée. Utiliser les chaines de traduciton i18n n'est pas obligatoire ici.
   - `content`: dossier de structure d'Astro. Stoque des "Collections". Format de données statiques internes d'Astro.
-    - `pages`: contenus des pages selon les différentes langues. Permet de fournir un contenu statique complet dans la langue désirée. Utiliser les chaines de traduciton i18n n'est pas obligatoire ici.
   - `layout`: composants de structures de page. Coquilles communes de contenu de pages
   - `pages`: dossier de sctructure d'Astro. Représente l'arborescence du site. Astro recherche les fichiers `.astro` ou `.md` dans le dossier `src/pages/`. Chaque page est exposée comme une route basée sur le nom de son fichier.
 
 Pour en savoir plus sur la structure de fichiers d'un projet Astro, se référer au [guide sur la structure du projet](https://docs.astro.build/fr/basics/project-structure/).
+
+## Traduction
+
+La traduction s'effectue de deux manière différentes dans le site:
+
+- Au moyen de clés de traduction : dossier `./src/assets/i18n`, les fichiers `fr.ts` et `en.ts`.
+- En "dur" (contenu html) dans les fichiers de contenu des pages : dossier `./src/components/page-content`.
+
+Pour activer le composant de menu de langue, ouvrir le fichier `./components/Header.astro` et décommenter les lignes suivantes:
+
+```md
+---
+…
+// import Lang from '@components/Lang.astro'
+…
+---
+…
+<!-- <Lang /> -->
+…
+```
+
+### Clés de traduction
+
+Toutes les clés sont disponibles dans le fichier `fr.ts`. Pour traduire en anglais, il suffit de dupliquer les mêmes clés dans le fichier `en.ts` et fournir l'équivalent en anglais.
+
+Si une clé non traduite est utilisée en anglais, c'est le texte en français qui apparaitra à la place, le français étant la langue par défaut.
+
+### Fichiers de traduction
+
+Pour le contenu de chaque page, il existe un fichier `.fr.astro` et `.en.astro`. L'un étant chargé pour le français, l'autre pour l'anglais.
+
+Il suffit de renseigner le contenu dans la langue dédiée en HTML. Il faudra voir avec Zelda les classes à utiliser sur les différents éléments pour appliquer la charte Ideance.
+
+## Déploiement
+
+1. Executer la commange `npm run build`
+2. Récupérer le contenu du dossier `./dist` (pages statiques)
+3. Les placer sur un serveur distant. Par exemple via FTP (le répertoire `/en` généré automatiquement n'est pas forcément à déplacer si l'anglais n'est pas souhaité).
+4. Prévoir éventuellement un fichier `.php` ou `.htacces` pour rerouter vers l'url en `/fr`.
