@@ -24,7 +24,7 @@ export const fr = {
     private_entity: `Une entreprise privée`,
     what_is_your_turnover: `Quel est votre chiffre d'affaires ?`,
     over_250m: `Supérieur à 250 millions d'euros`,
-    over_2m: `Supérieur à 2 millions d'euros`,
+    over_2m: `Compris entre 2 millions d'euros et 250 millions d'euros`,
     below_2m: `Inférieur à 2 millions d'euros`,
     how_many_employees: `Quel est votre nombre de salariés ?`,
     over_10: `10 ou plus`,
@@ -32,7 +32,7 @@ export const fr = {
     do_you_provide_service: `Fournissez-vous un service ?`,
     yes: `Oui`,
     no: `Non`,
-    service_yes: `Oui, je fournis un service concerné par la directive européene relative à l'accessibilité des produits et services.`,
+    service_yes: `Oui, je fournis un service concerné par la directive européenne relative à l'accessibilité des produits et services.`,
     service_no: `Non, je ne fournis pas l'un de ces services.`,
     previous: `Précédent`,
     next: `Suivant`,
@@ -45,15 +45,15 @@ export const fr = {
     your_legal_obligations: `Vos obligations légales`,
     application_field: `Champ d'application | Champs d'applications`,
     obligation: `Obligation | Obligations`,
-    sanction: `Santion | Les sanctions`,
+    sanction: `Santion | Sanctions`,
     control_organism: `Organisme de contrôle | Organismes de contrôle`,
     reference_text: `Texte de référence | Textes de référence`,
     no_explicit_obligation: `Pas d'obligation explicite`,
     financial_penalties: `Sanction financière | Sanctions financières`,
     legal_penalties: `Sanction juridique | Sanctions juridiques`,
-    what_is_a_service: `Qu'est ce qu'un service ?`,
-    type_of_service_concerned: `Type de service concerné | Type de services concernés`,
-    a_service_is: `Les services concernés sont :`,
+    what_is_a_service: `Qu'est-ce qu'un service ?`,
+    type_of_service_concerned: `Type de service concerné | Types de services concernés`,
+    a_service_is: `Les services concernés par la directive européenne relative à l'accessibilité des produits et services sont :`,
     result_title_subtext: `Ce que vous devez faire.`,
     application_field_subtext: `Qu'est-ce qui est concerné ?`,
     obligation_subtext: `Ce que la loi demande.`,
@@ -70,9 +70,9 @@ export const fr = {
     public: `Vous êtes un organisme public (ou assimilé).`,
     private: `Vous êtes une entreprise privée.`,
     over250m: `Votre chiffre d'affaires est supérieur à 250 millions d'euros.`,
-    over2m: `Votre chiffre d'affaires est supérieur à 2 millions d'euros.`,
+    over2m: `Votre chiffre d'affaires est compris entre 2 millions et 250 millions d'euros.`,
     below2m: `Votre chiffre d'affaires est inférieur à 2 millions d'euros.`,
-    provide_service: `Vote entreprise fournit un service.`,
+    provide_service: `Votre entreprise fournit un service concerné par la directive européenne relative à l'accessibilité des produits et services.`,
     no_service: `Vote entreprise ne fournit pas de service.`,
     over_employee_limit: `Votre entreprise compte plus de {count} employés et employées.`,
     below_employee_limit: `Votre entreprise compte moins de {count} employés et employées.`
@@ -82,31 +82,31 @@ export const fr = {
         <p>L'accessibilité est toutefois une nécessité et un droit fondamental pour les personnes en situation de handicap.</p>
         <p>Un contenu ou un service non-accessible représente une source de discrimination, qui est punie par la loi.</p>
         <p>N'hésitez pas à vous renseigner sur le sujet !</p>`,
-    service_source_content: `Pour aller plus loin : <a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj?locale=fr#002.002">Directive europééne 2019/882, chapitre 1, article 2 - Services concernés</a>.`
+    service_source_content: `Pour aller plus loin : <a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj?locale=fr#002.002">Directive européenne 2019/882, chapitre 1, article 2 - Services concernés</a>.`
   },
   law: {
     france: {
-      '2023_171': `Loi n° 2023-171 du 9 mars 2023 portant diverses dispositions d'adaptation au droit de l'Union européenne dans les domaines de l'économie, de la santé, du travail, des transports et de l'agriculture`,
-      '2005_102': `Loi n° 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées`
+      '2023_171': `<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000037388867/">Loi n° 2023-171 du 9 mars 2023 portant diverses dispositions d'adaptation au droit de l'Union européenne dans les domaines de l'économie, de la santé, du travail, des transports et de l'agriculture</a>`,
+      '2005_102': `<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000047282795/">Loi n° 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées</a>`
     },
     europe: {
-      '2016_2102': `Directive 2016/2102 relative à l'accessibilité des sites internet et des applications mobiles du secteur public`,
-      '2019_882': `Directive 2019/882 relative aux exigences en matière d'accessibilité applicables aux produits et services`
+      '2016_2102': `<a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=celex:32016L2102">Directive 2016/2102 relative à l'accessibilité des sites internet et des applications mobiles du secteur public</a>`,
+      '2019_882': `<a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32019L0882">Directive 2019/882 relative aux exigences en matière d'accessibilité applicables aux produits et services</a>`
     }
   },
   service: {
     audiovisual: `Service fournissant un accès à des services de médias audiovisuels | Services fournissants un accès à des services de médias audiovisuels`,
     digital_communication: `Service de communication électronique | Services de communication électronique`,
     transport: `Service de transport | Services de transports`,
-    bank: `Service banquaire | Services banquaires`,
+    bank: `Service bancaire | Services bancaires`,
     digital_book: `Livre numérique | Livres numériques`,
     ecommerce: `Commerce électronique (e-commerce)`,
     website: `Site web | Sites web`,
-    mobile_app: `Application mobile | Applications mobile`,
+    mobile_app: `Application mobile | Applications mobiles`,
     internet: `Internet`,
     intranet: `Intranet`,
     software_package: `Progiciel | Progiciels`,
-    digital_urban_furniture: `Mobilier urbain numérique | Mobiliers urbain numérique`
+    digital_urban_furniture: `Mobilier urbain numérique | Mobiliers urbains numériques`
   },
   obligation: {
     rgaa_compliance: `Conformité au @:standard.rgaa (@:standard.rgaa_long)`,
@@ -154,12 +154,12 @@ export const fr = {
       <p>Répondez à ce questionnaire et découvrez les obligations légales qui s'appliquent à votre situation ou à celle de votre entreprise.</p>`,
     option_2_titre: `Approfondir`,
     option_2_lien: `Ce que dit la loi :`,
-    option_2_description: ` <p>Vous voulez étudier le sujet en profondeur ?</p>
-      <p>Accédez à un article détaillé pour comprendre l'historique des obligations légales en France, et le détail du cadre légal actue.</p>`,
+    option_2_description: `<p>Vous voulez étudier le sujet en profondeur ?</p>
+      <p>Accédez à un article détaillé pour comprendre l'historique des obligations légales en France, et le détail du cadre légal actuel.</p>`,
     option_3_titre: `Synthétiser`,
     option_3_lien: `L'essentiel de la loi :`,
     option_3_description: ` <p>Vous préférez visualiser de manière synthétique ?</p>
-      <p>Une infographie vos permettra de découvrir en un coup d'oeil les règles en vigueur en matière d'accessibilité numérique.</p>`
+      <p>Une infographie vos permettra de découvrir en un coup d'œil les règles en vigueur en matière d'accessibilité numérique.</p>`
   },
   comprendre: {
     page_titre: `Approfondir`
