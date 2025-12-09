@@ -73,7 +73,7 @@ export const fr = {
     over2m: `Votre chiffre d'affaires est compris entre 2 millions et 250 millions d'euros.`,
     below2m: `Votre chiffre d'affaires est inférieur à 2 millions d'euros.`,
     provide_service: `Votre entreprise fournit un service concerné par la directive européenne relative à l'accessibilité des produits et services.`,
-    no_service: `Vote entreprise ne fournit pas de service.`,
+    no_service: `Vote entreprise ne fournit pas de service concerné par la directive européenne relative à l'accessibilité des produits et services.`,
     over_employee_limit: `Votre entreprise compte plus de {count} employés et employées.`,
     below_employee_limit: `Votre entreprise compte moins de {count} employés et employées.`
   },
