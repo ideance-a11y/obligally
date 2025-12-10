@@ -121,8 +121,8 @@ const cases: CaseData[] = [
     sanctionsId: ['five-class-fine', 'injunction-daily-fine', 'fine-in-europe'],
     controlOrganizations: [
       { id: 'dgccrf', servicesId: ['digital-book', 'ecommerce', 'transport'] },
-      { id: 'amf', servicesId: ['bank'] },
-      { id: 'bdf', servicesId: ['bank'] },
+      { id: 'amf', servicesId: ['bank_transparency'] },
+      { id: 'bdf', servicesId: ['bank_compliance'] },
       { id: 'arcom', servicesId: ['audiovisual'] },
       { id: 'arcep', servicesId: ['digital-communication'] }
     ]

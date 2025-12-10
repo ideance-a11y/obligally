@@ -101,6 +101,8 @@ export const fr = {
     digital_communication: `Service de communication électronique | Services de communication électronique`,
     transport: `Service de transport | Services de transports`,
     bank: `Service bancaire | Services bancaires`,
+    bank_compliance: `Service bancaire (pour la conformité)`,
+    bank_transparency: `Service bancaire (pour les éléments d'information et de transparence)`,
     digital_book: `Livre numérique | Livres numériques`,
     ecommerce: `Commerce électronique (e-commerce)`,
     website: `Site web | Sites web`,

@@ -32,6 +32,14 @@ export const services: Service[] = [
     name: 'service.bank'
   },
   {
+    id: 'bank_compliance',
+    name: 'service.bank_compliance'
+  },
+  {
+    id: 'bank_transparency',
+    name: 'service.bank_transparency'
+  },
+  {
     id: 'digital-book',
     name: 'service.digital_book'
   },
