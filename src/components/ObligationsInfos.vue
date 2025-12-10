@@ -203,6 +203,8 @@ function matchConditions(itemConditions: ItemConditions[]): boolean {
 
 /** Filtre un tableau de sanctions par type */
 function filterSanctions(sanctions: Sanction[], type: Sanction['type']) {
-  return sanctions.filter((sanction) => sanction?.type === type)
+  return sanctions.filter(
+    (sanction) => sanction?.type === type && sanction?.target.includes(props.entity)
+  )
 }
 </script>
