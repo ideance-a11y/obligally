@@ -21,6 +21,10 @@
       </h2>
       <p class="ice-subtitle text-center">{{ t('general.result_title_subtext') }}</p>
 
+      <p v-if="obligationResults.length > 1">
+        {{ t('general.multiple_obligations', { count: obligationResults.length }) }}
+      </p>
+
       <template
         v-for="result in obligationResults"
         :key="result.id"
@@ -152,7 +156,7 @@ import ListWithSingle from '@/components/ListWithSingle.vue'
 import type { Entity, Turnover, StringBoolean, ItemConditions } from '@/assets/types/global'
 import type { Sanction } from '@/assets/datas/sanctions'
 
-const t = inject<(key: string, number?: number) => string>('t')
+const t = inject<(key: string, number?: number | { count: number }) => string>('t')
 if (!t) throw Error('I18n non fourni')
 
 /** Les props correspondent aux données du formulaire */
