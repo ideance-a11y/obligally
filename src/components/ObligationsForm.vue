@@ -17,6 +17,12 @@
       <template v-slot:legend>
         <h2>{{ t('general.what_entity_are_you') }}</h2>
       </template>
+      <WrapperDisclosure iconClass="icon-question">
+        <template v-slot:button>
+          {{ t('general.what_is_a_public_organism') }}
+        </template>
+        <div v-html="t('html.public_organism_definition')"></div>
+      </WrapperDisclosure>
       <template
         v-if="isErrorEntity && isFormSubmitted"
         v-slot:error

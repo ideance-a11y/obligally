@@ -51,6 +51,7 @@ export const fr = {
     no_explicit_obligation: `Pas d'obligation explicite`,
     financial_penalties: `Sanction financière | Sanctions financières`,
     legal_penalties: `Sanction juridique | Sanctions juridiques`,
+    what_is_a_public_organism: `Qu'est ce qu'un organisme public ?`,
     what_is_a_service: `Qu'est-ce qu'un service ?`,
     type_of_service_concerned: `Type de service concerné | Types de services concernés`,
     a_service_is: `Les services concernés par la directive européenne relative à l'accessibilité des produits et services sont :`,
@@ -82,7 +83,8 @@ export const fr = {
         <p>L'accessibilité est toutefois une nécessité et un droit fondamental pour les personnes en situation de handicap.</p>
         <p>Un contenu ou un service non-accessible représente une source de discrimination, qui est punie par la loi.</p>
         <p>N'hésitez pas à vous renseigner sur le sujet !</p>`,
-    service_source_content: `Pour aller plus loin : <a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj?locale=fr#002.002">Directive européenne 2019/882, chapitre 1, article 2 - Services concernés</a>.`
+    service_source_content: `Pour aller plus loin : <a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj?locale=fr#002.002">Directive européenne 2019/882, chapitre 1, article 2 - Services concernés</a>.`,
+    public_organism_definition: `<p>Un organisme public est…</p>`
   },
   law: {
     france: {
