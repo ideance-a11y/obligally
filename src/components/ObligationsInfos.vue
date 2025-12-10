@@ -132,7 +132,7 @@
           </h3>
           <ListWithSingle :length="result.laws.length">
             <template v-slot:default="{ index }">
-              {{ t(result.laws[index].name) }}
+              <span v-html="t(result.laws[index].name)"></span>
             </template>
           </ListWithSingle>
         </article>
