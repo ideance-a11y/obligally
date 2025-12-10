@@ -10,6 +10,9 @@ export const fr = {
     comprendre: `Comprendre`,
     visualisation: `Visualiser`
   },
+  heading: {
+    simulation_subheading: `Entre 1 à 5 questions.`
+  },
   footer: {
     legal: `<p><b>Expertise, formations et audits accessibilité numérique.</b><br><b>Sensibilisation et aménagement pour le handicap en entreprise.</b></p><p>SAS au capital de 4000 €, immatriculée au <abbr title="Registre du Commerce et des Sociétés">RCS</abbr> de Rouen sous le numéro 888 808 383. Organisme de formation enregistré sous le numéro 28 76 06172 76.</p>
       <ul class="ice-menu"><li><a href="mailto:contact@ideance.fr">contact@ideance.fr</a></li><li><a href="tel:+33278775982">+33 (0)2 78 77 59 82</a></li></ul>`,
@@ -59,7 +62,8 @@ export const fr = {
     application_field_subtext: `Qu'est-ce qui est concerné ?`,
     obligation_subtext: `Ce que la loi demande.`,
     sanction_subtext: `Si vous ne respectez pas ces règles.`,
-    control_organism_subtext: `Qui contrôle ?`
+    control_organism_subtext: `Qui contrôle ?`,
+    multiple_obligations: `{count} obligations légales s'appliquent.`
   },
   error: {
     empty_entity: `Veuillez renseigner un type d'entité.`,
