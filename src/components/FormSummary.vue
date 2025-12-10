@@ -6,12 +6,32 @@
       class="ice-summary"
     >
       <!-- Icône dernière étape -->
-      <span v-if="currentStep === 10" class="ice-icon icon-company" aria-hidden="true"></span>
+      <span
+        v-if="currentStep === 10"
+        class="ice-icon icon-company"
+        aria-hidden="true"
+      ></span>
       <!-- Icône sinon -->
-      <span v-else class="ice-icon icon-summary" aria-hidden="true"></span>
+      <span
+        v-else
+        class="ice-icon icon-summary"
+        aria-hidden="true"
+      ></span>
       <div class="ice-summary-body">
-        <h2 id="summary-title" v-if="currentStep === 10" class="ice-summary-title">{{ t('general.summary_result') }}</h2>
-        <h2 v-else id="summary-title" class="ice-summary-title">{{ t('general.summary') }}</h2>
+        <h2
+          id="summary-title"
+          v-if="currentStep === 10"
+          class="ice-summary-title"
+        >
+          {{ t('general.summary_result') }}
+        </h2>
+        <h2
+          v-else
+          id="summary-title"
+          class="ice-summary-title"
+        >
+          {{ t('general.summary') }}
+        </h2>
         <p>
           <template v-if="entity === 'public'">{{ t('summary.public') }}</template>
           <template v-if="entity === 'private'">{{ t('summary.private') }}</template>

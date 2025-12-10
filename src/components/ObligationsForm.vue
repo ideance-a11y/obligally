@@ -82,7 +82,37 @@
       >
     </FieldsetGroup>
 
-    <!-- 2 : Service -->
+    <!-- 2 : Nombre d'employés -->
+    <FieldsetGroup
+      v-if="isDisplayedEmployees"
+      ref="fieldset-employees"
+    >
+      <template v-slot:legend>
+        <h2>{{ t('general.how_many_employees') }}</h2>
+      </template>
+      <template
+        v-if="isErrorEmployees && isFormSubmitted"
+        v-slot:error
+      >
+        {{ t('error.empty_employees') }}
+      </template>
+      <InputRadio
+        name="employeeLimit"
+        value="true"
+        required
+        v-model="exceedEmployeeLimitValue"
+        >{{ t('general.over_10') }}</InputRadio
+      >
+      <InputRadio
+        name="employeeLimit"
+        value="false"
+        required
+        v-model="exceedEmployeeLimitValue"
+        >{{ t('general.below_10') }}</InputRadio
+      >
+    </FieldsetGroup>
+
+    <!-- 3 : Service -->
     <FieldsetGroup
       v-if="isDisplayedService"
       ref="fieldset-service"
@@ -121,36 +151,6 @@
         required
         v-model="provideServiceValue"
         >{{ t('general.service_no') }}</InputRadio
-      >
-    </FieldsetGroup>
-
-    <!-- 3 : Nombre d'employés -->
-    <FieldsetGroup
-      v-if="isDisplayedEmployees"
-      ref="fieldset-employees"
-    >
-      <template v-slot:legend>
-        <h2>{{ t('general.how_many_employees') }}</h2>
-      </template>
-      <template
-        v-if="isErrorEmployees && isFormSubmitted"
-        v-slot:error
-      >
-        {{ t('error.empty_employees') }}
-      </template>
-      <InputRadio
-        name="employeeLimit"
-        value="true"
-        required
-        v-model="exceedEmployeeLimitValue"
-        >{{ t('general.over_10') }}</InputRadio
-      >
-      <InputRadio
-        name="employeeLimit"
-        value="false"
-        required
-        v-model="exceedEmployeeLimitValue"
-        >{{ t('general.below_10') }}</InputRadio
       >
     </FieldsetGroup>
 
@@ -252,8 +252,8 @@ const isFormSubmitted = ref(false)
  * Etape courante du formulaire:
  * - 0 : Entité
  * - 1 : Chiffre d'affaires
- * - 2 : Service ou non
- * - 3 : Nombre d'employés
+ * - 2 : Nombre d'employés
+ * - 3 : Service ou non
  * - 10 : Résultats
  */
 type Step = 0 | 1 | 2 | 3 | 10
@@ -282,11 +282,14 @@ const nextStep = computed<Step | null>(() => {
       if (entityValue.value === 'public') return 10
       if (entityValue.value === 'private') return 1
     case 1:
-      return 2
+      if (turnoverValue.value === 'below2m') return 2
+      return 3
     case 2:
-      if (provideServiceValue.value === 'false') return 10
-      if (turnoverValue.value !== 'over2m' && provideServiceValue.value === 'true') return 10
-      if (turnoverValue.value !== 'below2m' && provideServiceValue.value === 'true') return 3
+      if (exceedEmployeeLimitValue.value === 'true') return 3
+      return 10
+    // if (provideServiceValue.value === 'false') return 10
+    // if (turnoverValue.value !== 'over2m' && provideServiceValue.value === 'true') return 10
+    // if (turnoverValue.value !== 'below2m' && exceedEmployeeLimitValue.value === 'true') return 3
     case 3:
       return 10
     case 10:
@@ -301,8 +304,8 @@ const nextStep = computed<Step | null>(() => {
  */
 const isDisplayedEntity = computed(() => currentStep.value === 0)
 const isDisplayedTurnover = computed(() => currentStep.value === 1)
-const isDisplayedService = computed(() => currentStep.value === 2)
-const isDisplayedEmployees = computed(() => currentStep.value === 3)
+const isDisplayedEmployees = computed(() => currentStep.value === 2)
+const isDisplayedService = computed(() => currentStep.value === 3)
 const isDisplayedResults = computed(() => currentStep.value === 10)
 const isDisplayedPreviousBtn = computed(() => ![0, 10].includes(currentStep.value))
 const isDisplayedNextBtn = computed(() => ![10].includes(currentStep.value))
@@ -313,10 +316,10 @@ const isDisplayedResetBtn = computed(() => [10].includes(currentStep.value))
  */
 const isErrorEntity = computed(() => currentStep.value === 0 && entityValue.value === '')
 const isErrorTurnover = computed(() => currentStep.value === 1 && turnoverValue.value === '')
-const isErrorService = computed(() => currentStep.value === 2 && provideServiceValue.value === '')
 const isErrorEmployees = computed(
-  () => currentStep.value === 3 && exceedEmployeeLimitValue.value === ''
+  () => currentStep.value === 2 && exceedEmployeeLimitValue.value === ''
 )
+const isErrorService = computed(() => currentStep.value === 3 && provideServiceValue.value === '')
 const isError = computed(
   () =>
     isErrorEntity.value || isErrorTurnover.value || isErrorService.value || isErrorEmployees.value
@@ -333,7 +336,7 @@ const obligationsTitleElem = useTemplateRef('obligations-title')
 
 /** Étape de formulaire précédente */
 function handleFormPrevious() {
-  previousStep.value !== null && setCurrentStep(previousStep.value)
+  if (previousStep.value !== null) setCurrentStep(previousStep.value)
 }
 
 /** Soumission du formulaire à chaque étape */
@@ -370,8 +373,8 @@ function handleFormChange(evt: Event) {
 
   // Si modification d'une valeur "précédente", reset des valeurs des étapes suivantes
   if (['entity'].includes(name)) turnoverValue.value = ''
-  if (['entity', 'turnover'].includes(name)) provideServiceValue.value = ''
-  if (['entity', 'turnover', 'service'].includes(name)) exceedEmployeeLimitValue.value = ''
+  if (['entity', 'turnover'].includes(name)) exceedEmployeeLimitValue.value = ''
+  if (['entity', 'turnover', 'employeeLimit'].includes(name)) provideServiceValue.value = ''
 }
 
 /**
