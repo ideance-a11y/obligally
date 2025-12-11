@@ -17,10 +17,12 @@ body {
   font-size: $font-body-size;
   font-weight: normal;
   line-height: $font-body-l-hgt;
-
-  //text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
-  //-moz-osx-font-smoothing: grayscale;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $global-c;
+    color: $white-color;
+  }
 
   @include for-desktop {
     font-size: $font-body-size-dtp;

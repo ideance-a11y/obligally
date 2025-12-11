@@ -40,6 +40,12 @@ $card-c: $global-c;
   text-align: center;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
+  @media (prefers-color-scheme: dark) {
+    background-color: $tertiary-color;
+    box-shadow: rgba(0, 0, 0, 0.55) 0 0.2rem 0.8rem 0;
+    color: $white-color;
+  }
+
   &:hover,
   &:focus-within {
     box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
@@ -112,6 +118,10 @@ $card-c: $global-c;
     text-align: left;
     line-height: 1.6;
 
+    @media (prefers-color-scheme: dark) {
+      color: $white-color;
+    }
+
     @include for-tablet-and-upper {
       margin-top: -0.5rem;
     }
@@ -132,6 +142,10 @@ $card-c: $global-c;
     a {
       @include link($card-heading-c);
       font-weight: bold;
+
+      @media (prefers-color-scheme: dark) {
+        color: $white-color;
+      }
 
       &:before {
         content: "";
@@ -198,6 +212,10 @@ $card-c: $global-c;
     font-size: 6rem;
     color: $tertiary-color;
 
+    @media (prefers-color-scheme: dark) {
+      color: $white-color;
+    }
+
     @include for-tablet-and-upper {
       margin-bottom: 1.6rem;
     }
@@ -209,6 +227,10 @@ $card-c: $global-c;
     font-size: 2.3rem;
     font-weight: 900;
     line-height: 1.4;
+
+    @media (prefers-color-scheme: dark) {
+      color: $white-color;
+    }
 
     @include for-tablet-and-upper {
       font-size: 2.2rem;

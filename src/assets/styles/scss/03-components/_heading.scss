@@ -121,6 +121,14 @@
   font-weight: bold;
   font-size: 1.7rem;
 
+  @include for-desktop {
+    font-size: 1.9rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: $tertiary-light;
+  }
+
   &.text-center {
     text-align: center;
   }

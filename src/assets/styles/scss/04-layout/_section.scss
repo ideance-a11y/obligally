@@ -3,8 +3,9 @@
   max-width: 100%;
   margin-bottom: 6rem;
 
-  @include for-tablet-and-upper {
-    margin-bottom: 6rem;
+  &.wrapper-obligation + .wrapper-obligation {
+    padding-top: 6rem;
+    border-top: 0.15rem solid $primary-darker;
   }
 
   &.is-narrow {

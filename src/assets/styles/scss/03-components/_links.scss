@@ -25,6 +25,16 @@
     color: $link-hover-c;
     text-decoration-color: transparent;
   }
+
+  @media (prefers-color-scheme: dark) {
+    color: $white-color;
+    text-decoration-color: #4692B4;
+
+    &:hover,
+    &:focus {
+      color: $white-color;
+    }
+  }
 }
 
 .ice-link {

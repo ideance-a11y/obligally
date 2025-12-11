@@ -53,15 +53,24 @@
         border-radius: 1.3rem;
         border: 0.2rem solid $global-c;
         @include transition-default(border-color, box-shadow);
+
+        @media (prefers-color-scheme: dark) {
+          border-color: $white-color;
+        }
       }
     }
 
     &:focus {
       & + label:before {
-        outline-color: transparent;
+        outline: 0.2rem solid transparent;
         border-color: $primary-color;
         outline-offset: -0.2rem;
         box-shadow: 0 0 0 0.5rem rgba(10, 66, 247, 0.3);
+
+        @media (prefers-color-scheme: dark) {
+          border-color: $white-color;
+          box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.3);
+        }
       }
     }
 
@@ -78,6 +87,11 @@
         background: $primary-color;
         border: 0.2rem solid $primary-color;
         border-radius: 1rem;
+
+        @media (prefers-color-scheme: dark) {
+          background-color: $white-color;
+          border-color: $white-color;
+        }
       }
     }
   }

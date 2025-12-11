@@ -8,6 +8,13 @@
   text-align: left;
   line-height: 1.45;
 
+  @media (prefers-color-scheme: dark) {
+    background: darken($global-c, 2%);
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.55) 0 0.2rem 0.8rem 0;
+    color: $white-color;
+  }
+
   @include for-tablet-and-upper {
     padding: 2.2rem 2.8rem;
     line-height: 1.55;
@@ -52,9 +59,20 @@
     text-align: left;
   }
 
+  @media (prefers-color-scheme: dark) {
+    background: darken($global-c, 2%);
+    border-color:$white-color;
+    //box-shadow: rgba(0, 0, 0, 0.55) 0 0.2rem 0.8rem 0;
+    color: $white-color;
+  }
+
   .ice-icon {
     color: $tertiary-color;
     font-size: 6rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: $secondary-color;
+    }
 
     @include for-tablet-and-upper {
       font-size: 5.5rem;
@@ -76,6 +94,10 @@
     font-size: 2.1rem;
     font-weight: 900;
     line-height: 1.2;
+
+    @media (prefers-color-scheme: dark) {
+      color: $white-color;
+    }
 
     @include for-desktop {
       margin-bottom: 0.7rem;

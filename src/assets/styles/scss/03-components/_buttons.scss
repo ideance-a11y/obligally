@@ -23,11 +23,18 @@ $button-tertiary-c: $global-c;
   text-decoration: none;
   text-align: center;
   @include transition-default(background-color, box-shadow, color);
-  //outline-offset: 0.2rem;
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 0.3rem 0.4rem 0 rgba(0,0,0,0.3);
+  }
 
   &:hover,
   &:focus-within {
     box-shadow: 0 0.3rem 0.8rem 0 rgba(0,0,0,0.24);
+
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 0 0.3rem 0.4rem 0 rgba(0,0,0,0.55);
+    }
   }
 
   @include for-tablet-and-upper {
@@ -44,11 +51,21 @@ $button-tertiary-c: $global-c;
   background: $button-primary-bg;
   color: $button-primary-c;
 
+  @media (prefers-color-scheme: dark) {
+    background-color: $tertiary-color;
+    color: $white-color;
+  }
+
   &:hover,
   &:focus {
     opacity: 1;
     background: darken($primary-color, 10%);
     color: $button-primary-c;
+
+    @media (prefers-color-scheme: dark) {
+      background: darken($tertiary-color, 5%);
+      color: $white-color;
+    }
   }
 }
 
@@ -59,11 +76,22 @@ $button-tertiary-c: $global-c;
   border: 0.2rem solid $button-secondary-c;
   color: $button-secondary-c;
 
+  @media (prefers-color-scheme: dark) {
+    background: $global-c;
+    border-color: $tertiary-color;
+    color: darken($white-color, 10%);
+  }
+
   &:hover,
   &:focus {
     opacity: 1;
     color: darken($primary-color, 10%);
     border-color: darken($primary-color, 10%);
+
+    @media (prefers-color-scheme: dark) {
+      border-color: lighten($tertiary-color, 8%);
+      color: $white-color;
+    }
   }
 
   &.is-small {
@@ -88,6 +116,12 @@ $button-tertiary-c: $global-c;
   line-height: 1.3;
   text-transform: uppercase;
 
+  @media (prefers-color-scheme: dark) {
+    border-color: $tertiary-color;
+    background-color: $tertiary-color;
+    color: $white-color;
+  }
+
   &.with-icon {
     padding: 0.4rem 1.6rem 0.2rem 0.7rem;
 
@@ -96,136 +130,10 @@ $button-tertiary-c: $global-c;
       margin-right: 0.5rem;
       font-size: 2.1rem;
       color: $primary-color;
+
+      @media (prefers-color-scheme: dark) {
+        color: $global-c;
+      }
     }
   }
 }
-
-/*@mixin button-style($style: 'primary', $size: 'normal', $icon-only: 'no', $shape: 'normal') {
-  display: inline-flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  box-shadow: none;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-
-  @if ($style == 'primary') {
-    background: $button-primary-bg;
-    color: $button-primary-c;
-    @include transition-default(background-color, background-image, box-shadow);
-
-    &:hover,
-    &:focus {
-      opacity: 1;
-      background: darken($primary-color, 5%);
-      color: $button-primary-c;
-      box-shadow: 0 0 0 0.5rem rgba($primary-color, 0.25);
-    }
-
-    .ice-icon {
-      color: $secondary-color;
-    }
-
-  } @else if ($style =='secondary') {
-    background: $button-secondary-bg;
-    border: 0.1rem solid $button-secondary-bd-c;
-    color: $button-secondary-c;
-    font-weight: 900;
-    letter-spacing: 0.025rem;
-    @include transition-default(color, box-shadow);
-
-    &:hover,
-    &:focus {
-      opacity: 1;
-      background: lighten($button-secondary-bg, 2%);
-      color: darken($button-secondary-c, 5%);
-      box-shadow: 0 0 0 0.5rem rgba($button-secondary-bd-c, 0.25);
-    }
-
-    .ice-icon {
-      color: $red-color;
-    }
-  }
-
-  @if ($shape == 'round') {
-    @if ($size == 'small') {
-      min-height: 3rem;
-      padding: 0.4rem 1.5rem 0.3rem;
-      font-size: 1.2rem;
-      line-height: 1.3;
-      border-radius: 1.5rem;
-    }
-    @else {
-      min-height: 3.8rem;
-      width: 3.8rem;
-      border-radius: 1.9rem;
-      font-size: 1.5rem;
-      line-height: 1;
-
-      @include for-tablet-and-upper {
-        min-height: 4.2rem;
-        width: 4.2rem;
-        border-radius: 2.1rem;
-        font-size: 1.7rem;
-      }
-    }
-  }
-  @else {
-    @if ($size == 'small') {
-      min-height: 2.8rem;
-      padding: 0.4rem 1.3rem 0.3rem;
-      border-radius: 1.4rem;
-      font-size: 1.2rem;
-      line-height: 1.2;
-
-      @include for-tablet-and-upper {
-        font-size: 1.25rem;
-      }
-    }
-    @else {
-      min-height: 3.2rem;
-      padding: 0.7rem 1.8rem;
-      border-radius: 2.5rem;
-      font-size: 1.3rem;
-      line-height: 1.3;
-
-      @include for-tablet-and-upper {
-        min-height: 3.6rem;
-        border-radius: 1.8rem;
-        font-size: 1.4rem;
-      }
-
-      @include for-large-screen {
-        min-height: 3.8rem;
-        padding: 0.6rem 2.3rem 0.5rem;
-        border-radius: 2rem;
-      }
-    }
-  }
-
-  @if ($icon-only == 'yes') {
-    .ice-icon {
-      margin: 0;
-      font-size: 2.4rem;
-
-      @if ($style == 'primary') {
-        color: $secondary-color;
-      } @else {
-        color: $button-secondary-c;
-      }
-    }
-  } @else {
-    .ice-icon {
-      margin-right: 1rem;
-
-      &.icon-chevrons-left-bold,
-      &.icon-chevrons-right-bold {
-        margin-right: 1.2rem;
-      }
-    }
-  }
-}*/

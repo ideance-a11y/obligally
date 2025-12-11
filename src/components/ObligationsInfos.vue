@@ -21,7 +21,7 @@
       </h2>
       <p class="ice-subtitle text-center">{{ t('general.result_title_subtext') }}</p>
 
-      <p v-if="obligationResults.length > 1">
+      <p class="ice-block" v-if="obligationResults.length > 1">
         {{ t('general.multiple_obligations', { count: obligationResults.length }) }}
       </p>
 
@@ -29,7 +29,7 @@
         v-for="result in obligationResults"
         :key="result.id"
       >
-        <article class="wrapper-obligation">
+        <article class="ice-section wrapper-obligation">
           <!-- Champ d'application -->
           <h3 class="ice-title-level-2">{{ t('general.application_field') }}</h3>
           <p class="ice-subtitle">{{ t('general.application_field_subtext') }}</p>

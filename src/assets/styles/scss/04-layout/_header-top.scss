@@ -14,6 +14,11 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
     background: $header-top-bg;
     box-shadow: $header-top-bx-shw;
     color: $header-top-c;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $header-top-c;
+      color: $header-top-bg;
+    }
   }
 }
 
@@ -78,6 +83,11 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
       background: white;
       box-shadow: 0 0.3rem 0.4rem 0 rgba(0, 0, 0, 0.15);
       @include transition-default(left);
+
+      @media (prefers-color-scheme: dark) {
+        box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.55);
+        background: $global-c;
+      }
     }
 
     li {
@@ -93,9 +103,17 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
     @include link($global-c, $primary-darker, transparent);
     font-size: 1.9rem;
 
+    @media (prefers-color-scheme: dark) {
+      @include link($white-color, $white-color, transparent);
+    }
+
     @include for-tablet-and-upper {
       @include link($link-c, transparent, $link-underline-c);
       font-size: 1.5rem;
+
+      @media (prefers-color-scheme: dark) {
+        @include link($white-color, transparent, $white-color);
+      }
     }
 
     &[aria-current="page"] {
