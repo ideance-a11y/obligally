@@ -88,7 +88,13 @@ export const fr = {
         <p>Un contenu ou un service non-accessible représente une source de discrimination, qui est punie par la loi.</p>
         <p>N'hésitez pas à vous renseigner sur le sujet !</p>`,
     service_source_content: `Pour aller plus loin : <a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj?locale=fr#002.002">Directive européenne 2019/882, chapitre 1, article 2 - Services concernés</a>.`,
-    public_organism_definition: `<p>Un organisme public est…</p>`
+    public_organism_definition: `<p>Les organismes concernés sont :</p>
+        <ul>
+        	<li>Les personnes morales de droit public : l’État, les collectivités territoriales (départements, régions, agglomérations…), les établissements publics (hôpitaux, universités, caisses de sécurité sociales…), les groupements d’intérêt public, etc.</li>
+        	<li>Les organismes de droit privé délégataires d’une mission de service public.</li>
+        	<li>Les organismes créés pour satisfaire des besoins d’intérêt général ayant un caractère autre qu’industriel ou commercial (sociétés privées d’exploitation de lignes de transport en commun par exemple).</li>
+        </ul>
+        <p><a href="https://accessibilite.numerique.gouv.fr/obligations/champ-application/">Voir la définition complète sur le site du RGAA</a>.</p>`
   },
   law: {
     france: {
