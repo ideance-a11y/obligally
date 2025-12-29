@@ -7,11 +7,11 @@ export const fr = {
     home: `Accueil`,
     about: `À propos`,
     simulation: `Simuler`,
-    comprendre: `Comprendre`,
+    comprendre: `Approfondir`,
     visualisation: `Visualiser`
   },
   heading: {
-    simulation_subheading: `Entre 1 à 5 questions.`
+    simulation_subheading: `Entre 1 et 5 questions.`
   },
   footer: {
     legal: `<p><b>Expertise, formations et audits accessibilité numérique.</b><br><b>Sensibilisation et aménagement pour le handicap en entreprise.</b></p><p>SAS au capital de 4000 €, immatriculée au <abbr title="Registre du Commerce et des Sociétés">RCS</abbr> de Rouen sous le numéro 888 808 383. Organisme de formation enregistré sous le numéro 28 76 06172 76.</p>
