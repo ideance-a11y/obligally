@@ -33,6 +33,22 @@
     background-color: #feeced;
   }
 
+  &.is-blue {
+    background: #e8f2f6;
+    border-left: 0.4rem solid #8ebed3;
+    border-radius: 0.3rem;
+    color: $global-c;
+    font-weight: normal;
+  }
+
+  &.is-green {
+    background-color: #eaf6e8;
+    border-left: 0.4rem solid #7cc770;
+    border-radius: 0.3rem;
+    color: $global-c;
+    font-weight: normal;
+  }
+
   &.no-margin-top {
     margin-top: 0;
   }

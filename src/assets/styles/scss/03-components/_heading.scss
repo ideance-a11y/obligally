@@ -5,68 +5,83 @@
 
 %h1 {
   @extend %heading-base;
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   font-weight: 900;
   line-height: 1.35;
   font-weight: 900;
   text-align: center;
 
   @include for-tablet {
-    font-size: 2.7rem;
+    font-size: 2.8rem;
   }
 
   @include for-desktop {
-    font-size: 2.8rem;
+    font-size: 2.9rem;
     line-height: 1.3;
   }
 }
 
 %h2 {
   @extend %heading-base;
-  margin-bottom: 2.3rem;
+	margin-top: 4rem;
+  margin-bottom: 1.6rem;
   color: $global-c;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   line-height: 1.3;
   font-weight: 900;
 
   @include for-tablet {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 
   @include for-desktop {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     line-height: 1.2;
+  }
+
+  @include for-large-screen {
+    margin-top: 5rem;
   }
 }
 
 %h3 {
   @extend %heading-base;
+	margin-top: 3rem;
   margin-bottom: 1.8rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 900;
   line-height: 1.35;
 
   @include for-tablet {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   @include for-desktop {
     margin-bottom: 2.6rem;
-    font-size: 2.4rem;
+    font-size: 2.1rem;
+  }
+
+  @include for-large-screen {
+    margin-top: 4rem;
   }
 }
 
 %h4 {
   @extend %heading-base;
+	margin-top: 3rem;
   margin-bottom: 1.8rem;
   color: $global-c;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 900;
   line-height: 1.4;
 
   @include for-desktop {
     margin-bottom: 2.5rem;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+  }
+
+  @include for-tablet-and-upper {
+    margin-top: 4.2rem;
   }
 }
 
@@ -110,8 +125,36 @@
 .ice-title-level-2 {
   @extend %h2;
 
+  &.no-margin-top {
+    margin-top: 0;
+  }
+
   &:not(.with-no-subtitle) {
     margin-bottom: 0.3rem;
+  }
+}
+
+.ice-supra-title {
+  display: block;
+  margin-top: 4.5rem;
+  margin-bottom: 1rem;
+  padding: 1.2rem 1.8rem;
+  background: linear-gradient(to right, $primary-color, $primary-darker);
+  border-radius: 0.5rem;
+  border: 0;
+  color: $white-color;
+  font-size: $font-body-size;
+  font-weight: normal;
+
+  @include for-tablet-and-upper {
+    margin-top: 6rem;
+    margin-bottom: 1.5rem;
+    padding: 1.2rem 2.2rem;
+    font-size: $font-body-size-dtp;
+  }
+
+  & + .ice-title-level-2 {
+    margin-top: 1.8rem;
   }
 }
 
@@ -136,5 +179,11 @@
 
 .ice-title-level-3 {
   @extend %h3;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.ice-title-level-4 {
+  @extend %h4;
+  color: darken($tertiary-color, 3%);
+  margin-bottom: 1rem;
 }

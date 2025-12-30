@@ -29,7 +29,7 @@
         v-for="result in obligationResults"
         :key="result.id"
       >
-        <article class="ice-section wrapper-obligation">
+        <article class="ice-section with-border-top">
           <!-- Champ d'application -->
           <h3 class="ice-title-level-2">{{ t('general.application_field') }}</h3>
           <p class="ice-subtitle">{{ t('general.application_field_subtext') }}</p>

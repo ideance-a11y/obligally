@@ -21,7 +21,7 @@
         <template v-slot:button>
           {{ t('general.what_is_a_public_organism') }}
         </template>
-        <div v-html="t('html.public_organism_definition')"></div>
+        <div v-html="t('html.public_organism_definition')" />
       </WrapperDisclosure>
       <template
         v-if="isErrorEntity && isFormSubmitted"

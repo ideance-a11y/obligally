@@ -1,43 +1,17 @@
-p,
-.ice-block,
-.ice-transcript,
-.ice-table,
-blockquote {
-	& + h2 {
-		margin-top: 4.8rem;
-
-		@include for-large-screen {
-			margin-top: 5.6rem;
-		}
-	}
-
-	& + h3 {
-		margin-top: 3.5rem;
-
-		@include for-large-screen {
-			margin-top: 4.2rem;
-		}
-	}
-
-	& + h4,
-	& + h5,
-	& + h6 {
-		margin-top: 4.5rem;
-
-		@include for-tablet-and-upper {
-			margin-top: 5.25rem;
-		}
-	}
-}
-
+//--- CITATIONS
 blockquote {
   margin-left: 0;
-  padding-left: 1.5rem;
+  padding: 0.8rem 0 0.8rem 1.6rem;
   border-left: 0.3rem solid $secondary-color;
   font-style: italic;
+  line-height: 1.7;
 
   @include for-tablet-and-upper {
-    padding-left: 2.2rem;
+    padding-left: 2.5rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -86,7 +60,7 @@ p {
 				width: 0.7rem;
 				margin-right: -3.2rem;
 				margin-top: 0.1rem;
-				background: $black-color;
+				background: $tertiary-color;
 				border-radius: 50%;
 
         @media (prefers-color-scheme: dark) {
@@ -109,24 +83,6 @@ p {
 
 		@include for-tablet-and-upper {
 			margin-bottom: 1.2rem;
-		}
-	}
-
-	ul + h2,
-	ol + h2 {
-		margin-top: 4.8rem;
-
-		@include for-large-screen {
-			margin-top: 5.6rem;
-		}
-	}
-
-	ul + h3,
-	ol + h3 {
-		margin-top: 3.5rem;
-
-		@include for-large-screen {
-			margin-top: 4.2rem;
 		}
 	}
 }
@@ -174,7 +130,7 @@ $gutter-typo-dtp-lg: 2.5rem;
 	}
 }
 
-//--- TABLES
+//--- TABLEAUX
 .ice-table {
 	display: block;
 	padding-bottom: 1.2rem;
@@ -232,30 +188,32 @@ $gutter-typo-dtp-lg: 2.5rem;
 	}
 }
 
-//--- PANNEAUX DÉROULANTS
+//--- PANNEAUX DÉPLIANTS
 .ice-disclosure {
 	display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include for-mobile {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
 
 	.ice-disclosure-heading {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    padding: 1.3rem 2rem;
+    padding: 1.3rem 1.8rem;
     background: transparent;
-    border-radius: 2.7rem;
     border: 0.1rem solid #D9D9D9;
+    border-radius: 0.8rem;
     color: $tertiary-color;
 		font-weight: bold;
-		text-align: center;
+    text-align: left;
+    line-height: 1.5;
     cursor: pointer;
     @include transition-default(border-radius, border);
-
-    h2 {
-      font-size: inherit;
-    }
 
     @media (prefers-color-scheme: dark) {
       background-color: #273646;
@@ -263,8 +221,23 @@ $gutter-typo-dtp-lg: 2.5rem;
       color: $white-color;
     }
 
+    @include for-mobile {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
     @include for-tablet-and-upper {
       padding: 1.5rem 2.5rem;
+      border-radius: 2.7rem;
+		  text-align: center;
+    }
+
+    h2,
+    h3,
+    h4,
+    & > * {
+      margin: 0;
+      font-size: inherit;
     }
 
     &[aria-expanded="true"] {
@@ -277,20 +250,15 @@ $gutter-typo-dtp-lg: 2.5rem;
       margin-left: 0.8rem;
     }
 	}
-
-  .ice-disclosure-heading > * {
-    margin: 0;
-    font-size: inherit;
-  }
 }
 
 .ice-disclosure-panel {
   display: block;
   width: 100%;
-  padding: 1.8rem 2.5rem;
+  padding: 1.8rem 1.8rem;
   background: none;
   border: 0.1rem solid #D9D9D9;
-  border-radius: 2rem;
+  border-radius: 0.8rem;
 
   @media (prefers-color-scheme: dark) {
     background-color: darken($global-c, 5%);
@@ -299,7 +267,8 @@ $gutter-typo-dtp-lg: 2.5rem;
   }
 
   @include for-tablet-and-upper {
-    padding: 2.2rem 4rem;
+    padding: 2.5rem 4rem;
+    border-radius: 2rem;
   }
 
   &:last-child {
@@ -318,74 +287,3 @@ $gutter-typo-dtp-lg: 2.5rem;
   margin-bottom: 2.5rem;
   border: 0.1rem solid $gray-3;
 }
-
-/*.ice-typography .ice-block {
-	background: #e8f2f6;
-	border: 0;
-	border-left: 0.4rem solid #8ebed3;
-	border-radius: 0.2rem;
-	text-align: left;
-	line-height: 1.6;
-
-	@include for-tablet-and-upper {
-		border-width: 0.5rem;
-	}
-
-	li:before {
-		background: #5D879A;
-	}
-
-	&.is-chapo {
-		border: 0;
-		font-weight: bold;
-		font-size: calc(#{$font-body-size} + 0.1rem);
-
-		@include for-tablet-and-upper {
-			font-size: calc(#{$font-body-size-dtp} + 0.1rem);
-		}
-	}
-
-	&.is-grey {
-		background-color: #ebebeb;
-		border-color: #adadad;
-
-		li:before {
-			background: #878787;
-		}
-	}
-
-	&.is-red {
-		background-color: #feeced;
-		border-color: #fdb2b9;
-
-		li:before {
-			background: #E45D68;
-		}
-	}
-
-	&.is-green {
-		background-color: #eaf6e8;
-		border-color: #7cc770;
-
-		li:before {
-			background: #439536;
-		}
-	}
-
-  p {
-    margin-bottom: 1.1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  ul {
-    margin-left: 2rem;
-
-    &:last-child,
-    & li:last-child {
-      margin-bottom: 0;
-    }
-  }
-}*/

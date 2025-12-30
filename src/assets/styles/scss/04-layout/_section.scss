@@ -3,8 +3,8 @@
   max-width: 100%;
   margin-bottom: 6rem;
 
-  &.wrapper-obligation + .wrapper-obligation {
-    padding-top: 6rem;
+  &.with-border-top {
+    //padding-top: 1rem;
     border-top: 0.15rem solid $primary-darker;
   }
 
@@ -20,3 +20,9 @@
     }
   }
 }
+
+.ice-block + .with-border-top {
+  padding-top: 0;
+  border-top: 0;
+}
+
