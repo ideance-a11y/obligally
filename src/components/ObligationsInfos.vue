@@ -8,7 +8,7 @@
       >
         {{ t('general.no_explicit_obligation') }}
       </h2>
-      <div v-html="t('html.no_legal_obligation_content')" />
+      <div v-html="t('html.no_legal_obligation_content')"></div>
     </template>
 
     <template v-else>
