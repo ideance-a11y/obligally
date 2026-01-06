@@ -140,6 +140,10 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
     @include transition-default(all);
   }
 
+  @media (prefers-color-scheme: dark) {
+    background: $global-c;
+  }
+
   &[aria-expanded="true"] {
     .line:nth-child(1) {
       transform: rotate(45deg);

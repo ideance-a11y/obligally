@@ -1,27 +1,32 @@
 .ice-block {
-  margin: 3rem auto;
-  padding: 1.8rem 1.8rem;
+  margin: 2rem auto;
+  padding: 1.8rem 1.8rem 2rem;
   background: $light-blue;
   border-radius: 1rem;
   color: $tertiary-color;
   font-weight: bold;
   text-align: left;
-  line-height: 1.45;
-
-  @media (prefers-color-scheme: dark) {
-    background: darken($global-c, 2%);
-    border: 0;
-    box-shadow: rgba(0, 0, 0, 0.55) 0 0.2rem 0.8rem 0;
-    color: $white-color;
-  }
+  line-height: 1.5;
 
   @include for-tablet-and-upper {
+    margin: 3rem auto;
     padding: 2.2rem 2.8rem;
     line-height: 1.55;
   }
 
   a {
     @include link($tertiary-color, $primary-darker);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: $tertiary-color;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.55) 0 0.2rem 0.8rem 0;
+    color: $white-color;
+
+    a {
+      @include link($white-color, $white-color);
+    }
   }
 
   p:last-child {
@@ -31,6 +36,11 @@
   &.is-red {
     color: darken(#C56D6F, 20%);
     background-color: #feeced;
+
+    @media (prefers-color-scheme: dark) {
+      //background: darken()
+      color: $white-color;
+    }
   }
 
   &.is-blue {
@@ -39,6 +49,19 @@
     border-radius: 0.3rem;
     color: $global-c;
     font-weight: normal;
+
+    a {
+      @include link($global-c, $tertiary-color);
+
+      @media (prefers-color-scheme: dark) {
+        @include link($white-color, $white-color);
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: $tertiary-color;
+      color: $white-color;
+    }
   }
 
   &.is-green {
@@ -47,6 +70,19 @@
     border-radius: 0.3rem;
     color: $global-c;
     font-weight: normal;
+
+    a {
+      @include link($global-c, $tertiary-color);
+
+      @media (prefers-color-scheme: dark) {
+        @include link($white-color, $white-color);
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: #3B7C30;
+      color: $white-color;
+    }
   }
 
   &.no-margin-top {
@@ -78,7 +114,6 @@
   @media (prefers-color-scheme: dark) {
     background: darken($global-c, 2%);
     border-color:$white-color;
-    //box-shadow: rgba(0, 0, 0, 0.55) 0 0.2rem 0.8rem 0;
     color: $white-color;
   }
 

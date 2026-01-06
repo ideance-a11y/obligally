@@ -1,10 +1,11 @@
 //--- CITATIONS
 blockquote {
-  margin-left: 0;
-  padding: 0.8rem 0 0.8rem 1.6rem;
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 0 0.9rem 2rem;
   border-left: 0.3rem solid $secondary-color;
+  border-radius: 0.2rem;
   font-style: italic;
-  line-height: 1.7;
+  line-height: 1.6;
 
   @include for-tablet-and-upper {
     padding-left: 2.5rem;
@@ -45,7 +46,11 @@ p {
 
 	ul {
 		@extend %reset-list;
-		margin-left: 2.7rem;
+		margin-left: 2.2rem;
+
+    @include for-tablet-and-upper {
+      margin-left: 2.6rem;
+    }
 
 		li {
 			position: relative;
@@ -54,17 +59,20 @@ p {
 				content: "";
 				position: absolute;
 				top: 1rem;
-				left: -2.4rem;
+				left: -2.2rem;
 				display: block;
 				height: 0.7rem;
 				width: 0.7rem;
-				margin-right: -3.2rem;
 				margin-top: 0.1rem;
 				background: $tertiary-color;
 				border-radius: 50%;
 
         @media (prefers-color-scheme: dark) {
           background-color: $secondary-color;
+        }
+
+        @include for-tablet-and-upper {
+          left: -2.6rem;
         }
 			}
 

@@ -1,6 +1,11 @@
 %heading-base {
   margin: 0;
   font-family: $font-heading;
+  color: $global-c;
+
+  @media (prefers-color-scheme: dark) {
+    color: $white-color;
+  }
 }
 
 %h1 {
@@ -25,7 +30,6 @@
   @extend %heading-base;
 	margin-top: 4rem;
   margin-bottom: 1.6rem;
-  color: $global-c;
   font-size: 2.1rem;
   line-height: 1.3;
   font-weight: 900;
@@ -70,8 +74,7 @@
   @extend %heading-base;
 	margin-top: 3rem;
   margin-bottom: 1.8rem;
-  color: $global-c;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 900;
   line-height: 1.4;
 
@@ -88,7 +91,6 @@
 %h5 {
   @extend %heading-base;
   margin-bottom: 1.9rem;
-  color: $global-c;
   font-size: 1.9rem;
   line-height: 1.4;
 
@@ -139,7 +141,7 @@
   margin-top: 4.5rem;
   margin-bottom: 1rem;
   padding: 1.2rem 1.8rem;
-  background: linear-gradient(to right, $primary-color, $primary-darker);
+  background: $primary-color linear-gradient(to right, $primary-color, $primary-darker);
   border-radius: 0.5rem;
   border: 0;
   color: $white-color;
@@ -151,6 +153,10 @@
     margin-bottom: 1.5rem;
     padding: 1.2rem 2.2rem;
     font-size: $font-body-size-dtp;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: $tertiary-color;
   }
 
   & + .ice-title-level-2 {
@@ -186,4 +192,8 @@
   @extend %h4;
   color: darken($tertiary-color, 3%);
   margin-bottom: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    color: $tertiary-light;
+  }
 }

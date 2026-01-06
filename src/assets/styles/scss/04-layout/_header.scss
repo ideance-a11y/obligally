@@ -13,6 +13,10 @@ $logo-hgt-dtp: 9rem;
 
   @include for-tablet-and-upper {
     background: $primary-color linear-gradient($primary-darker 5rem, transparent 80%);
+
+    @media (prefers-color-scheme: dark) {
+      background: #0711D4 linear-gradient(#7505BD 5rem, transparent 80%);
+    }
   }
 
   @include for-desktop {
@@ -68,7 +72,7 @@ $logo-hgt-dtp: 9rem;
   }
 
   @include for-very-large-screen {
-    padding: 3.5rem $col-3 5rem;
+    padding: 3.5rem $col-2 5rem;
   }
 
   .on-home & {
@@ -109,6 +113,10 @@ $logo-hgt-dtp: 9rem;
     &:before {
       z-index: -2;
       background: $header-bg;
+
+      @media (prefers-color-scheme: dark) {
+        background: $tertiary-color linear-gradient(#7505BD, #0711D4);
+      }
     }
 
     &:after {
