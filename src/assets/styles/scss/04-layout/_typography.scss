@@ -27,10 +27,6 @@ p {
 
 //--- LISTS
 .with-typo-styles {
-	@include for-mobile {
-		line-height: 1.65;
-	}
-
 	a {
 		@extend %link;
 	}
@@ -202,26 +198,21 @@ $gutter-typo-dtp-lg: 2.5rem;
   flex-direction: column;
   align-items: center;
 
-  @include for-mobile {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-
 	.ice-disclosure-heading {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    padding: 1.3rem 1.8rem;
+    margin: 0;
+    padding: 1.3rem 2rem;
     background: transparent;
     border: 0.1rem solid #D9D9D9;
-    border-radius: 0.8rem;
+    border-radius: 2.7rem;
     color: $tertiary-color;
 		font-weight: bold;
     text-align: left;
-    line-height: 1.5;
+    line-height: 1.35;
     cursor: pointer;
-    @include transition-default(border-radius, border);
+    //@include transition-default(width);
 
     @media (prefers-color-scheme: dark) {
       background-color: #273646;
@@ -229,12 +220,8 @@ $gutter-typo-dtp-lg: 2.5rem;
       color: $white-color;
     }
 
-    @include for-mobile {
-      margin-left: 1.5rem;
-      margin-right: 1.5rem;
-    }
-
     @include for-tablet-and-upper {
+      //width: auto;
       padding: 1.5rem 2.5rem;
       border-radius: 2.7rem;
 		  text-align: center;
@@ -252,10 +239,18 @@ $gutter-typo-dtp-lg: 2.5rem;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       border-bottom: 0;
+
+      @include for-small-mobile {
+        width: 100%;
+      }
+
+      .icon-plus:before {
+        content: "\e903";
+      }
     }
 
     .ice-icon {
-      margin-left: 0.8rem;
+      margin-left: 1rem;
     }
 	}
 }
@@ -263,10 +258,14 @@ $gutter-typo-dtp-lg: 2.5rem;
 .ice-disclosure-panel {
   display: block;
   width: 100%;
-  padding: 1.8rem 1.8rem;
+  padding: 1.8rem 1.8rem 2.4rem;
   background: none;
   border: 0.1rem solid #D9D9D9;
-  border-radius: 0.8rem;
+  border-radius: 2rem;
+
+  @include for-small-mobile {
+    border-radius: 0 0 2rem 2rem;
+  }
 
   @media (prefers-color-scheme: dark) {
     background-color: darken($global-c, 5%);
@@ -279,7 +278,7 @@ $gutter-typo-dtp-lg: 2.5rem;
     border-radius: 2rem;
   }
 
-  &:last-child {
+  p:last-child {
     margin-bottom: 0;
   }
 

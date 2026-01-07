@@ -21,7 +21,7 @@ $button-tertiary-c: $global-c;
   line-height: 1.3;
   text-transform: none;
   text-decoration: none;
-  text-align: center;
+  text-align: left;
   @include transition-default(background-color, box-shadow, color);
 
   @media (prefers-color-scheme: dark) {

@@ -93,7 +93,7 @@
 .ice-summary {
   margin: 2rem -1.5rem;
   padding: 2rem 2.5rem 2.5rem;
-  border: 0.2rem solid lighten($tertiary-color, 25%);
+  border: 0.2rem solid $tertiary-light;
   border-left: 0;
   border-right: 0;
   color: $global-c;
@@ -105,8 +105,9 @@
     flex-flow: row nowrap;
     align-items: flex-start;
     justify-content: flex-start;
+    margin: 2rem 0;
     padding: 2.3rem 2.8rem;
-    border: 0.15rem solid $tertiary-color;
+    border: 0.2rem solid $tertiary-light;
     border-radius: 1.2rem;
     text-align: left;
   }
