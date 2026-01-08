@@ -17,9 +17,13 @@
       <template v-slot:legend>
         <h2>{{ t('general.what_entity_are_you') }}</h2>
       </template>
-      <WrapperDisclosure iconClass="icon-question">
+      <WrapperDisclosure>
         <template v-slot:button>
           {{ t('general.what_is_a_public_organism') }}
+          <span
+            class="ice-icon icon-question"
+            aria-hidden="true"
+          ></span>
         </template>
         <div v-html="t('html.public_organism_definition')" />
       </WrapperDisclosure>
@@ -126,9 +130,13 @@
       >
         {{ t('error.empty_service') }}
       </template>
-      <WrapperDisclosure iconClass="icon-question">
+      <WrapperDisclosure>
         <template v-slot:button>
           {{ t('general.what_is_a_service') }}
+          <span
+            class="ice-icon icon-question"
+            aria-hidden="true"
+          ></span>
         </template>
         <p>{{ t('general.a_service_is') }}</p>
         <ul>

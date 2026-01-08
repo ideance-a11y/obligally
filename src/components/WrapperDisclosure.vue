@@ -1,17 +1,29 @@
 <template>
   <div class="ice-disclosure">
+    <!-- Si wrapper nécessaire autour du bouton -->
+    <component
+      v-if="buttonWrapperElem"
+      :is="buttonWrapperElem"
+      :class="buttonWrapperClass"
+    >
+      <button
+        type="button"
+        class="ice-disclosure-heading"
+        :aria-expanded="isDisplayed"
+        v-on:click="isDisplayed = !isDisplayed"
+      >
+        <slot name="button" />
+      </button>
+    </component>
+    <!-- Si pas de wrapper autour du bouton -->
     <button
+      v-else
       type="button"
       class="ice-disclosure-heading"
       :aria-expanded="isDisplayed"
       v-on:click="isDisplayed = !isDisplayed"
     >
       <slot name="button" />
-      <span
-        v-if="iconClass"
-        :class="[`ice-icon`, iconClass]"
-        aria-hidden="true"
-      ></span>
     </button>
     <div
       class="ice-disclosure-panel with-typo-styles"
@@ -28,7 +40,10 @@ import { ref } from 'vue'
 const isDisplayed = ref(false)
 
 defineProps<{
-  iconClass?: string
+  /** Élément HTML qui structure le bouton */
+  buttonWrapperElem?: string
+  /** Classes de l'élément HTML qui structure le bouton */
+  buttonWrapperClass?: string
 }>()
 
 /** Liste des slots */

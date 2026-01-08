@@ -11,7 +11,17 @@ const t = await initI18n(lang)
   alt={t('visualiser.image_alt')}
   src="/images/arbre.jpg"
 />
-<WrapperDisclosure client:load>
-  <h2 class="no-margin-bottom" slot="button">Description détaillée de l'infographie</h2>
+<WrapperDisclosure
+  client:load
+  buttonWrapperElem="h2"
+  buttonWrapperClass="no-margin-bottom"
+>
+  <Fragment slot="button">
+    <span>Description détaillée de l'infographie</span>
+    <span
+      class="ice-icon icon-plus"
+      aria-hidden="true"
+    ></span>
+  </Fragment>
   Description détaillée...
 </WrapperDisclosure>

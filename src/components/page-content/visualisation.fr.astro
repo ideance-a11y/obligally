@@ -11,247 +11,328 @@ const t = await initI18n(lang)
   alt={t('visualiser.image_alt')}
   src="/images/arbre.jpg"
 />
-<WrapperDisclosure client:load>
-  <h2 class="no-margin-bottom" slot="button">Description détaillée de l'infographie</h2>
-  <span class="ice-icon icon-plus" aria-hidden="true" slot="button"></span>
-  <h3 class="ice-title-level-2 no-margin-top">Cap sur les obligations d'accessibilité numérique en France</h3>
+
+<WrapperDisclosure
+  client:load
+  buttonWrapperElem="h2"
+  buttonWrapperClass="no-margin-bottom"
+>
+  <Fragment slot="button">
+    <span>Description détaillée de l'infographie</span>
+    <span
+      class="ice-icon icon-plus"
+      aria-hidden="true"
+    ></span>
+  </Fragment>
+  <h3 class="ice-title-level-2 no-margin-top">
+    Cap sur les obligations d'accessibilité numérique en France
+  </h3>
   <p class="ice-subtitle">Le point sur votre situation</p>
   <p>Arbre décisionnel :</p>
   <p>Quel type de structure représentez-vous ?</p>
   <ul>
     <li>Un organisme public ou assimilé => Référez-vous au cas 1</li>
-    <li>Une entreprise privée<br>
-    > Quel est votre chiffre d'affaires ?
-  	  <ul>
-  		<li>Supérieur à 250 millions d'euros => Référez-vous au cas 2. Si vous fournissez un service, référez-vous également au cas 3.</li>
-  		<li>Inférieur à 2 millions d'euros<br>
-  		> Combien de salariés avez-vous ?
-  			<ul>
-  			  <li>Moins de 10 => Référez-vous au cas 4</li>
-  			  <li>10 ou plus<br>
-  			  > Fournissez-vous un service ?
-  				  <ul type="square">
-  					<li>Oui => Référez-vous au cas 3</li>
-  					<li>Non => Référez-vous au cas 4</li>
-  				  </ul>
-  			  </li>
-  			</ul>
-  		</li>
-  		<li>Supérieur à 2 millions d'euros<br>
-  		=> Fournissez-vous un service ?
-  			<ul>
-  			  <li>Oui => Référez-vous au cas 3</li>
-  			  <li>Non => Référez-vous au cas 4</li>
-  			</ul>
-  		</li>
-  	  </ul>
-  	</li>
+    <li>
+      Une entreprise privée<br />
+      > Quel est votre chiffre d'affaires ?
+      <ul>
+        <li>
+          Supérieur à 250 millions d'euros => Référez-vous au cas 2. Si vous fournissez un service,
+          référez-vous également au cas 3.
+        </li>
+        <li>
+          Inférieur à 2 millions d'euros<br />
+          > Combien de salariés avez-vous ?
+          <ul>
+            <li>Moins de 10 => Référez-vous au cas 4</li>
+            <li>
+              10 ou plus<br />
+              > Fournissez-vous un service ?
+              <ul type="square">
+                <li>Oui => Référez-vous au cas 3</li>
+                <li>Non => Référez-vous au cas 4</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Supérieur à 2 millions d'euros<br />
+          => Fournissez-vous un service ?
+          <ul>
+            <li>Oui => Référez-vous au cas 3</li>
+            <li>Non => Référez-vous au cas 4</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
-  
+
   <article class="ice-section">
     <h4 class="ice-supra-title">Cas 1 : Vous êtes un organisme public ou assimilé</h4>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Champ d'application</h5>
-  	<p>Tout contenu numérique, y compris :</p>
-  	<ul>
-  		<li>Site web</li>
-  		<li>Application mobile</li>
-  		<li>Internet</li>
-  		<li>Intranet</li>
-  		<li>Progiciel</li>
-  		<li>Mobilier urbain numérique</li>
-  	</ul>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Les obligations</h5>
-  	<ul>
-  		<li>Conformité au RGAA (Référentiel Général d'Amélioration de l'Accessibilité)</li>
-  		<li>Publication d'une déclaration de conformité, d'un schéma pluriannuel et d'un plan d'action</li>
-  		<li>Affichage du niveau d'accessibilité (non-conforme / partiellement conforme / totalement conforme) sur la page d'accueil</li>
-  	</ul>
-  	<h5 class="ice-title-level-2">Les sanctions</h5>
-  	<p class="ice-subtitle">Si vous ne respectez pas ces règles.</p>
-  	<p>Sanctions juridiques : </p>
-  	<ul>
-  		<li>Mise en demeure publique</li>
-  		<li>Les sanctions peuvent être rendues publiques par l'ARCOM</li>
-  		<li>Sanctions renouvelables après 6 mois</li>
-  	</ul>
-  	<p>Sanctions financières : </p>
-  	<ul>
-  		<li>Jusqu'à 50 000 € pour non conformité</li>
-  		<li>Jusqu'à 25 000 € pour non publication de la déclaration de conformité et des autres documents requis.</li>
-  	</ul>
-  	<h5 class="ice-title-level-2">Organisme de contrôle</h5>
-  	<p class="ice-subtitle">Qui contrôle ?</p>
-  	<table class="ice-table">
-  		<thead>
-  			<tr>
-  				<th>Organisme de contrôle</th>
-  				<th>Type de services concernés</th>
-  			</tr>
-  		</thead>
-  		<tbody>
-  			<tr>
-  				<td>Autorité de Régulation de la Communication audiovisuelle et numérique (ARCOM)</td>
-  				<td>
-  					<ul>
-  						<li>Site web</li>
-  						<li>Application mobile</li>
-  						<li>Internet</li>
-  						<li>Intranet</li>
-  						<li>Progiciel</li>
-  						<li>Mobilier urbain numérique</li>
-  					</ul>
-  				</td>
-  			</tr>
-  		</tbody>
-  	</table>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Textes de référence</h5>
-  	<ul>
-  		<li>Loi n° 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées</li>
-  		<li>Directive 2016/2102 relative à l'accessibilité des sites internet et des applications mobiles du secteur public</li>
-  	</ul>
+    <h5 class="ice-title-level-2 with-no-subtitle">Champ d'application</h5>
+    <p>Tout contenu numérique, y compris :</p>
+    <ul>
+      <li>Site web</li>
+      <li>Application mobile</li>
+      <li>Internet</li>
+      <li>Intranet</li>
+      <li>Progiciel</li>
+      <li>Mobilier urbain numérique</li>
+    </ul>
+    <h5 class="ice-title-level-2 with-no-subtitle">Les obligations</h5>
+    <ul>
+      <li>Conformité au RGAA (Référentiel Général d'Amélioration de l'Accessibilité)</li>
+      <li>
+        Publication d'une déclaration de conformité, d'un schéma pluriannuel et d'un plan d'action
+      </li>
+      <li>
+        Affichage du niveau d'accessibilité (non-conforme / partiellement conforme / totalement
+        conforme) sur la page d'accueil
+      </li>
+    </ul>
+    <h5 class="ice-title-level-2">Les sanctions</h5>
+    <p class="ice-subtitle">Si vous ne respectez pas ces règles.</p>
+    <p>Sanctions juridiques :</p>
+    <ul>
+      <li>Mise en demeure publique</li>
+      <li>Les sanctions peuvent être rendues publiques par l'ARCOM</li>
+      <li>Sanctions renouvelables après 6 mois</li>
+    </ul>
+    <p>Sanctions financières :</p>
+    <ul>
+      <li>Jusqu'à 50 000 € pour non conformité</li>
+      <li>
+        Jusqu'à 25 000 € pour non publication de la déclaration de conformité et des autres
+        documents requis.
+      </li>
+    </ul>
+    <h5 class="ice-title-level-2">Organisme de contrôle</h5>
+    <p class="ice-subtitle">Qui contrôle ?</p>
+    <table class="ice-table">
+      <thead>
+        <tr>
+          <th>Organisme de contrôle</th>
+          <th>Type de services concernés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Autorité de Régulation de la Communication audiovisuelle et numérique (ARCOM)</td>
+          <td>
+            <ul>
+              <li>Site web</li>
+              <li>Application mobile</li>
+              <li>Internet</li>
+              <li>Intranet</li>
+              <li>Progiciel</li>
+              <li>Mobilier urbain numérique</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h5 class="ice-title-level-2 with-no-subtitle">Textes de référence</h5>
+    <ul>
+      <li>
+        Loi n° 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la
+        participation et la citoyenneté des personnes handicapées
+      </li>
+      <li>
+        Directive 2016/2102 relative à l'accessibilité des sites internet et des applications
+        mobiles du secteur public
+      </li>
+    </ul>
   </article>
-  
+
   <article class="ice-section">
-    <h4 class="ice-supra-title">Cas 2 : Vous êtes une entreprise privée. Votre chiffre d'affaires est supérieur à 250 millions d'euros.</h4>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Champ d'application</h5>
-  	<p>Tout contenu numérique, y compris :</p>
-  	<ul>
-  		<li>Site web</li>
-  		<li>Application mobile</li>
-  		<li>Internet</li>
-  		<li>Intranet</li>
-  		<li>Progiciel</li>
-  		<li>Mobilier urbain numérique</li>
-  	</ul>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Obligations</h5>
-  	<ul>
-  		<li>Conformité au RGAA ou à la norme EN 301 549 ou à WCAG 2.1.</li>
-  		<li>Publication d'une déclaration de conformité, d'un schéma pluriannuel et d'un plan d'action</li>
-  		<li>Affichage du niveau d'accessibilité (non-conforme / partiellement conforme / totalement conforme) sur la page d'accueil</li>
-  	</ul>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Les sanctions</h5>
-  	<p>Sanctions juridiques : </p>
-  	<ul>
-  		<li>Mise en demeure publique</li>
-  		<li>Les sanctions peuvent être rendues publiques par l'ARCOM</li>
-  		<li>Sanctions renouvelables après 6 mois</li>
-  	</ul>
-  	<p>Sanctions financières : </p>
-  	<p>Jusqu'à 25 000 € si vous ne publiez pas les documents demandés.</p>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Organisme de contrôle</h5>
-  	<table class="ice-table">
-  		<thead>
-  			<tr>
-  				<th>Organisme de contrôle</th>
-  				<th>Type de services concernés</th>
-  			</tr>
-  		</thead>
-  		<tbody>
-  			<tr>
-  				<td>Autorité de Régulation de la Communication audiovisuelle et numérique (ARCOM)</td>
-  				<td>
-  					<ul>
-  						<li>Site web</li>
-  						<li>Application mobile</li>
-  						<li>Internet</li>
-  						<li>Intranet</li>
-  						<li>Progiciel</li>
-  						<li>Mobilier urbain numérique</li>
-  					</ul>
-  				</td>
-  			</tr>
-  		</tbody>
-  	</table>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Texte de référence</h5>
-  	<p>Loi n° 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées</p>
+    <h4 class="ice-supra-title">
+      Cas 2 : Vous êtes une entreprise privée. Votre chiffre d'affaires est supérieur à 250 millions
+      d'euros.
+    </h4>
+    <h5 class="ice-title-level-2 with-no-subtitle">Champ d'application</h5>
+    <p>Tout contenu numérique, y compris :</p>
+    <ul>
+      <li>Site web</li>
+      <li>Application mobile</li>
+      <li>Internet</li>
+      <li>Intranet</li>
+      <li>Progiciel</li>
+      <li>Mobilier urbain numérique</li>
+    </ul>
+    <h5 class="ice-title-level-2 with-no-subtitle">Obligations</h5>
+    <ul>
+      <li>Conformité au RGAA ou à la norme EN 301 549 ou à WCAG 2.1.</li>
+      <li>
+        Publication d'une déclaration de conformité, d'un schéma pluriannuel et d'un plan d'action
+      </li>
+      <li>
+        Affichage du niveau d'accessibilité (non-conforme / partiellement conforme / totalement
+        conforme) sur la page d'accueil
+      </li>
+    </ul>
+    <h5 class="ice-title-level-2 with-no-subtitle">Les sanctions</h5>
+    <p>Sanctions juridiques :</p>
+    <ul>
+      <li>Mise en demeure publique</li>
+      <li>Les sanctions peuvent être rendues publiques par l'ARCOM</li>
+      <li>Sanctions renouvelables après 6 mois</li>
+    </ul>
+    <p>Sanctions financières :</p>
+    <p>Jusqu'à 25 000 € si vous ne publiez pas les documents demandés.</p>
+    <h5 class="ice-title-level-2 with-no-subtitle">Organisme de contrôle</h5>
+    <table class="ice-table">
+      <thead>
+        <tr>
+          <th>Organisme de contrôle</th>
+          <th>Type de services concernés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Autorité de Régulation de la Communication audiovisuelle et numérique (ARCOM)</td>
+          <td>
+            <ul>
+              <li>Site web</li>
+              <li>Application mobile</li>
+              <li>Internet</li>
+              <li>Intranet</li>
+              <li>Progiciel</li>
+              <li>Mobilier urbain numérique</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h5 class="ice-title-level-2 with-no-subtitle">Texte de référence</h5>
+    <p>
+      Loi n° 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation
+      et la citoyenneté des personnes handicapées
+    </p>
   </article>
-  
+
   <article class="ice-section">
-    <h4 class="ice-supra-title">Cas 3 : Vous êtes une entreprise privée. Votre chiffre d'affaires est supérieur à 2 millions d'euros ou inférieur à 2 millions d'euros avec 10 salariés ou plus. Vous fournissez un service.</h4>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Champ d'application</h5>
-  	<p>Les services numériques suivants :</p>
-  	<ul>
-  		<li>Service de communication électronique</li>
-  		<li>Service fournissant un accès à des services de médias audiovisuels</li>
-  		<li>Service de transport</li>
-  		<li>Service banquaire</li>
-  		<li>Livre numérique</li>
-  		<li>Commerce électronique (e-commerce)</li>
-  	</ul>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Obligations</h5>
-  	<ul>
-  		<li>Conformité à la norme EN 301 549</li>
-  		<li>Information des consommateurs sur la manière dont le service se conforme aux exigences d'accessibilité</li>
-  		<li>Mise en place de procédures pour que la conformité soit maintenue</li>
-  		<li>Information des autorités de contrôle en cas de non-conformité</li>
-  		<li>Capacité à fournir une preuve de la conformité sur demande des autorités de contrôle</li>
-  	</ul>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Les sanctions</h5>
-  	<p>Sanctions financières : </p>
-  	<ul>
-  		<li>Contravention de 5e classe (7 500 € pour une personne morale)</li>
-  		<li>Injonction avec astreinte journalière de 3 000 €, pouvant aller jusqu'à 30 000 € au total (sans dépasser 5 % du chiffre d'affaires)</li>
-  		<li>Chaque pays de l'UE définit ses propres sanctions</li>
-  	</ul>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Organismes de contrôle</h5>
-  	<table class="ice-table">
-  		<thead>
-  			<tr>
-  				<th>Organisme de contrôle</th>
-  				<th>Type de services concernés</th>
-  			</tr>
-  		</thead>
-  		<tbody>
-  			<tr>
-  				<td>Direction Générale de la Concurrence, de la Consommation et de la Répression des Fraudes (DGCCRF)</td>
-  				<td>
-  					<ul>
-  						<li>Livre numérique</li>
-  						<li>Commerce électronique (e-commerce)</li>
-  						<li>Service de transport</li>
-  					</ul>
-  				</td>
-  			</tr>
-  			<tr>
-  				<td>Autorité des Marchés Financiers (AMF)</td>
-  				<td>
-  					<p>Service banquaire</p>
-  				</td>
-  			</tr>
-  			<tr>
-  				<td>La Banque de France </td>
-  				<td>
-  					<p>Service banquaire</p>
-  				</td>
-  			</tr>
-  			<tr>
-  				<td>Autorité de Régulation de la Communication audiovisuelle et numérique (ARCOM)</td>
-  				<td>
-  					<p>Service fournissant un accès à des services de médias audiovisuels</p>
-  				</td>
-  			</tr>
-  			<tr>
-  				<td>Autorité de Régulation des Communications Électroniques et des Postes (ARCEP)</td>
-  				<td>
-  					<p>Service de communication électronique</p>
-  				</td>
-  			</tr>
-  		</tbody>
-  	</table>
-  	<h5 class="ice-title-level-2 with-no-subtitle">Textes de référence</h5>
-  	<ul>
-  		<li>Loi n° 2023-171 du 9 mars 2023 portant diverses dispositions d'adaptation au droit de l'Union européenne dans les domaines de l'économie, de la santé, du travail, des transports et de l'agriculture</li>
-  		<li>Directive 2019/882 relative aux exigences en matière d'accessibilité applicables aux produits et services</li>
-  	</ul>
+    <h4 class="ice-supra-title">
+      Cas 3 : Vous êtes une entreprise privée. Votre chiffre d'affaires est supérieur à 2 millions
+      d'euros ou inférieur à 2 millions d'euros avec 10 salariés ou plus. Vous fournissez un
+      service.
+    </h4>
+    <h5 class="ice-title-level-2 with-no-subtitle">Champ d'application</h5>
+    <p>Les services numériques suivants :</p>
+    <ul>
+      <li>Service de communication électronique</li>
+      <li>Service fournissant un accès à des services de médias audiovisuels</li>
+      <li>Service de transport</li>
+      <li>Service banquaire</li>
+      <li>Livre numérique</li>
+      <li>Commerce électronique (e-commerce)</li>
+    </ul>
+    <h5 class="ice-title-level-2 with-no-subtitle">Obligations</h5>
+    <ul>
+      <li>Conformité à la norme EN 301 549</li>
+      <li>
+        Information des consommateurs sur la manière dont le service se conforme aux exigences
+        d'accessibilité
+      </li>
+      <li>Mise en place de procédures pour que la conformité soit maintenue</li>
+      <li>Information des autorités de contrôle en cas de non-conformité</li>
+      <li>Capacité à fournir une preuve de la conformité sur demande des autorités de contrôle</li>
+    </ul>
+    <h5 class="ice-title-level-2 with-no-subtitle">Les sanctions</h5>
+    <p>Sanctions financières :</p>
+    <ul>
+      <li>Contravention de 5e classe (7 500 € pour une personne morale)</li>
+      <li>
+        Injonction avec astreinte journalière de 3 000 €, pouvant aller jusqu'à 30 000 € au total
+        (sans dépasser 5 % du chiffre d'affaires)
+      </li>
+      <li>Chaque pays de l'UE définit ses propres sanctions</li>
+    </ul>
+    <h5 class="ice-title-level-2 with-no-subtitle">Organismes de contrôle</h5>
+    <table class="ice-table">
+      <thead>
+        <tr>
+          <th>Organisme de contrôle</th>
+          <th>Type de services concernés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            >Direction Générale de la Concurrence, de la Consommation et de la Répression des
+            Fraudes (DGCCRF)</td
+          >
+          <td>
+            <ul>
+              <li>Livre numérique</li>
+              <li>Commerce électronique (e-commerce)</li>
+              <li>Service de transport</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Autorité des Marchés Financiers (AMF)</td>
+          <td>
+            <p>Service banquaire</p>
+          </td>
+        </tr>
+        <tr>
+          <td>La Banque de France </td>
+          <td>
+            <p>Service banquaire</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Autorité de Régulation de la Communication audiovisuelle et numérique (ARCOM)</td>
+          <td>
+            <p>Service fournissant un accès à des services de médias audiovisuels</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Autorité de Régulation des Communications Électroniques et des Postes (ARCEP)</td>
+          <td>
+            <p>Service de communication électronique</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h5 class="ice-title-level-2 with-no-subtitle">Textes de référence</h5>
+    <ul>
+      <li>
+        Loi n° 2023-171 du 9 mars 2023 portant diverses dispositions d'adaptation au droit de
+        l'Union européenne dans les domaines de l'économie, de la santé, du travail, des transports
+        et de l'agriculture
+      </li>
+      <li>
+        Directive 2019/882 relative aux exigences en matière d'accessibilité applicables aux
+        produits et services
+      </li>
+    </ul>
   </article>
-  
-  <h4 class="ice-supra-title">Cas 4 : Vous êtes une entreprise privée. Votre chiffre d'affaires est inférieur à 2 millions d'euros avec moins de 10 salariés, ou votre chiffre d'affaires est inférieur à 250 millions d'euros et vous ne fournissez pas un service.</h4>
+
+  <h4 class="ice-supra-title">
+    Cas 4 : Vous êtes une entreprise privée. Votre chiffre d'affaires est inférieur à 2 millions
+    d'euros avec moins de 10 salariés, ou votre chiffre d'affaires est inférieur à 250 millions
+    d'euros et vous ne fournissez pas un service.
+  </h4>
   <p>Vous n'êtes pas concerné par des obligations explicites.</p>
-  <p>L'accessibilité est toutefois une nécessité et un droit fondamental pour les personnes handicapées.</p>
-  <p>Un contenu ou un service non-accessible représente une source de discrimination, qui est punie par la loi.</p>
+  <p>
+    L'accessibilité est toutefois une nécessité et un droit fondamental pour les personnes
+    handicapées.
+  </p>
+  <p>
+    Un contenu ou un service non-accessible représente une source de discrimination, qui est punie
+    par la loi.
+  </p>
   <p>N'hésitez pas à vous renseigner sur le sujet !</p>
+
+  <a
+    href="/files/IDEANCE-arbre-de-decision-accessible.pdf"
+    class="ice-btn-tertiary with-icon ice-link-pdf"
+  >
+    <span
+      class="ice-icon icon-two-chevrons-right"
+      aria-hidden="true"
+    ></span>
+    <span>Télécharger l'infographie au format PDF (1,12 Mo)</span>
+  </a>
 </WrapperDisclosure>
-<a href="/files/IDEANCE-arbre-de-decision-accessible.pdf" class="ice-btn-tertiary with-icon ice-link-pdf"> 
-  <span class="ice-icon icon-two-chevrons-right" aria-hidden="true"></span> 
-  <span>Télécharger l'infographie au format PDF (1,12 Mo)</span>
-</a>
