@@ -275,7 +275,8 @@ const previousStep = computed<Step | null>(() => {
     case 2:
       return 1
     case 3:
-      return 2
+      if (turnoverValue.value === 'below2m') return 2
+      return 1
     case 10:
       return 0
     default:
@@ -408,9 +409,9 @@ function handleFocus() {
     case 1:
       fieldsetTurnoverElem.value?.fieldsetRef?.focus()
     case 2:
-      fieldsetServiceElem.value?.fieldsetRef?.focus()
-    case 3:
       fieldsetEmployeesElem.value?.fieldsetRef?.focus()
+    case 3:
+      fieldsetServiceElem.value?.fieldsetRef?.focus()
     case 10:
       obligationsTitleElem.value?.titleRef?.focus()
   }
