@@ -65,7 +65,7 @@
         outline: 0.2rem solid transparent;
         border-color: $primary-color;
         outline-offset: -0.2rem;
-        box-shadow: 0 0 0 0.5rem rgba(10, 66, 247, 0.3);
+        box-shadow: 0 0 0 0.5rem rgba(10, 66, 247, 0.6);
 
         @media (prefers-color-scheme: dark) {
           border-color: $white-color;
