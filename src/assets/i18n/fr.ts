@@ -178,7 +178,7 @@ export const fr = {
   comprendre: {
     page_titre: `Approfondir`
   },
-  visualisation: {
+  visualiser: {
     page_titre: `Visualiser`,
     image_alt: `Infographie représentant les obligations légales d'accessibilité numérique en fonction des types d'entreprises et services fournis (voir description détaillée ci-après)`
   }

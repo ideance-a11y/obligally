@@ -1,10 +1,14 @@
 ---
 import WrapperDisclosure from '@/components/WrapperDisclosure.vue'
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
+
+const lang = getLangFromUrl(Astro.url)
+const t = await initI18n(lang)
 ---
 
 <img
   class="ice-infographic"
-  alt="{t'(visualisation.image_alt)}"
+  alt={t('visualiser.image_alt')}
   src="/images/arbre.jpg"
 />
 <WrapperDisclosure client:load>
