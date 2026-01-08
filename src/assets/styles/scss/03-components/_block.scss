@@ -34,11 +34,11 @@
   }
 
   &.is-red {
-    color: darken(#C56D6F, 20%);
+    color: #923a3c;
     background-color: #feeced;
 
     @media (prefers-color-scheme: dark) {
-      //background: darken()
+      background: #923a3c;
       color: $white-color;
     }
   }

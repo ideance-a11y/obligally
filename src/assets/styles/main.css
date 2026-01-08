@@ -862,6 +862,7 @@ strong {
     background-color: #feeced; }
     @media (prefers-color-scheme: dark) {
       .ice-block.is-red {
+        background: #923a3c;
         color: #ffffff; } }
   .ice-block.is-blue {
     background: #e8f2f6;
@@ -1218,7 +1219,7 @@ strong {
   @media (prefers-color-scheme: dark) {
     .ice-question-options input[type="radio"]:focus + label:before {
       border-color: #ffffff;
-      box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.3); } }
+      box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.4); } }
 .ice-question-options input[type="radio"]:checked + label:after {
   content: "";
   z-index: 5;
