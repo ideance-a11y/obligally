@@ -170,7 +170,7 @@ export const fr = {
     option_2_lien: `Ce que dit la loi :`,
     option_2_description: `<p>Vous voulez étudier le sujet en profondeur ?</p>
       <p>Accédez à un article détaillé pour comprendre l'historique des obligations légales en France, et le détail du cadre légal actuel.</p>`,
-    option_3_titre: `Synthétiser`,
+    option_3_titre: `Visualiser`,
     option_3_lien: `L'essentiel de la loi :`,
     option_3_description: ` <p>Vous préférez visualiser de manière synthétique ?</p>
       <p>Une infographie vos permettra de découvrir en un coup d'œil les règles en vigueur en matière d'accessibilité numérique.</p>`
