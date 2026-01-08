@@ -98,8 +98,8 @@ export const fr = {
   },
   law: {
     france: {
-      '2023_171': `<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000037388867/">Loi n° 2023-171 du 9 mars 2023 portant diverses dispositions d'adaptation au droit de l'Union européenne dans les domaines de l'économie, de la santé, du travail, des transports et de l'agriculture</a>`,
-      '2005_102': `<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000047282795/">Loi n° 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées</a>`
+      '2023_171': `<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000047282795/">Loi n° 2023-171 du 9 mars 2023 portant diverses dispositions d'adaptation au droit de l'Union européenne dans les domaines de l'économie, de la santé, du travail, des transports et de l'agriculture</a>`,
+      '2005_102': `<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000037388867/">Loi n° 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées</a>`
     },
     europe: {
       '2016_2102': `<a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=celex:32016L2102">Directive 2016/2102 relative à l'accessibilité des sites internet et des applications mobiles du secteur public</a>`,
