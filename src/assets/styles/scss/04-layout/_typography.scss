@@ -169,6 +169,10 @@ $gutter-typo-dtp-lg: 2.5rem;
     @include for-desktop {
 		  padding: 1.6rem 2.2rem;
     }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
   ul {

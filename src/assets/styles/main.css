@@ -1929,6 +1929,8 @@ kbd {
     @media screen and (min-width: 992px) {
       .ice-table td {
         padding: 1.6rem 2.2rem; } }
+    .ice-table td p:last-child {
+      margin-bottom: 0; }
   .ice-table ul {
     margin-bottom: 0; }
   .ice-table li {
