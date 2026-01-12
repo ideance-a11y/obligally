@@ -6,7 +6,7 @@
         ref="title"
         class="ice-page-title"
       >
-        {{ t('general.no_explicit_obligation') }}
+        {{ t('simulate.no_explicit_obligation') }}
       </h2>
       <div v-html="t('html.no_legal_obligation_content')"></div>
     </template>
@@ -21,8 +21,11 @@
       </h2>
       <p class="ice-subtitle text-center">{{ t('general.result_title_subtext') }}</p>
 
-      <p class="ice-block" v-if="obligationResults.length > 1">
-        {{ t('general.multiple_obligations', { count: obligationResults.length }) }}
+      <p
+        class="ice-block"
+        v-if="obligationResults.length > 1"
+      >
+        {{ t('simulate.multiple_obligations', { count: obligationResults.length }) }}
       </p>
 
       <template
@@ -30,8 +33,25 @@
         :key="result.id"
       >
         <article class="ice-section with-border-top">
+          <h3 class="ice-title-level-2">
+            <template v-if="result.conditions.find((c) => c.entity === 'public')">{{
+              t('simulate.public_organism_obligations')
+            }}</template>
+            <template
+              v-else-if="
+                result.conditions.find(
+                  (c) =>
+                    c.entity === 'private' &&
+                    c.turnover === 'over250m' &&
+                    c.provideService === undefined
+                )
+              "
+              >{{ t('simulate.private_over250m_obligations') }}</template
+            >
+            <template v-else>{{ t('simulate.private_services_obligations') }}</template>
+          </h3>
           <!-- Champ d'application -->
-          <h3 class="ice-title-level-2">{{ t('general.application_field') }}</h3>
+          <h4 class="ice-title-level-3">{{ t('general.application_field') }}</h4>
           <p class="ice-subtitle">{{ t('general.application_field_subtext') }}</p>
           <template
             v-for="field in result.applicationFields"
@@ -46,9 +66,9 @@
           </template>
 
           <!-- Oligations légales -->
-          <h3 class="ice-title-level-2">
+          <h4 class="ice-title-level-3">
             {{ t('general.obligation', result.obligations.length) }}
-          </h3>
+          </h4>
           <p class="ice-subtitle">{{ t('general.obligation_subtext') }}</p>
           <ListWithSingle :length="result.obligations.length">
             <template v-slot:default="{ index }">
@@ -57,7 +77,7 @@
           </ListWithSingle>
 
           <!-- Sanctions -->
-          <h3 class="ice-title-level-2">{{ t('general.sanction', result.sanctions.length) }}</h3>
+          <h4 class="ice-title-level-3">{{ t('general.sanction', result.sanctions.length) }}</h4>
           <p class="ice-subtitle">{{ t('general.sanction_subtext') }}</p>
           <p v-if="filterSanctions(result.sanctions, 'penalty').length > 0">
             {{ t('general.legal_penalties', 2) }} :
@@ -78,9 +98,9 @@
           </ListWithSingle>
 
           <!-- Organismes de contrôle -->
-          <h3 class="ice-title-level-2">
+          <h4 class="ice-title-level-3">
             {{ t('general.control_organism', result.controlOrganizations.length) }}
-          </h3>
+          </h4>
           <p class="ice-subtitle">{{ t('general.control_organism_subtext') }}</p>
 
           <table class="ice-table">
@@ -131,9 +151,9 @@
           -->
 
           <!-- Lois -->
-          <h3 class="ice-title-level-2 with-no-subtitle">
+          <h4 class="ice-title-level-3 with-no-subtitle">
             {{ t('general.reference_text', result.laws.length) }}
-          </h3>
+          </h4>
           <ListWithSingle :length="result.laws.length">
             <template v-slot:default="{ index }">
               <span v-html="t(result.laws[index].name)"></span>

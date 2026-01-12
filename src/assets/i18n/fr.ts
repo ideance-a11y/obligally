@@ -51,7 +51,6 @@ export const fr = {
     sanction: `Santion | Sanctions`,
     control_organism: `Organisme de contrôle | Organismes de contrôle`,
     reference_text: `Texte de référence | Textes de référence`,
-    no_explicit_obligation: `Pas d'obligation explicite`,
     financial_penalties: `Sanction financière | Sanctions financières`,
     legal_penalties: `Sanction juridique | Sanctions juridiques`,
     what_is_a_public_organism: `Qu'est ce qu'un organisme public ?`,
@@ -62,8 +61,7 @@ export const fr = {
     application_field_subtext: `Qu'est-ce qui est concerné ?`,
     obligation_subtext: `Ce que la loi demande.`,
     sanction_subtext: `Si vous ne respectez pas ces règles.`,
-    control_organism_subtext: `Qui contrôle ?`,
-    multiple_obligations: `{count} obligations légales s'appliquent.`
+    control_organism_subtext: `Qui contrôle ?`
   },
   error: {
     empty_entity: `Veuillez renseigner un type d'entité.`,
@@ -177,6 +175,13 @@ export const fr = {
   },
   comprendre: {
     page_titre: `Approfondir`
+  },
+  simulate: {
+    no_explicit_obligation: `Pas d'obligation explicite`,
+    multiple_obligations: `{count} obligations légales s'appliquent.`,
+    public_organism_obligations: `Les obligations légales pour les organismes publics`,
+    private_over250m_obligations: `Les obligations légales pour les entreprises dont le chiffre d'affaires est supérieur à 250 millions d'euros`,
+    private_services_obligations: `Les obligations légales pour les entreprises qui fournissent des services`
   },
   visualiser: {
     page_titre: `Visualiser`,
