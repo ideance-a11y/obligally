@@ -528,6 +528,7 @@ strong {
   text-transform: none;
   text-decoration: none;
   text-align: left;
+  text-decoration: none;
   transition-property: background-color, box-shadow, color;
   transition-duration: 0.25s;
   transition-timing-function: ease-in-out; }
@@ -535,7 +536,8 @@ strong {
     .ice-btn-primary, .ice-btn-secondary, .ice-btn-tertiary, .ice-header-top-inner .ice-btn {
       box-shadow: 0 0.3rem 0.4rem 0 rgba(0, 0, 0, 0.3); } }
   .ice-btn-primary:hover, .ice-btn-secondary:hover, .ice-btn-tertiary:hover, .ice-header-top-inner .ice-btn:hover, .ice-btn-primary:focus-within, .ice-btn-secondary:focus-within, .ice-btn-tertiary:focus-within, .ice-header-top-inner .ice-btn:focus-within {
-    box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.24); }
+    box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.24);
+    text-decoration: none; }
     @media (prefers-color-scheme: dark) {
       .ice-btn-primary:hover, .ice-btn-secondary:hover, .ice-btn-tertiary:hover, .ice-header-top-inner .ice-btn:hover, .ice-btn-primary:focus-within, .ice-btn-secondary:focus-within, .ice-btn-tertiary:focus-within, .ice-header-top-inner .ice-btn:focus-within {
         box-shadow: 0 0.3rem 0.4rem 0 rgba(0, 0, 0, 0.55); } }
@@ -1959,6 +1961,7 @@ kbd {
     border-radius: 2.7rem;
     color: #37738E;
     font-weight: bold;
+    font-size: 1.7rem;
     text-align: left;
     line-height: 1.35;
     cursor: pointer; }
@@ -1971,10 +1974,9 @@ kbd {
       .ice-disclosure .ice-disclosure-heading {
         padding: 1.5rem 2.5rem;
         border-radius: 2.7rem;
+        font-size: 1.8rem;
         text-align: center; } }
-    .ice-disclosure .ice-disclosure-heading h2,
-    .ice-disclosure .ice-disclosure-heading h3,
-    .ice-disclosure .ice-disclosure-heading h4, .ice-disclosure .ice-disclosure-heading > * {
+    .ice-disclosure .ice-disclosure-heading > * {
       margin: 0;
       font-size: inherit; }
     .ice-disclosure .ice-disclosure-heading[aria-expanded="true"] {

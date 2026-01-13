@@ -1,4 +1,4 @@
-$button-primary-bg: $primary-color; // linear-gradient(to right, transparent 0%, $primary-darker 100%);
+$button-primary-bg: $primary-color;
 $button-primary-c: $white-color;
 $button-secondary-bg: $white-color;
 $button-secondary-c: $primary-color;
@@ -22,6 +22,7 @@ $button-tertiary-c: $global-c;
   text-transform: none;
   text-decoration: none;
   text-align: left;
+  text-decoration: none;
   @include transition-default(background-color, box-shadow, color);
 
   @media (prefers-color-scheme: dark) {
@@ -31,6 +32,7 @@ $button-tertiary-c: $global-c;
   &:hover,
   &:focus-within {
     box-shadow: 0 0.3rem 0.8rem 0 rgba(0,0,0,0.24);
+    text-decoration: none;
 
     @media (prefers-color-scheme: dark) {
       box-shadow: 0 0.3rem 0.4rem 0 rgba(0,0,0,0.55);

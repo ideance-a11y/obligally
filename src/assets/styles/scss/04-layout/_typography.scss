@@ -213,10 +213,10 @@ $gutter-typo-dtp-lg: 2.5rem;
     border-radius: 2.7rem;
     color: $tertiary-color;
 		font-weight: bold;
+    font-size: 1.7rem;
     text-align: left;
     line-height: 1.35;
     cursor: pointer;
-    //@include transition-default(width);
 
     @media (prefers-color-scheme: dark) {
       background-color: #273646;
@@ -225,15 +225,12 @@ $gutter-typo-dtp-lg: 2.5rem;
     }
 
     @include for-tablet-and-upper {
-      //width: auto;
       padding: 1.5rem 2.5rem;
       border-radius: 2.7rem;
+      font-size: 1.8rem;
 		  text-align: center;
     }
 
-    h2,
-    h3,
-    h4,
     & > * {
       margin: 0;
       font-size: inherit;
