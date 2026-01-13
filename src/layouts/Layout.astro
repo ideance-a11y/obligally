@@ -6,6 +6,8 @@ import Footer from '@components/Footer.astro'
 
 import type { ComponentProps } from 'astro/types'
 
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
+
 import '@styles/main.css'
 
 interface Props {
@@ -19,8 +21,10 @@ interface Props {
 
 const { lang, pageTitle, metaDescription, headerClass, bodyClass, breadcrumb } = Astro.props
 
-const siteTitle = 'Ideance - Obligally'
-const siteMetaDesc = `Obligations légales concernant l\'accessibilité numérique en France`
+const t = await initI18n(lang)
+
+const siteTitle = t('head.site_title')
+const siteMetaDesc = t('head.meta_description')
 ---
 
 <!doctype html>
@@ -42,13 +46,13 @@ const siteMetaDesc = `Obligations légales concernant l\'accessibilité numériq
     />
     <meta
       name="description"
-      content={`${siteMetaDesc}${metaDescription}`}
+      content={`${siteMetaDesc}${metaDescription ? metaDescription : ''}`}
     />
     <meta
       name="theme-color"
       content="#9801ff"
     />
-    <title>{pageTitle} - {siteTitle}</title>
+    <title>{pageTitle ? `${pageTitle} - ` : ''}{siteTitle}</title>
   </head>
 
   <body class={`body wrapper-main ${bodyClass}`}>

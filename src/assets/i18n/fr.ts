@@ -1,4 +1,8 @@
 export const fr = {
+  head: {
+    site_title: `Obligally, un site proposé par Ideance`,
+    meta_description: `Obligations légales concernant l'accessibilité numérique en France`
+  },
   nav: {
     go_to_ideance: `Aller sur ideance.net`,
     skiplink_to_main: `Aller au contenu`,
