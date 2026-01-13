@@ -31,36 +31,36 @@ const t = await initI18n(lang)
   <p>Arbre décisionnel :</p>
   <p>Quel type de structure représentez-vous ?</p>
   <ul>
-    <li>Un organisme public ou assimilé => Référez-vous au cas 1</li>
+    <li>Un organisme public ou assimilé : référez-vous au cas 1</li>
     <li>
-      Une entreprise privée<br />
-      > Quel est votre chiffre d'affaires ?
+      Une entreprise privée :<br />
+      Quel est votre chiffre d'affaires ?
       <ul>
         <li>
-          Supérieur à 250 millions d'euros => Référez-vous au cas 2. Si vous fournissez un service,
+          Supérieur à 250 millions d'euros : référez-vous au cas 2. Si vous fournissez un service,
           référez-vous également au cas 3.
         </li>
         <li>
-          Inférieur à 2 millions d'euros<br />
-          > Combien de salariés avez-vous ?
+          Inférieur à 2 millions d'euros :<br />
+          Combien de salariés avez-vous ?
           <ul>
-            <li>Moins de 10 => Référez-vous au cas 4</li>
+            <li>Moins de 10 : référez-vous au cas 4</li>
             <li>
-              10 ou plus<br />
-              > Fournissez-vous un service ?
+              10 ou plus :<br />
+              Fournissez-vous un service ?
               <ul type="square">
-                <li>Oui => Référez-vous au cas 3</li>
-                <li>Non => Référez-vous au cas 4</li>
+                <li>Oui : référez-vous au cas 3</li>
+                <li>Non : référez-vous au cas 4</li>
               </ul>
             </li>
           </ul>
         </li>
         <li>
-          Supérieur à 2 millions d'euros<br />
-          => Fournissez-vous un service ?
+          Supérieur à 2 millions d'euros :<br />
+          Fournissez-vous un service ?
           <ul>
-            <li>Oui => Référez-vous au cas 3</li>
-            <li>Non => Référez-vous au cas 4</li>
+            <li>Oui : référez-vous au cas 3</li>
+            <li>Non : référez-vous au cas 4</li>
           </ul>
         </li>
       </ul>
