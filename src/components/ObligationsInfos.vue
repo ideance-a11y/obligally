@@ -21,23 +21,26 @@
       </h2>
       <p class="ice-subtitle text-center">{{ t('general.result_title_subtext') }}</p>
 
-      <p
+      <div
         class="ice-block"
         v-if="obligationResults.length > 1"
       >
-        {{ t('simulate.multiple_obligations', { count: obligationResults.length }) }}
-      </p>
+        <p>
+          {{ `${t('simulate.multiple_obligations', { count: obligationResults.length })} :` }}
+        </p>
 
-      <template
-        v-for="result in obligationResults"
-        :key="result.id"
-      >
-        <article class="ice-section with-border-top">
-          <h3 class="ice-title-level-2">
-            <template v-if="result.conditions.find((c) => c.entity === 'public')">{{
-              t('simulate.public_organism_obligations')
-            }}</template>
-            <template
+        <ul>
+          <li
+            v-for="result in obligationResults"
+            :key="result.id"
+          >
+            <a
+              href="#public_organism_obligations"
+              v-if="result.conditions.find((c) => c.entity === 'public')"
+              >{{ t('simulate.public_organism_obligations') }}</a
+            >
+            <a
+              href="#private_over250m_obligations"
               v-else-if="
                 result.conditions.find(
                   (c) =>
@@ -46,9 +49,49 @@
                     c.provideService === undefined
                 )
               "
-              >{{ t('simulate.private_over250m_obligations') }}</template
+              >{{ t('simulate.private_over250m_obligations') }}</a
             >
-            <template v-else>{{ t('simulate.private_services_obligations') }}</template>
+            <a
+              href="#private_services_obligations"
+              v-else
+              >{{ t('simulate.private_services_obligations') }}</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <template
+        v-for="result in obligationResults"
+        :key="result.id"
+      >
+        <article class="ice-section with-border-top">
+          <h3
+            class="ice-title-level-2"
+            id="public_organism_obligations"
+            v-if="result.conditions.find((c) => c.entity === 'public')"
+          >
+            {{ t('simulate.public_organism_obligations') }}
+          </h3>
+          <h3
+            class="ice-title-level-2"
+            id="private_over250m_obligations"
+            v-else-if="
+              result.conditions.find(
+                (c) =>
+                  c.entity === 'private' &&
+                  c.turnover === 'over250m' &&
+                  c.provideService === undefined
+              )
+            "
+          >
+            {{ t('simulate.private_over250m_obligations') }}
+          </h3>
+          <h3
+            class="ice-title-level-2"
+            id="private_services_obligations"
+            v-else
+          >
+            {{ t('simulate.private_services_obligations') }}
           </h3>
           <!-- Champ d'application -->
           <h4 class="ice-title-level-3">{{ t('general.application_field') }}</h4>

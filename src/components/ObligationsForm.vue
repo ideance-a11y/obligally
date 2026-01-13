@@ -38,15 +38,15 @@
         value="public"
         required
         v-model="entityValue"
-        >{{ t('general.public_entity') }}</InputRadio
-      >
+        >{{ t('general.public_entity') }}
+      </InputRadio>
       <InputRadio
         name="entity"
         value="private"
         required
         v-model="entityValue"
-        >{{ t('general.private_entity') }}</InputRadio
-      >
+        >{{ t('general.private_entity') }}
+      </InputRadio>
     </FieldsetGroup>
 
     <!-- 1 : Chiffre d'affaires -->
@@ -68,22 +68,22 @@
         value="over250m"
         required
         v-model="turnoverValue"
-        >{{ t('general.over_250m') }}</InputRadio
-      >
+        >{{ t('general.over_250m') }}
+      </InputRadio>
       <InputRadio
         name="turnover"
         value="over2m"
         required
         v-model="turnoverValue"
-        >{{ t('general.over_2m') }}</InputRadio
-      >
+        >{{ t('general.over_2m') }}
+      </InputRadio>
       <InputRadio
         name="turnover"
         value="below2m"
         required
         v-model="turnoverValue"
-        >{{ t('general.below_2m') }}</InputRadio
-      >
+        >{{ t('general.below_2m') }}
+      </InputRadio>
     </FieldsetGroup>
 
     <!-- 2 : Nombre d'employés -->
@@ -105,15 +105,15 @@
         value="true"
         required
         v-model="exceedEmployeeLimitValue"
-        >{{ t('general.over_10') }}</InputRadio
-      >
+        >{{ t('general.over_10') }}
+      </InputRadio>
       <InputRadio
         name="employeeLimit"
         value="false"
         required
         v-model="exceedEmployeeLimitValue"
-        >{{ t('general.below_10') }}</InputRadio
-      >
+        >{{ t('general.below_10') }}
+      </InputRadio>
     </FieldsetGroup>
 
     <!-- 3 : Service -->
@@ -151,15 +151,15 @@
         value="true"
         required
         v-model="provideServiceValue"
-        >{{ t('general.service_yes') }}</InputRadio
-      >
+        >{{ t('general.service_yes') }}
+      </InputRadio>
       <InputRadio
         name="service"
         value="false"
         required
         v-model="provideServiceValue"
-        >{{ t('general.service_no') }}</InputRadio
-      >
+        >{{ t('general.service_no') }}
+      </InputRadio>
     </FieldsetGroup>
 
     <div class="ice-question-actions">
