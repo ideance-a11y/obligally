@@ -184,7 +184,7 @@ export const fr = {
   },
   simulate: {
     no_explicit_obligation: `Pas d'obligation explicite`,
-    multiple_obligations: `{count} obligations légales s'appliquent.`,
+    multiple_obligations: `{count} obligations légales s'appliquent`,
     public_organism_obligations: `Les obligations légales pour les organismes publics`,
     private_over250m_obligations: `Les obligations légales pour les entreprises dont le chiffre d'affaires est supérieur à 250 millions d'euros`,
     private_services_obligations: `Les obligations légales pour les entreprises qui fournissent des services`
