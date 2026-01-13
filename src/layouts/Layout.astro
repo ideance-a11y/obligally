@@ -19,7 +19,7 @@ interface Props {
 
 const { lang, pageTitle, metaDescription, headerClass, bodyClass, breadcrumb } = Astro.props
 
-const siteTitle = 'Obligally'
+const siteTitle = 'Ideance - Obligally'
 const siteMetaDesc = `Obligations légales concernant l\'accessibilité numérique en France`
 ---
 
@@ -44,13 +44,19 @@ const siteMetaDesc = `Obligations légales concernant l\'accessibilité numériq
       name="description"
       content={`${siteMetaDesc}${metaDescription}`}
     />
-    <meta name="theme-color" content="#9801ff">
-    <title>{pageTitle} | {siteTitle}</title>
+    <meta
+      name="theme-color"
+      content="#9801ff"
+    />
+    <title>{pageTitle} - {siteTitle}</title>
   </head>
 
   <body class={`body wrapper-main ${bodyClass}`}>
     <Skiplinks />
-    <Header siteTitle="Obligally" class={`${headerClass}`}>
+    <Header
+      siteTitle="Obligally"
+      class={`${headerClass}`}
+    >
       <slot name="header" />
     </Header>
     <main
