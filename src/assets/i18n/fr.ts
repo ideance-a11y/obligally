@@ -8,7 +8,9 @@ export const fr = {
     about: `À propos`,
     simulation: `Simuler`,
     comprendre: `Approfondir`,
-    visualisation: `Visualiser`
+    visualisation: `Visualiser`,
+    404: `Erreur 404`,
+    500: `Erreur 500`
   },
   heading: {
     simulation_subheading: `Entre 1 et 5 questions.`
@@ -186,5 +188,11 @@ export const fr = {
   visualiser: {
     page_titre: `Visualiser`,
     image_alt: `Infographie représentant les obligations légales d'accessibilité numérique en fonction des types d'entreprises et services fournis (voir description détaillée ci-après)`
+  },
+  404: {
+    caption: `Texte page 404`
+  },
+  500: {
+    caption: `Texte page 500`
   }
 }

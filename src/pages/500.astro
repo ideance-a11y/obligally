@@ -1,0 +1,23 @@
+---
+import Layout from '@layouts/Layout.astro'
+
+import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
+
+const lang = getLangFromUrl(Astro.url)
+const t = await initI18n(lang)
+
+export async function getStaticPaths() {
+  return [/*{ params: { locale: 'en' } },*/ { params: { locale: 'fr' } }]
+}
+---
+
+<Layout
+  lang={lang}
+  pageTitle={t('nav.500')}
+>
+  <h1 class="ice-page-title">{t('nav.500')}</h1>
+
+  <div class="ice-section is-narrow with-typo-styles">
+    <p>{t('500.caption')}</p>
+  </div>
+</Layout>
