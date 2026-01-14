@@ -419,7 +419,8 @@ template {
   content: "\ea92"; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  overflow-x: hidden; }
 
 body {
   position: relative;
@@ -434,14 +435,14 @@ body {
   font-weight: normal;
   line-height: 1.5;
   -webkit-font-smoothing: subpixel-antialiased; }
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #2C3E50;
-      color: #ffffff; } }
   @media screen and (min-width: 992px) {
     body {
       font-size: 1.8rem;
       line-height: 1.6; } }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #2C3E50;
+      color: #ffffff; } }
 
 *,
 *::before,
@@ -503,6 +504,7 @@ strong {
     margin-top: 3rem; }
     .with-sidebar .ice-sidebar-left {
       flex: 0 0 25%;
+      display: initial;
       position: sticky;
       top: 0; } }
     @media screen and (min-width: 768px) and (min-width: 1140px) {

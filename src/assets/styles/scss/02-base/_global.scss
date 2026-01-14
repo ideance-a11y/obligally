@@ -1,9 +1,12 @@
 html {
   font-size: $font-global-size;
+  overflow-x: hidden;
 }
 
 body {
   position: relative;
+  //overflow-x: hidden;
+  //overflow-y: auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -16,14 +19,14 @@ body {
   line-height: $font-body-l-hgt;
   -webkit-font-smoothing: subpixel-antialiased;
 
-  @media (prefers-color-scheme: dark) {
-    background-color: $global-c;
-    color: $white-color;
-  }
-
   @include for-desktop {
     font-size: $font-body-size-dtp;
     line-height: 1.6;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $global-c;
+    color: $white-color;
   }
 }
 
