@@ -1,0 +1,36 @@
+.ice-sidebar-title {
+  display: block;
+  margin: 0.5rem 0 2.2rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 0.1rem solid $tertiary-light;
+  text-transform: uppercase;
+}
+
+.ice-sidebar-left {
+  margin-bottom: 4rem;
+
+  @include for-mobile {
+    padding: 1.5rem 1.5rem;
+    background: #f6f8fa;
+    border-radius: 0.3rem;
+  }
+
+  ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+    li {
+      margin-bottom: 0.9rem;
+
+      a {
+        @include link($global-c, transparent, $primary-darker);
+
+        @media (prefers-color-scheme: dark) {
+          @include link($white-color, transparent, $tertiary-color);
+        }
+      }
+    }
+  }
+}

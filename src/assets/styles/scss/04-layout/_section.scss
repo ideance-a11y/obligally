@@ -5,6 +5,10 @@
 
   & + &.with-border-top {
     border-top: 0.15rem solid $primary-darker;
+
+    @media (prefers-color-scheme: dark) {
+      border-top-color: $secondary-color;
+    }
   }
 
   &.is-narrow {

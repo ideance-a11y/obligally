@@ -15,21 +15,26 @@
   }
 
   a {
-    @include link($tertiary-color, $primary-darker);
+    @include link($tertiary-color, #29566B);
+    font-weight: 500;
   }
 
   @media (prefers-color-scheme: dark) {
     background: $tertiary-color;
     border: 0;
-    box-shadow: rgba(0, 0, 0, 0.55) 0 0.2rem 0.8rem 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0.2rem 0.7rem 0;
     color: $white-color;
 
     a {
-      @include link($white-color, $white-color);
+      @include link($white-color, $tertiary-light);
     }
   }
 
-  p:last-child {
+  p:last-child,
+  ul:last-child,
+  ol:last-child,
+  ul:last-child li:last-child,
+  ol:last-child li:last-child {
     margin-bottom: 0;
   }
 

@@ -78,6 +78,20 @@ p {
 		}
 	}
 
+  ol {
+		padding: 0;
+    margin: 0;
+		margin-left: 2.2rem;
+
+    @include for-tablet-and-upper {
+      margin-left: 2.6rem;
+    }
+
+    li {
+      padding-left: 0.5rem;
+    }
+  }
+
   p + ul {
     margin-top: -0.7rem;
   }

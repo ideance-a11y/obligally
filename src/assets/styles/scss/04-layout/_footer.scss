@@ -38,7 +38,7 @@ $footer-logo-size: 6rem;
   }
 
   a:not(.ice-social-link) {
-    @include link();
+    @include link($global-c, $primary-darker);
 
     @media (prefers-color-scheme: dark) {
       @include link($white-color, #4692B4, transparent);

@@ -69,11 +69,8 @@
   }
 }
 
-.ice-link-pdf {
+.ice-btn-tertiary.ice-link-pdf {
   margin-top: 3rem;
-  //@include link($global-c, $tertiary-color);
-
-  //@media (prefers-color-scheme: dark) {
-    //@include link($white-color, $white-color);
-  //}
+  padding: 0.8rem 1.7rem 0.7rem;
+  font-size: 1.3rem;
 }

@@ -50,3 +50,34 @@ $col-11: 91.666667%;
     }
   }
 }
+
+@include for-tablet-and-upper {
+  .with-sidebar {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+    .ice-sidebar-left {
+      flex: 0 0 $col-3;
+      position: sticky;
+      top: 0;
+
+      @include for-large-screen {
+        flex: 0 0 $col-3;
+        padding-left: $col-1;
+      }
+    }
+
+    .ice-body {
+      flex: 0 0 $col-9;
+      padding-left: $col-1;
+
+      @include for-large-screen {
+        flex: 0 0 $col-9;
+        padding-right: $col-1;
+      }
+    }
+  }
+}

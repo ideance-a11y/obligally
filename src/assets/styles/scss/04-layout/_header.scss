@@ -15,7 +15,7 @@ $logo-hgt-dtp: 9rem;
     background: $primary-color linear-gradient($primary-darker 5rem, transparent 80%);
 
     @media (prefers-color-scheme: dark) {
-      background: #0711D4 linear-gradient(#7505BD 5rem, transparent 80%);
+      background: #060EB2 linear-gradient(#7505BD 6rem, transparent 100%);
     }
   }
 
@@ -90,7 +90,7 @@ $logo-hgt-dtp: 9rem;
 
     &:before,
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       left: -50%;
       right: -50%;
@@ -115,7 +115,7 @@ $logo-hgt-dtp: 9rem;
       background: $header-bg;
 
       @media (prefers-color-scheme: dark) {
-        background: $tertiary-color linear-gradient(#7505BD, #0711D4);
+        background: $tertiary-color linear-gradient(#7505BD 0%, #060EB2 90%);
       }
     }
 
@@ -270,19 +270,7 @@ $logo-hgt-dtp: 9rem;
   @include for-tablet-and-upper {
     margin-left: 4rem;
     padding-left: 3.8rem;
-    border-left: 0.4rem solid $secondary-color;
-
-    &:before {
-      //content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      height: 5rem;
-      width: 0.4rem;
-      background-color: $secondary-color;
-      box-shadow: 0 0 1rem 0 rgba(23, 24, 29, 0.3);
-    }
+    border-left: 0.35rem solid $secondary-color;
   }
 }
 

@@ -1,7 +1,7 @@
 $header-top-hgt-dtp: 6rem;
 $header-top-bg: $light-blue;
 $header-top-c: $global-c;
-$header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
+$header-top-bx-shw: rgba(0, 0, 0, 0.3) 0 0.2rem 0.7rem 0;
 
 .ice-header-top {
   z-index: 5;
@@ -17,6 +17,7 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
 
     @media (prefers-color-scheme: dark) {
       background-color: $header-top-c;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 0.2rem 0.7rem 0;
       color: $header-top-bg;
     }
   }
@@ -75,14 +76,13 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
       align-items: center;
       justify-content: center;
       top: 100%;
-      left: 0;
+      left: 0%;
       right: 0;
       height: auto;
       width: 100vw;
       padding: 6rem 3rem;
       background: white;
       box-shadow: 0 0.3rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-      @include transition-default(left);
 
       @media (prefers-color-scheme: dark) {
         box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.55);
@@ -161,9 +161,8 @@ $header-top-bx-shw: 0 0 1rem 0 rgba(23,24,29,0.25);
 
   @include for-mobile {
     &[aria-expanded="false"] + ul {
-      visibility: hidden;
+      display: none;
       left: 100%;
-      transition: visibility 0s $transition-dur, left $transition-dur $transition-ftn;
     }
   }
 

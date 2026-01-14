@@ -12,12 +12,12 @@ $button-tertiary-c: $global-c;
   align-items: center;
   justify-content: center;
   min-height: 4.5rem;
-  padding: 0.9rem 2.8rem;
+  padding: 0.8rem 2.5rem;
   border-radius: 2.3rem;
   border: 0;
   box-shadow: 0 0.3rem 0.4rem 0 rgba(0,0,0,0.15);
   font-weight: bold;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   line-height: 1.3;
   text-transform: none;
   text-decoration: none;
@@ -43,7 +43,7 @@ $button-tertiary-c: $global-c;
     min-height: 5rem;
     padding: 0.8rem 4.5rem;
     border-radius: 2.5rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -52,6 +52,8 @@ $button-tertiary-c: $global-c;
   @extend %button;
   background: $button-primary-bg;
   color: $button-primary-c;
+  text-transform: uppercase;
+  @include transition-default(background-color, color);
 
   @media (prefers-color-scheme: dark) {
     background-color: $tertiary-color;
@@ -61,7 +63,7 @@ $button-tertiary-c: $global-c;
   &:hover,
   &:focus {
     opacity: 1;
-    background: darken($primary-color, 10%);
+    background: darken($primary-color, 8%);
     color: $button-primary-c;
 
     @media (prefers-color-scheme: dark) {
