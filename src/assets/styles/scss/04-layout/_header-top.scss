@@ -100,7 +100,7 @@ $header-top-bx-shw: rgba(0, 0, 0, 0.3) 0 0.2rem 0.7rem 0;
   }
 
   a {
-    @include link($global-c, $primary-darker, transparent);
+    @include link($global-c, transparent, $primary-darker);
     font-size: 1.9rem;
 
     @media (prefers-color-scheme: dark) {
