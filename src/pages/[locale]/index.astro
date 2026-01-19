@@ -13,12 +13,13 @@ export async function getStaticPaths() {
 
 <Layout
   lang={lang}
-  pageTitle={''}
+  pageTitle={t('accueil.page_titre')}
   headerClass={'on-home'}
+  metaDescription={t('accueil.metadescription')}
 >
   <h1
     class="ice-page-title"
-    set:html={t('accueil.page_titre')}
+    set:html={t('accueil.page_heading_1')}
   />
 
   <div class="ice-section">

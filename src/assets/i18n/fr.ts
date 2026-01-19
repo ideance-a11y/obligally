@@ -1,7 +1,7 @@
 export const fr = {
   head: {
     site_title: `Obligally, un site proposé par Ideance`,
-    meta_description: `Obligations légales concernant l'accessibilité numérique en France`
+    meta_description: `Obligations légales concernant l'accessibilité numérique en France.`
   },
   nav: {
     go_to_ideance: `Aller sur ideance.net`,
@@ -169,7 +169,9 @@ export const fr = {
     raweb_long: `Référentiel d'Évaluation de l'Accessibilité Web`
   },
   accueil: {
-    page_titre: `Découvrir les lois qui favorisent l'accès<br>au numérique pour les personnes handicapées`,
+    metadescription: `Faites le point sur les obligations légales liées à l’accessibilité numérique en France grâce à des contenus clairs, un simulateur et une synthèse visuelle.`,
+    page_titre: ``,
+    page_heading_1: `Découvrir les lois qui favorisent l'accès<br>au numérique pour les personnes handicapées`,
     option_1_titre: `Simuler`,
     option_1_lien: `Ce que la loi attend de vous :`,
     option_1_description: `<p>Vous souhaitez connaître vos obligations ?</p>
@@ -184,9 +186,11 @@ export const fr = {
       <p>Une infographie vous permettra de découvrir en un coup d'œil les règles en vigueur en matière d'accessibilité numérique.</p>`
   },
   comprendre: {
+    metadescription: `Découvrez en détail les lois françaises et directives européennes sur l’accessibilité numérique et comment elles s’appliquent à votre organisation.`,
     page_titre: `Approfondir`
   },
   simulation: {
+    metadescription: `Évaluez vos obligations légales en matière d’accessibilité numérique en France avec notre simulateur gratuit.`,
     simulation_subheading: `Entre 1 et 5 questions.`,
     no_explicit_obligation: `Pas d'obligation explicite`,
     multiple_obligations: `{count} obligations légales s'appliquent`,
@@ -195,8 +199,12 @@ export const fr = {
     private_services_obligations: `Les obligations légales pour les entreprises qui fournissent des services`
   },
   visualiser: {
+    metadescription: `Visualisez les obligations légales d’accessibilité numérique en France grâce à notre infographie, avec transcription détaillée et possibilité de téléchargement.`,
     page_titre: `Visualiser`,
     image_alt: `Infographie représentant les obligations légales d'accessibilité numérique en fonction des types d'entreprises et services fournis (voir description détaillée ci-après)`
+  },
+  a_propos: {
+    metadescription: `Obligally est un projet d’Ideance pour clarifier les obligations légales d’accessibilité numérique en France, gratuit et accessible.`
   },
   404: {
     caption: `Erreur 404, page non-trouvée`,
