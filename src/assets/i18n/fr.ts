@@ -13,8 +13,8 @@ export const fr = {
     simulation: `Simuler`,
     comprendre: `Approfondir`,
     visualisation: `Visualiser`,
-    404: `Erreur 404`,
-    500: `Erreur 500`
+    404: `Aïe, fausse route…`,
+    500: `Aïe, nous rencontrons un problème`
   },
   heading: {
     simulation_subheading: `Entre 1 et 5 questions.`
@@ -194,9 +194,11 @@ export const fr = {
     image_alt: `Infographie représentant les obligations légales d'accessibilité numérique en fonction des types d'entreprises et services fournis (voir description détaillée ci-après)`
   },
   404: {
-    caption: `Texte page 404`
+    caption: `Erreur 404, page non-trouvée`,
+    html_text: `Il semble que la page que vous cherchez n'existe pas. Retournez vite à l’<a href="/">accueil</a> pour poursuivre continuer votre exploration.`
   },
   500: {
-    caption: `Texte page 500`
+    caption: `Erreur 500, problème interne du serveur`,
+    html_text: `<p>Le serveur n'a pas pu traiter votre requête. Veuillez réessayer plus tard.</p>`
   }
 }

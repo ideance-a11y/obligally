@@ -18,6 +18,7 @@ export async function getStaticPaths() {
   <h1 class="ice-page-title">{t('nav.404')}</h1>
 
   <div class="ice-section is-narrow with-typo-styles">
-    <p>{t('404.caption')}</p>
+    <p class="ice-title-level-3">{t('404.caption')}</p>
+    <p set:html={t('404.html_text')} />
   </div>
 </Layout>
