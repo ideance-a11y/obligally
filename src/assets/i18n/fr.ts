@@ -20,7 +20,7 @@ export const fr = {
     site_name: `Obligally`,
     title: `Obligally, les obligations légales d'accessibilité numérique en France.`,
     description: `Un site d’informations pour clarifier les obligations légales françaises en matière d’accessibilité numérique, grâce à un simulateur, des contenus détaillés et une synthèse visuelle.`,
-    url: `https://obligations-legales-accessibilite-numerique.fr/`,
+    url: `https://obligally.com/`,
     type: `website`
   },
   footer: {
