@@ -6,7 +6,7 @@
         ref="title"
         class="ice-page-title"
       >
-        {{ t('simulate.no_explicit_obligation') }}
+        {{ t('simulation.no_explicit_obligation') }}
       </h2>
       <div v-html="t('html.no_legal_obligation_content')"></div>
     </template>
@@ -26,7 +26,7 @@
         v-if="obligationResults.length > 1"
       >
         <p>
-          {{ `${t('simulate.multiple_obligations', { count: obligationResults.length })} :` }}
+          {{ `${t('simulation.multiple_obligations', { count: obligationResults.length })} :` }}
         </p>
 
         <ul>
@@ -37,7 +37,7 @@
             <a
               href="#public_organism_obligations"
               v-if="result.conditions.find((c) => c.entity === 'public')"
-              >{{ t('simulate.public_organism_obligations') }}</a
+              >{{ t('simulation.public_organism_obligations') }}</a
             >
             <a
               href="#private_over250m_obligations"
@@ -49,12 +49,12 @@
                     c.provideService === undefined
                 )
               "
-              >{{ t('simulate.private_over250m_obligations') }}</a
+              >{{ t('simulation.private_over250m_obligations') }}</a
             >
             <a
               href="#private_services_obligations"
               v-else
-              >{{ t('simulate.private_services_obligations') }}</a
+              >{{ t('simulation.private_services_obligations') }}</a
             >
           </li>
         </ul>
@@ -70,7 +70,7 @@
             id="public_organism_obligations"
             v-if="result.conditions.find((c) => c.entity === 'public')"
           >
-            {{ t('simulate.public_organism_obligations') }}
+            {{ t('simulation.public_organism_obligations') }}
           </h3>
           <h3
             class="ice-title-level-2"
@@ -84,14 +84,14 @@
               )
             "
           >
-            {{ t('simulate.private_over250m_obligations') }}
+            {{ t('simulation.private_over250m_obligations') }}
           </h3>
           <h3
             class="ice-title-level-2"
             id="private_services_obligations"
             v-else
           >
-            {{ t('simulate.private_services_obligations') }}
+            {{ t('simulation.private_services_obligations') }}
           </h3>
           <!-- Champ d'application -->
           <h4 class="ice-title-level-3">{{ t('general.application_field') }}</h4>
