@@ -6,7 +6,7 @@ import Footer from '@components/Footer.astro'
 
 import type { ComponentProps } from 'astro/types'
 
-import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
+import { initI18n } from '@/assets/i18n/i18n.ts'
 
 import '@styles/main.css'
 
@@ -124,7 +124,31 @@ const siteMetaDesc = t('head.meta_description')
     />
     <meta
       name="description"
-      content={`${siteMetaDesc}${metaDescription ? metaDescription : ''}`}
+      content={`${siteMetaDesc}${metaDescription ? ` ${metaDescription}` : ''}`}
+    />
+    <meta
+      property="og:site_name"
+      content={t('open_graph.site_name')}
+    />
+    <meta
+      property="og:image"
+      content="/opengraph/og-image-obligally.png"
+    />
+    <meta
+      property="og:type"
+      content={t('open_graph.type')}
+    />
+    <meta
+      property="og:url"
+      content={t('open_graph.url')}
+    />
+    <meta
+      property="og:title"
+      content={t('open_graph.title')}
+    />
+    <meta
+      property="og:description"
+      content={t('open_graph.description')}
     />
     <meta
       name="theme-color"

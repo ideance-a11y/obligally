@@ -16,6 +16,13 @@ export const fr = {
     404: `Aïe, fausse route…`,
     500: `Aïe, nous rencontrons un problème`
   },
+  open_graph: {
+    site_name: `Obligally`,
+    title: `Obligally, les obligations légales d'accessibilité numérique en France.`,
+    description: `Un site d’informations pour clarifier les obligations légales françaises en matière d’accessibilité numérique, grâce à un simulateur, des contenus détaillés et une synthèse visuelle.`,
+    url: `https://obligations-legales-accessibilite-numerique.fr/`,
+    type: `website`
+  },
   footer: {
     legal: `<p><b>Expertise, formations et audits accessibilité numérique.</b><br><b>Sensibilisation et aménagement pour le handicap en entreprise.</b></p><p>SAS au capital de 4000 €, immatriculée au <abbr title="Registre du Commerce et des Sociétés">RCS</abbr> de Rouen sous le numéro 888 808 383. Organisme de formation enregistré sous le numéro 28 76 06172 76.</p>
       <ul class="ice-menu"><li><a href="mailto:contact@ideance.fr">contact@ideance.fr</a></li><li><a href="tel:+33278775982">+33 (0)2 78 77 59 82</a></li></ul>`,
