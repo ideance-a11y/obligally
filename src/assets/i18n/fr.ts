@@ -158,7 +158,7 @@ export const fr = {
     six_month_renewable: `Sanctions renouvelables après 6 mois`,
     no_compliance_fine: `Jusqu'à 50 000 € pour non conformité`,
     no_declaration_fine: `Jusqu'à 25 000 € pour non publication de la déclaration de conformité et des autres documents requis.`,
-    injunction_daily_fine: `Injonction avec astreinte journalière de 3 000 €, pouvant aller jusqu'à 30 000 € au total (sans dépasser 5 % du chiffre d'affaires)`,
+    injunction_daily_fine: `Injonction avec astreinte journalière de 3 000 €, pouvant aller jusqu'à 300 000 € au total (sans dépasser 5 % du chiffre d'affaires)`,
     five_class_fine: `Contravention de 5e classe (7 500 € pour une personne morale)`,
     fine_in_europe_depends: `Les sanctions ci-dessus sont celles définies par la France. Chaque pays de l'UE définit ses propres sanctions`
   },
