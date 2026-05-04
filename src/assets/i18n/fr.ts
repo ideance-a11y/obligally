@@ -189,10 +189,12 @@ export const fr = {
   },
   comprendre: {
     metadescription: `Découvrez en détail les lois françaises et directives européennes sur l’accessibilité numérique et comment elles s’appliquent à votre organisation.`,
+    heading: `Approfondir`,
     subheading: `Entre 1 et 5 questions.`
   },
   simulation: {
     metadescription: `Évaluez vos obligations légales en matière d’accessibilité numérique en France avec notre simulateur gratuit.`,
+    heading: `Simuler`,
     subheading: `Un article complet pour comprendre le sujet.`,
     no_explicit_obligation: `Pas d'obligation explicite`,
     multiple_obligations: `{count} obligations légales s'appliquent`,
@@ -202,6 +204,7 @@ export const fr = {
   },
   visualiser: {
     metadescription: `Visualisez les obligations légales d’accessibilité numérique en France grâce à notre infographie, avec transcription détaillée et possibilité de téléchargement.`,
+    heading: `Visualiser`,
     subheading: `Une infographie et une description détaillée.`,
     image_alt: `Infographie représentant les obligations légales d'accessibilité numérique en fonction des types d'entreprises et services fournis (voir description détaillée ci-après)`
   },
