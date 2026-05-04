@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import Hero from '@components/Hero.astro'
 
 import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
@@ -21,6 +22,11 @@ const PageContent = lang === 'fr' ? PageContentFr : PageContentEn
   pageTitle={t('nav.about')}
   metaDescription={t('a_propos.metadescription')}
 >
+  <Hero
+    slot="hero"
+    lang={lang}
+  />
+
   <h1 class="ice-page-title">{t('nav.about')}</h1>
 
   <div class="ice-section is-narrow with-typo-styles">

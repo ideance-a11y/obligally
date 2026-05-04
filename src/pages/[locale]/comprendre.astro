@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import Hero from '@components/Hero.astro'
 
 import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
@@ -18,22 +19,21 @@ const PageContent = lang === 'fr' ? PageContentFr : PageContentEn
 
 <Layout
   lang={lang}
-  pageTitle={t('comprendre.page_titre')}
+  pageTitle={t('nave.comprendre')}
   metaDescription={t('comprendre.metadescription')}
 >
-  <div
-    class="ice-header-page-details"
-    slot="header"
+  <Hero
+    slot="hero"
+    lang={lang}
+    heading={t('nav.comprendre')}
+    subheading={t('comprendre.subheading')}
   >
-    <h1 class="ice-header-page-title">{t('comprendre.page_titre')}</h1>
-    <div class="ice-header-page-subheading">
-      <span
-        class="ice-icon icon-info"
-        aria-hidden="true"
-      ></span>
-      <p>Un article complet pour comprendre le sujet.</p>
-    </div>
-  </div>
+    <span
+      slot="icon"
+      class="ice-icon icon-info"
+      aria-hidden="true"
+    ></span>
+  </Hero>
 
   <div class="ice-section with-typo-styles">
     <PageContent />

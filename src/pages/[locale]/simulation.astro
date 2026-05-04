@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import Hero from '@components/Hero.astro'
 
 import ObligationsForm from '@/components/ObligationsForm.vue'
 
@@ -18,17 +19,17 @@ export async function getStaticPaths() {
   pageTitle={t('nav.simulation')}
   metaDescription={t('simulation.metadescription')}
 >
-  <div slot="header">
-    <div class="ice-header-page-details">
-      <h1 class="ice-header-page-title">{t('nav.simulation')}</h1>
-      <div class="ice-header-page-subheading">
-        <span
-          class="ice-icon icon-timer"
-          aria-hidden="true"
-        ></span>
-        <p>{t('simulation.simulation_subheading')}</p>
-      </div>
-    </div>
-  </div>
+  <Hero
+    slot="hero"
+    lang={lang}
+    heading={t('nav.simulation')}
+    subheading={t('simulation.subheading')}
+  >
+    <span
+      slot="icon"
+      class="ice-icon icon-timer"
+      aria-hidden="true"
+    ></span>
+  </Hero>
   <ObligationsForm client:load />
 </Layout>

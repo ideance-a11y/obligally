@@ -170,6 +170,7 @@ const siteMetaDesc = t('head.meta_description')
       role="main"
       class="ice-main-content-wrapper"
     >
+      <slot name="hero" />
       <div class="ice-container ice-page-content">
         {breadcrumb && <Breadcrumb breadcrumb={breadcrumb} />}
         <slot />

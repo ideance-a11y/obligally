@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import Hero from '@components/Hero.astro'
 
 import { initI18n, getLangFromUrl } from '@/assets/i18n/i18n.ts'
 
@@ -17,7 +18,13 @@ export async function getStaticPaths() {
   headerClass={'on-home'}
   metaDescription={t('accueil.metadescription')}
 >
-  <h1
+  <Hero
+    slot="hero"
+    lang={lang}
+    isHome
+  />
+
+  <h2
     class="ice-page-title"
     set:html={t('accueil.page_heading_1')}
   />

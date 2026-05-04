@@ -4,6 +4,7 @@ export const fr = {
     meta_description: `Obligations légales concernant l'accessibilité numérique en France.`
   },
   nav: {
+    site_name: `Obligally`,
     go_to_ideance: `Aller sur ideance.net`,
     skiplink_to_main: `Aller au contenu`,
     label_main: `Menu principal`,
@@ -13,6 +14,7 @@ export const fr = {
     simulation: `Simuler`,
     comprendre: `Approfondir`,
     visualisation: `Visualiser`,
+    return_homepage: `Retour à l'accueil`,
     404: `Aïe, fausse route…`,
     500: `Aïe, nous rencontrons un problème`
   },
@@ -187,11 +189,11 @@ export const fr = {
   },
   comprendre: {
     metadescription: `Découvrez en détail les lois françaises et directives européennes sur l’accessibilité numérique et comment elles s’appliquent à votre organisation.`,
-    page_titre: `Approfondir`
+    subheading: `Entre 1 et 5 questions.`
   },
   simulation: {
     metadescription: `Évaluez vos obligations légales en matière d’accessibilité numérique en France avec notre simulateur gratuit.`,
-    simulation_subheading: `Entre 1 et 5 questions.`,
+    subheading: `Un article complet pour comprendre le sujet.`,
     no_explicit_obligation: `Pas d'obligation explicite`,
     multiple_obligations: `{count} obligations légales s'appliquent`,
     public_organism_obligations: `Les obligations légales pour les organismes publics`,
@@ -200,7 +202,7 @@ export const fr = {
   },
   visualiser: {
     metadescription: `Visualisez les obligations légales d’accessibilité numérique en France grâce à notre infographie, avec transcription détaillée et possibilité de téléchargement.`,
-    page_titre: `Visualiser`,
+    subheading: `Une infographie et une description détaillée.`,
     image_alt: `Infographie représentant les obligations légales d'accessibilité numérique en fonction des types d'entreprises et services fournis (voir description détaillée ci-après)`
   },
   a_propos: {
