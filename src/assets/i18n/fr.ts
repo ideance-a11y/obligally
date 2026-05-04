@@ -1,7 +1,7 @@
 export const fr = {
   head: {
-    site_title: `Obligally, un site proposé par Ideance`,
-    meta_description: `Obligations légales concernant l'accessibilité numérique en France.`
+    site_title: `Obligally, les obligations légales d'accessibilité numérique en France`,
+    meta_description: `Découvrez vos obligations légales concernant l'accessibilité numérique en France. Un site proposé par Ideance.`
   },
   nav: {
     site_name: `Obligally`,
@@ -189,13 +189,13 @@ export const fr = {
   },
   comprendre: {
     metadescription: `Découvrez en détail les lois françaises et directives européennes sur l’accessibilité numérique et comment elles s’appliquent à votre organisation.`,
-    heading: `Approfondir`,
-    subheading: `Entre 1 et 5 questions.`
+    heading: `Approfondir vos connaissances sur les obligations légales d'accessibilité numérique`,
+    subheading: `Un article complet pour comprendre le sujet.`
   },
   simulation: {
     metadescription: `Évaluez vos obligations légales en matière d’accessibilité numérique en France avec notre simulateur gratuit.`,
-    heading: `Simuler`,
-    subheading: `Un article complet pour comprendre le sujet.`,
+    heading: `Simuler vos obligations légales d'accessibilité numérique`,
+    subheading: `Entre 1 et 5 questions.`,
     no_explicit_obligation: `Pas d'obligation explicite`,
     multiple_obligations: `{count} obligations légales s'appliquent`,
     public_organism_obligations: `Les obligations légales pour les organismes publics`,
@@ -204,7 +204,7 @@ export const fr = {
   },
   visualiser: {
     metadescription: `Visualisez les obligations légales d’accessibilité numérique en France grâce à notre infographie, avec transcription détaillée et possibilité de téléchargement.`,
-    heading: `Visualiser`,
+    heading: `Visualiser vos obligations légales d'accessibilité numérique`,
     subheading: `Une infographie et une description détaillée.`,
     image_alt: `Infographie représentant les obligations légales d'accessibilité numérique en fonction des types d'entreprises et services fournis (voir description détaillée ci-après)`
   },
