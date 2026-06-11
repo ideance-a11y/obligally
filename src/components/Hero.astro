@@ -14,46 +14,46 @@ const t = await initI18n(lang)
 ---
 
 <div class="ice-hero">
-  <div class="ice-hero-inner ice-container">
-    {
-      // Structure différente sur la home
-      isHome ? (
-        <div class="ice-logo">
-          <img
-            alt="Ideance"
-            src="/images/lg_ideance.svg"
-          />
-        </div>
-        <div class="ice-site-title-wrapper">
-          <h1>
+  <div class="ice-container no-gutters">
+    <div class="ice-hero-inner">
+      {
+        // Structure différente sur la home
+        isHome ? (
+          <div class="ice-logo">
+            <img
+              alt="Ideance"
+              src="/images/lg_ideance.svg"
+            />
+          </div>
+          <h1 class="ice-site-title-wrapper">
             <a
               href="/"
               class="ice-site-title"
               >{t('nav.site_name')}</a>
-            <span class="ice-site-slogan">{t('general.a11y_legal_obligations_france')}</span>
+            <span class="ice-site-slogan">{t('general.a11y_legal_obligations_france')}</span>  
           </h1>
-      </div>
-      ) : (
-        <div class="ice-site-title-wrapper">
-          <a
-            href="/"
-            class="ice-site-title"
-            aria-label={`${t('nav.site_name')}, ${t('nav.return_homepage')}`}
-            >{t('nav.site_name')}</a>
-        </div>
-      )
-    }
-    {
-      // Si pas de titre renseigné, affiche juste le lien de retour
-      !isHome && heading !== null && (
-        <div class="ice-hero-page-details">
-          <h1 class="ice-hero-page-title">{heading}</h1>
-          <div class="ice-hero-page-subheading">
-            <slot name="icon" />
-            <p>{subheading}</p>
+        ) : (
+          <div class="ice-site-title-wrapper">
+            <a
+              href="/"
+              class="ice-site-title"
+              aria-label={`${t('nav.site_name')}, ${t('nav.return_homepage')}`}
+              >{t('nav.site_name')}</a>
           </div>
-        </div>
-      )
-    }
+        )
+      }
+      {
+        // Si pas de titre renseigné, affiche juste le lien de retour
+        !isHome && heading !== null && (
+          <div class="ice-hero-page-details">
+            <h1 class="ice-hero-page-title">{heading}</h1>
+            <div class="ice-hero-page-subheading">
+              <slot name="icon" />
+              <p>{subheading}</p>
+            </div>
+          </div>
+        )
+      }
+    </div>
   </div>
 </div>

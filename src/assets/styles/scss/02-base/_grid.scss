@@ -17,7 +17,7 @@ $col-11: 91.666667%;
   margin-right: auto;
 
   @include for-mobile {
-    &:not(.with-no-gutters) {
+    &:not(.no-gutters) {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }

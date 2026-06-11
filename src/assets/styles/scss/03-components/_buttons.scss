@@ -56,7 +56,7 @@ $button-tertiary-c: $global-c;
   @include transition-default(background-color, color);
 
   @media (prefers-color-scheme: dark) {
-    background-color: $tertiary-color;
+    background-color: $tertiary-color-dark;
     color: $white-color;
   }
 
@@ -67,7 +67,7 @@ $button-tertiary-c: $global-c;
     color: $button-primary-c;
 
     @media (prefers-color-scheme: dark) {
-      background: darken($tertiary-color, 5%);
+      background: darken($tertiary-color-dark, 5%);
       color: $white-color;
     }
   }
@@ -82,7 +82,7 @@ $button-tertiary-c: $global-c;
 
   @media (prefers-color-scheme: dark) {
     background: $global-c;
-    border-color: $tertiary-color;
+    border-color: $tertiary-color-dark;
     color: darken($white-color, 10%);
   }
 
@@ -93,7 +93,7 @@ $button-tertiary-c: $global-c;
     border-color: darken($primary-color, 10%);
 
     @media (prefers-color-scheme: dark) {
-      border-color: lighten($tertiary-color, 8%);
+      border-color: lighten($tertiary-color-dark, 8%);
       color: $white-color;
     }
   }
@@ -121,8 +121,8 @@ $button-tertiary-c: $global-c;
   text-transform: uppercase;
 
   @media (prefers-color-scheme: dark) {
-    border-color: $tertiary-color;
-    background-color: $tertiary-color;
+    border-color: $tertiary-color-dark;
+    background-color: $tertiary-color-dark;
     color: $white-color;
   }
 

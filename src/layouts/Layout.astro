@@ -14,12 +14,12 @@ interface Props {
   lang: string
   pageTitle: string
   metaDescription?: string
-  headerClass?: string
+  heroClass?: string
   bodyClass?: string
   breadcrumb?: ComponentProps<typeof Breadcrumb>['breadcrumb']
 }
 
-const { lang, pageTitle, metaDescription, headerClass, bodyClass, breadcrumb } = Astro.props
+const { lang, pageTitle, metaDescription, heroClass, bodyClass, breadcrumb } = Astro.props
 
 const t = await initI18n(lang)
 
@@ -161,14 +161,14 @@ const siteMetaDesc = t('head.meta_description')
     <Skiplinks />
     <Header
       siteTitle="Obligally"
-      class={`${headerClass}`}
+      class=""
     >
       <slot name="header" />
     </Header>
     <main
       id="main"
       role="main"
-      class="ice-main-content-wrapper"
+      class={`ice-main-content-wrapper ${heroClass}`}
     >
       <slot name="hero" />
       <div class="ice-container ice-page-content">

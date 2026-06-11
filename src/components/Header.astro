@@ -20,39 +20,18 @@ const { siteTitle, class: className, ...rest } = Astro.props
   class:list={['ice-header', className]}
   {...rest}
 >
-  <div class="ice-header-top">
-    <div class="ice-header-top-inner ice-container">
-      <!-- <Lang /> -->
-      <a
-        href="https://www.ideance.net"
-        class="ice-btn-tertiary with-icon"
-      >
-        <span
-          class="ice-icon icon-two-chevrons-left"
-          aria-hidden="true"
-        ></span>
-        <span>{t('nav.go_to_ideance')}</span>
-      </a>
-      <Navigation />
-    </div>
-  </div>
-  <!--
   <div class="ice-header-inner ice-container">
-    <div class="ice-logo">
-      <img
-        alt="Ideance"
-        src="/images/lg_ideance.svg"
-      />
-    </div>
-    <div class="ice-site-title-wrapper">
-      <a
-        href="/"
-        class="ice-site-title"
-        >{siteTitle}</a
-      >
-      <p class="ice-site-slogan">{t('general.a11y_legal_obligations_france')}</p>
-    </div>
-    <slot />
+    <!-- <Lang /> -->
+    <a
+      href="https://www.ideance.net"
+      class="ice-btn-tertiary with-icon"
+    >
+      <span
+        class="ice-icon icon-two-chevrons-left"
+        aria-hidden="true"
+      ></span>
+      <span>{t('nav.go_to_ideance')}</span>
+    </a>
+    <Navigation />
   </div>
-  -->
 </header>

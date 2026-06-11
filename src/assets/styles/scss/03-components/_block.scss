@@ -20,7 +20,7 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    background: $tertiary-color;
+    background: $tertiary-color-dark;
     border: 0;
     box-shadow: rgba(0, 0, 0, 0.3) 0 0.2rem 0.7rem 0;
     color: $white-color;
@@ -64,7 +64,7 @@
     }
 
     @media (prefers-color-scheme: dark) {
-      background: $tertiary-color;
+      background: $tertiary-color-dark;
       color: $white-color;
     }
   }
