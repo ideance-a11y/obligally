@@ -44,7 +44,7 @@ const t = await initI18n(lang)
       }
       {
         // Si pas de titre renseigné, affiche juste le lien de retour
-        !isHome && heading !== null && (
+        !isHome && heading && (
           <div class="ice-hero-page-details">
             <h1 class="ice-hero-page-title">{heading}</h1>
             <div class="ice-hero-page-subheading">
